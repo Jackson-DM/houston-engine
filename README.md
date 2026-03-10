@@ -1,90 +1,107 @@
 # Houston AI Authority Engine
 
-> A strategic AI content and authority-building system designed to position Leon Coe and Amplify Intelligence as the leading AI voice in Houston.
+A multi-agent AI research and content system designed to identify emerging industry signals, generate executive insights, and convert them into authority-building content. This engine powers the Houston AI Club authority ecosystem.
 
 ---
 
-## Project Overview
+# System Purpose
 
-This repository is the operating system behind a regional AI authority strategy.
+The Houston AI Authority Engine transforms **industry signals** into **strategic insights** and **authority content**. Instead of randomly generating posts, the system identifies emerging patterns across industries and converts them into executive-level insight.
 
-It is not a content vault. It is the infrastructure that drives a structured, repeatable process for producing executive-level AI insights, distributing them across the right channels, and converting thought leadership into consulting opportunities.
+This creates consistent authority positioning around AI adoption in:
+- Energy
+- Logistics
+- Healthcare
+- Professional Services
+- Manufacturing
 
-The system combines structured prompt engineering, multi-model AI orchestration, and a defined conversion funnel — generating authority assets consistently, at scale, without drift.
-
----
-
-## What This System Does
-
-- Generates executive AI memos tailored to Houston's key industries
-- Converts research and strategy into LinkedIn authority content
-- Funnels senior executives into AI Office Hours discussions
-- Tracks engagement signals and maps them to enterprise opportunities
+with a regional focus on **Houston's innovation ecosystem**.
 
 ---
 
-## Current Phase
+# System Pipeline
 
-**Phase 2 — Controlled Activation**
-
-The system has produced three executive authority assets — one per target vertical. Each memo targets C-suite and VP-level readers, runs approximately 800 words, and ends with a direct call to action for the Executive AI Office Hours.
-
-| Memo | Vertical |
-|---|---|
-| [Energy AI Operating Model](content/executive-memos/houston-energy-ai-operating-model.md) | Energy |
-| [Healthcare AI Governance](content/executive-memos/houston-healthcare-ai-governance.md) | Healthcare |
-| [Professional Services AI Operating Model](content/executive-memos/houston-professional-services-ai-operating-model.md) | Professional Services |
-
----
-
-## System Architecture
-
-The engine runs a structured, sequential pipeline:
-
-```
-Strategy
-  → Templates
-  → AI Execution Agents (Claude, Codex, Gemini)
-  → Executive Memos
-  → LinkedIn Distribution
-  → AI Office Hours Funnel
-  → CRM Signal Tracking
-```
-
-Full pipeline documentation: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+Industry Signals
+↓
+Signal Intelligence Layer
+↓
+Executive Memo Generation
+↓
+Authority Content Packaging
+↓
+Audience Engagement + CRM Feedback
 
 ---
 
-## Repository Structure
+# Current System Phase
 
-```
-/docs        Architecture and strategy documentation
-/templates   Repeatable content frameworks
-/content     Generated authority assets
-/logs        System execution history
-```
+**Phase 3 — Swarm Operational**
 
-Documentation index: [`docs/INDEX.md`](docs/INDEX.md)
+Completed:
+• Week 1 manual execution
+• Week 2 swarm-assisted execution
+• CRM initialization
 
----
-
-## Development Philosophy
-
-- **Structured prompts over ad-hoc generation** — every output begins from a template that enforces format, voice, and audience
-- **Deterministic AI execution** — agents operate within defined cognitive boundaries; output quality comes from constraint
-- **Multi-agent orchestration** — each model has a specific role; no duplication, no overlap
-- **Authority content as a system** — every asset type is repeatable, every vertical is activatable on demand
+Next Objective: **Phase 4 — Signal-Driven Memo Generation**
+Phase 4 introduces a signal intelligence layer that identifies important industry developments and converts them into research memos before content is produced.
 
 ---
 
-## Future Phases
+# Agent Architecture
 
-**Phase 3 — Scaled Execution**
-Content atomization across all three verticals, increased publication cadence, and KPI tracking activated.
+The system operates using a multi-model agent swarm.
 
-**Phase 4 — Authority Automation**
-Recurring agent deployment for weekly briefs, SEO monitoring, and pipeline updates — with a full orchestration layer routing tasks across agents automatically.
+**Orchestrator**
+Gemini Flash (Claw)
+
+**Research + Memo Generation**
+Claude
+
+**Engineering + Repo Operations**
+Codex
+
+**Strategic Oversight**
+ChatGPT
+
+Each agent performs a specific role in the authority pipeline.
 
 ---
 
-Houston first. Web amplified. Enterprise focused.
+# Repository Structure
+
+- `signals/`
+- `memos/`
+- `crm/`
+- `agents/`
+- `analytics/`
+- `commands/`
+- `content/`
+- `docs/`
+- `templates/`
+- `logs/`
+
+The repository represents a full **AI research + authority engine**, not just a content generator.
+
+---
+
+# Strategic Goal
+
+Position Houston as the **global epicenter of applied AI in industry**, particularly in:
+- Energy infrastructure
+- Logistics networks
+- Industrial operations
+- Healthcare systems
+
+The authority engine identifies the signals that matter and converts them into insight before the rest of the market notices.
+
+---
+
+# Long-Term Vision
+
+The Houston AI Authority Engine evolves toward a fully autonomous AI research pipeline capable of:
+• detecting emerging industry signals
+• generating strategic research memos
+• producing authority content
+• identifying consulting opportunities
+
+This creates a continuous intelligence loop connecting **industry change → insight → influence → opportunity**.
