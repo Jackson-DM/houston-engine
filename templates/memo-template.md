@@ -14,5 +14,15 @@ Prediction:
 Strategic Insight:
 
 Content Angles:
+- 
+- 
+- 
+- 
+- 
 
 Linked Companies:
+
+Status:
+- Draft
+- Approved
+- Needs Revision
