@@ -7,11 +7,31 @@ Industry:
 Signal Summary:
 
 Houston Relevance:
+Score: 
+Reasoning:
 
-Strategic Importance:
+Industry Importance:
+Score: 
+Reasoning:
+
+Executive Urgency:
+Score: 
+Reasoning:
+
+Authority Potential:
+Score: 
+Reasoning:
+
+Consulting Opportunity:
+Score: 
+Reasoning:
+
+Total Signal Score:
+Priority Band:
 
 Potential Insight:
 
-Authority Opportunity:
-
-Signal Score:
+Recommended Action:
+- Archive
+- Monitor
+- Escalate to Memo
