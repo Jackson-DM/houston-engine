@@ -5,131 +5,96 @@ Houston AI Authority Engine
 
 # System Overview
 
-The Houston AI Authority Engine is a multi-agent AI system designed to transform industry signals into authority-building insight.
+The **Houston AI Authority Engine** is an automated multi-agent intelligence system designed to transform raw industry signals into strategic, executive-grade authority content. 
 
-The system performs four core functions:
-1. Signal Detection
-2. Insight Generation
-3. Authority Content Creation
-4. Strategic Feedback
+The system provides a continuous loop: **Signal Detection → Hybrid Scoring → Insight Generation → Authority Content → Business Opportunity.**
 
 ---
 
 # Core Pipeline
 
-Signals
+**1. RSS Sources** (NVIDIA, OpenAI, Anthropic, VentureBeat, TechCrunch)
 ↓
-Signal Analysis
+**2. Signal Hunter** (Automated Ingestion Engine)
 ↓
-Executive Memo
+**3. Hybrid Scoring** (Deterministic + Bounded AI Adjustment)
 ↓
-Authority Content
+**4. Signal Triage** (Publish / Candidate / Archive)
 ↓
-Audience + CRM Feedback
+**5. Executive Memo** (Strategic Insight Generation)
+↓
+**6. Authority Content** (LinkedIn and Social Packaging)
 
 ---
 
 # Current Phase
 
-**Phase 3 — Swarm Operational**
+**Phase 4 — Signal-Driven Automation (ACTIVE)**
 
-The system currently executes weekly content cycles using a multi-agent workflow.
+The system has transitioned from a manual architectural concept into a live, automated pipeline.
 
-Execution agents collaborate to:
-• generate industry insights
-• convert insights into authority posts
-• store assets within the repository
+**Core Automation Stack:**
+• **Signal Hunter:** 24/7 ingestion via GitHub Actions (scheduled every 6 hours).
+• **Hybrid Scoring:** Weighted deterministic baseline with a bounded (-8 to +12) AI expert adjustment.
+• **State Tracking:** Robust JSON-based deduplication and run history management.
+• **Cloud Native:** Serverless execution environment with zero-maintenance overhead.
 
 ---
 
-# Phase 4 Objective
+# Phase 5 Objective
 
-Introduce a **Signal Intelligence Layer**.
+Introduce the **Insight Extraction & Memo Generation Layer**.
 
-Instead of manually choosing topics, the system will:
-1. collect industry signals
-2. score signal importance
-3. cluster related developments
-4. generate executive insight memos
-
-Content will then be generated from these memos.
-
-This upgrade transforms the engine from a **content generator** into a **research-driven authority system**.
+The next upgrade will:
+1.  Automatically cluster `scored` signals into thematic groups.
+2.  Trigger the **Research Agent (Claude)** to draft Executive Memos.
+3.  Cross-reference memos with **CRM Engagement Signals** to prioritize high-value leads.
 
 ---
 
 # Agent Roles
 
-**Orchestrator**
-Gemini Flash (Claw)
+**Orchestrator** (Claw - Gemini 3 Flash)
+- Coordinates 24/7 pipeline execution via GitHub Actions.
+- Manages repository state and system-wide documentation.
+- Routes high-value signals to the Research Layer.
 
-Responsibilities:
-- coordinate agent execution
-- manage weekly cycles
-- route tasks between agents
+**Research Agent** (Claude Opus)
+- Analyzes scored signals to identify strategic "Why it Matters" insights.
+- Generates Executive Memos and drafts high-authority content.
+- Applies the "Houston Lens" to global AI developments.
 
----
+**Engineering Agent** (Codex / o3-mini)
+- Maintains the Python/Bash automation stack.
+- Configures GitHub Actions and environment secrets.
+- Manages technical schema validation and dedupe logic.
 
-**Research Agent**
-Claude
-
-Responsibilities:
-- analyze signals
-- generate executive memos
-- draft authority content
-
----
-
-**Engineering Agent**
-Codex
-
-Responsibilities:
-- maintain repo structure
-- manage commits and automation
-- update system documentation
-
----
-
-**Strategic Oversight**
-ChatGPT
-
-Responsibilities:
-- system architecture
-- pipeline design
-- signal scoring models
-- long-term roadmap
+**Strategic Oversight** (ChatGPT)
+- Designs the hybrid scoring models and triage thresholds.
+- Maps long-term roadmap and business opportunity triggers.
+- Provides architectural guidance for the authority funnel.
 
 ---
 
 # System Assets
 
-**Signals**
-Industry developments detected by the system.
+**Raw Signals (`signals/raw/`)**
+Initial ingestions from Golden Set sources.
 
-**Memos**
-Executive insights derived from signals.
+**Scored Signals (`signals/scored/`)**
+Triaged intelligence ready for memo generation (Publish/Candidate status).
 
-**Content**
-Authority posts generated from memos.
+**Archived Signals (`signals/archive/`)**
+Signals filtered out by the scoring layer for historical reference.
 
-**CRM Data**
-Audience and company engagement signals.
+**Memos (`memos/`)**
+Executive insights derived from scored signals.
 
-**Analytics**
-Performance feedback from distributed content.
+**CRM Data (`crm/`)**
+Tracking of companies, industries, and partnership opportunities.
 
 ---
 
 # Strategic Outcome
 
-The engine creates a continuous authority loop:
-
-Industry Change
-↓
-Insight
-↓
-Authority Content
-↓
-Audience Trust
-↓
-Business Opportunity
+The engine positions Houston as the **center of applied industrial AI** by converting global changes into regional influence and business opportunity.

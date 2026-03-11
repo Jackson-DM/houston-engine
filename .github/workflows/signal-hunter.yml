@@ -39,13 +39,25 @@ jobs:
       - name: Run Signal Scoring
         run: python automation/scripts/score_signals.py
 
+      - name: Run Insight Extraction
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SIGNAL_INSIGHT_MODEL: "google/gemini-2.0-flash-001"
+        run: python automation/scripts/extract_signal_insights.py
+
+      - name: Run Content Generation
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CONTENT_GEN_MODEL: "google/gemini-2.0-flash-001"
+        run: python automation/scripts/generate_authority_drafts.py
+
       - name: Commit and Push Results
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
           # Only add specific directory changes for safety
-          git add signals/raw/ signals/scored/ signals/archive/ automation/state/ automation/logs/
+          git add signals/raw/ signals/scored/ signals/archive/ signals/insights/ content/drafts/ automation/state/ automation/logs/
           
           # Check if there's anything to commit
           if [[ -n "$(git status --porcelain)" ]]; then
