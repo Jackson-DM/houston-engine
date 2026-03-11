@@ -53,7 +53,7 @@ echo "[$(date)] Validating changes..." | tee -a "$RUN_LOG"
 CHANGED_FILES=$(git status --porcelain | awk '{print $NF}')
 
 # Regex for allowed paths
-ALLOWED_REGEX="^(signals/raw/|automation/state/signal-hunter-last-run\.json|automation/state/signal-hunter-seen-signals\.json|automation/logs/signal-hunter/)"
+ALLOWED_REGEX="^(signals/raw/|automation/state/signal-hunter-last-run\.json|automation/state/signal-hunter-seen-signals\.json|automation/logs/signal-hunter/|automation/logs/runtime/)"
 
 # Abort on any unauthorized path
 for FILE in $CHANGED_FILES; do
