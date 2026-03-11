@@ -63,10 +63,8 @@ for FILE in $CHANGED_FILES; do
     fi
 done
 
-# 1. Count only NEWLY ADDED raw signal files (Status '??' or 'A')
-# Using a temp variable to clean up the count output from wc
-RAW_COUNT=$(git status --porcelain signals/raw/ | grep -E "^(\?\?| A)" | wc -l)
-NEW_SIGNALS_COUNT=$((RAW_COUNT))
+NEW_SIGNALS_COUNT=$(git status --porcelain signals/raw/ | grep -E "^(\?\?| A)" | wc -l || echo 0)
+NEW_SIGNALS_COUNT=$(echo $NEW_SIGNALS_COUNT | xargs)
 
 if [[ "$NEW_SIGNALS_COUNT" -gt 3 ]]; then
     echo "ERROR: Too many NEW raw signal files added ($NEW_SIGNALS_COUNT). Max is 3. Aborting." | tee -a "$RUN_LOG"
