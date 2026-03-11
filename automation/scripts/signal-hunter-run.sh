@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ==============================================================================
 # Script: signal-hunter-run.sh
@@ -15,65 +15,86 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # Target Directories & Files
 STATE_DIR="$REPO_ROOT/automation/state"
-LOG_DIR="$REPO_ROOT/automation/logs/signal-hunter"
+INGESTION_LOG_DIR="$REPO_ROOT/automation/logs/signal-hunter"
+RUNTIME_LOG_DIR="$REPO_ROOT/automation/logs/runtime"
 RAW_SIGNALS_DIR="$REPO_ROOT/signals/raw"
 
-# Create log directory if it doesn't exist
-mkdir -p "$LOG_DIR"
+# Required Files
+LAST_RUN_JSON="$STATE_DIR/signal-hunter-last-run.json"
+SEEN_SIGNALS_JSON="$STATE_DIR/signal-hunter-seen-signals.json"
+INGEST_CMD="./commands/ingest-signals.sh"
+
+# Create directories if they don't exist
+mkdir -p "$RUNTIME_LOG_DIR"
+mkdir -p "$INGESTION_LOG_DIR"
 mkdir -p "$STATE_DIR"
 
 # Individual execution log file (YYYYMMDD-HHMMSS)
 TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
-RUN_LOG="$LOG_DIR/run-$TIMESTAMP.log"
+RUN_LOG="$RUNTIME_LOG_DIR/run-$TIMESTAMP.log"
 
 # Navigate to Repo Root
 cd "$REPO_ROOT"
 
+# --- Preflight Check ---
+if [[ ! -x "$INGEST_CMD" ]]; then
+    echo "ERROR: Ingestion command '$INGEST_CMD' not found or not executable. Aborting." | tee -a "$RUN_LOG"
+    exit 1
+fi
+
 # --- Execute Ingestion ---
 echo "[$(date)] Starting Signal Hunter ingestion..." | tee -a "$RUN_LOG"
-
-# Using existing manual ingestion contract/agent setup
-# Assuming 'npm run ingest:signals' or equivalent is the established entry point.
-# Using 'git checkout' as a placeholder for the logic check if no specific entry point command was provided.
-# As it's agentic, we assume we invoke the signal hunter agent workflow.
-# For now, we simulate the run.
-# REPLACE WITH THE ACTUAL COMMAND IF DIFFERENT (e.g., ./commands/ingest-signals.sh)
-./commands/ingest-signals.sh >> "$RUN_LOG" 2>&1 || true
+$INGEST_CMD >> "$RUN_LOG" 2>&1
 
 # --- Inspection & Validation ---
 echo "[$(date)] Validating changes..." | tee -a "$RUN_LOG"
 
-# Check what changed in git
-UNCHANGED_DIFF=$(git status --porcelain | grep -vE "^(\?\?| A| M) (signals/raw/|automation/state/signal-hunter-last-run\.json|automation/state/signal-hunter-seen-signals\.json|automation/logs/signal-hunter/)" || true)
+# Collect all changed/untracked file paths
+CHANGED_FILES=$(git status --porcelain | awk '{print $NF}')
 
-if [[ -n "$UNCHANGED_DIFF" ]]; then
-    echo "ERROR: Unrelated files changed. Aborting." | tee -a "$RUN_LOG"
-    echo "$UNCHANGED_DIFF" >> "$RUN_LOG"
-    exit 1
-fi
+# Regex for allowed paths
+ALLOWED_REGEX="^(signals/raw/|automation/state/signal-hunter-last-run\.json|automation/state/signal-hunter-seen-signals\.json|automation/logs/signal-hunter/)"
 
-# 1. Abort if more than 3 raw signal files were added
-NEW_SIGNALS_COUNT=$(git status --porcelain signals/raw/ | wc -l)
+# Abort on any unauthorized path
+for FILE in $CHANGED_FILES; do
+    if [[ ! "$FILE" =~ $ALLOWED_REGEX ]]; then
+        echo "ERROR: Unauthorized file change detected: $FILE. Aborting." | tee -a "$RUN_LOG"
+        exit 1
+    fi
+done
+
+# 1. Count only NEWLY ADDED raw signal files (Status '??' or 'A')
+NEW_SIGNALS_COUNT=$(git status --porcelain signals/raw/ | grep -E "^(\?\?| A)" | wc -l || echo 0)
 if [[ "$NEW_SIGNALS_COUNT" -gt 3 ]]; then
-    echo "ERROR: Too many raw signal files added ($NEW_SIGNALS_COUNT). Max is 3. Aborting." | tee -a "$RUN_LOG"
+    echo "ERROR: Too many NEW raw signal files added ($NEW_SIGNALS_COUNT). Max is 3. Aborting." | tee -a "$RUN_LOG"
     exit 1
 fi
 
-# 2. Abort if state files were NOT updated (assuming they should be modified on every run)
-if ! git status --porcelain "$STATE_DIR" | grep -q "signal-hunter-last-run.json" || \
-   ! git status --porcelain "$STATE_DIR" | grep -q "signal-hunter-seen-signals.json"; then
-    echo "ERROR: State files were not updated. Aborting." | tee -a "$RUN_LOG"
+# 2. State Validation
+# - signal-hunter-last-run.json MUST change every run
+if ! git status --porcelain "$LAST_RUN_JSON" | grep -q "M"; then
+    echo "ERROR: $LAST_RUN_JSON was not updated. Aborting." | tee -a "$RUN_LOG"
     exit 1
 fi
 
-# 3. Abort if no run log was created
+# - signal-hunter-seen-signals.json MUST change if new signals were added
+if [[ "$NEW_SIGNALS_COUNT" -gt 0 ]]; then
+    if ! git status --porcelain "$SEEN_SIGNALS_JSON" | grep -q "M"; then
+        echo "ERROR: New signals were added but $SEEN_SIGNALS_JSON was not updated. Aborting." | tee -a "$RUN_LOG"
+        exit 1
+    fi
+fi
+
+# 3. Final log check
 if [[ ! -f "$RUN_LOG" ]]; then
-    echo "ERROR: Run log was not created. Aborting."
+    echo "ERROR: Runtime log was not created. Aborting."
     exit 1
 fi
 
 # --- Clean Exit vs Commit ---
-if [[ -z "$(git status --porcelain signals/raw/ automation/state/ automation/logs/signal-hunter/)" ]]; then
+# Check if anything in allowed paths actually changed
+STAGED_OR_MODIFIED=$(git status --porcelain signals/raw/ automation/state/ automation/logs/signal-hunter/)
+if [[ -z "$STAGED_OR_MODIFIED" ]]; then
     echo "[$(date)] No valid ingestion changes detected. Exiting cleanly." | tee -a "$RUN_LOG"
     exit 0
 fi
@@ -82,8 +103,8 @@ fi
 echo "[$(date)] Committing changes..." | tee -a "$RUN_LOG"
 
 git add signals/raw/ \
-        automation/state/signal-hunter-last-run.json \
-        automation/state/signal-hunter-seen-signals.json \
+        "$LAST_RUN_JSON" \
+        "$SEEN_SIGNALS_JSON" \
         automation/logs/signal-hunter/
 
 COMMIT_MSG="chore(signal-hunter): scheduled ingestion run $(date +'%Y-%m-%d %H:%M:%S')"
@@ -93,8 +114,8 @@ git push origin main >> "$RUN_LOG" 2>&1
 # --- Summary Output ---
 echo "--- Terminal Summary ---"
 echo "Timestamp:      $(date +'%Y-%m-%d %H:%M:%S')"
-echo "Raw Signals:    $NEW_SIGNALS_COUNT added"
-echo "State Files:    Updated (last-run, seen-signals)"
+echo "Raw Signals:    $NEW_SIGNALS_COUNT newly added"
+echo "State Files:    Validated (last-run: changed, seen-signals: conditional)"
 echo "Run Log:        Detected ($RUN_LOG)"
 echo "Action:         Commit and Push successful"
 echo "------------------------"
