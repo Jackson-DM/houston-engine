@@ -1,10 +1,11 @@
 --- 
-ai_adjustment: 0
+ai_adjustment: -4
+ai_reasoning: Signal focused on pricing/costs rather than strategic/technical breakthrough.
 base_score: 40
 collected_at: 2026-03-10 21:49:00+00:00
 confidence: 0.95
 duplicate_of: null
-final_score: 40
+final_score: 36
 geo_relevance: US
 industry: Manufacturing
 priority_hint: high

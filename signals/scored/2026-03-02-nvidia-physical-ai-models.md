@@ -1,10 +1,12 @@
 --- 
-ai_adjustment: 0
+ai_adjustment: 5
+ai_reasoning: High-value open-weights/community signal detected; relevant for self-hosted
+  authority.
 base_score: 53
 collected_at: 2026-03-10 21:23:00+00:00
 confidence: 1.0
 duplicate_of: null
-final_score: 53
+final_score: 58
 geo_relevance: Global
 industry: Manufacturing
 priority_hint: high

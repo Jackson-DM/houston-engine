@@ -1,10 +1,12 @@
 --- 
-ai_adjustment: 0
+ai_adjustment: 8
+ai_reasoning: Strong alignment with Agentic Enterprise thesis; boosted for strategic
+  priority.
 base_score: 47
 collected_at: 2026-03-11 18:45:26+00:00
 confidence: 0.85
 duplicate_of: null
-final_score: 47
+final_score: 55
 geo_relevance: Global
 industry: Cross-Industry
 priority_hint: medium

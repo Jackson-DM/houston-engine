@@ -1,5 +1,6 @@
 --- 
 ai_adjustment: 0
+ai_reasoning: Base score too low for AI evaluation.
 base_score: 32
 collected_at: 2026-03-11 18:39:07+00:00
 confidence: 0.9

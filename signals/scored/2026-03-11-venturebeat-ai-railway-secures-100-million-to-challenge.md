@@ -1,5 +1,6 @@
 --- 
 ai_adjustment: 0
+ai_reasoning: AI adjustment bypassed (score too low or no strong nuance detected).
 base_score: 49
 collected_at: 2026-03-11 18:45:22+00:00
 confidence: 0.85

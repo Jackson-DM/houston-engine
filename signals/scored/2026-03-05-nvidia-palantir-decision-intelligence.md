@@ -1,10 +1,12 @@
 --- 
-ai_adjustment: 0
+ai_adjustment: 8
+ai_reasoning: Strong alignment with Agentic Enterprise thesis; boosted for strategic
+  priority.
 base_score: 65
 collected_at: 2026-03-10 21:55:00+00:00
 confidence: 0.95
 duplicate_of: null
-final_score: 65
+final_score: 73
 geo_relevance: US
 industry: Enterprise / Industrial
 priority_hint: high
@@ -14,7 +16,7 @@ source_name: NVIDIA Newsroom
 source_type: Company Blog
 source_url: https://nvidianews.nvidia.com/news/nvidia-palantir-ai-enterprise-data-intelligence
 status: triaged
-tier: candidate
+tier: publish
 ---
 
 # Signal Summary

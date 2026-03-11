@@ -1,10 +1,12 @@
 --- 
-ai_adjustment: 0
+ai_adjustment: 8
+ai_reasoning: Strong alignment with Agentic Enterprise thesis; boosted for strategic
+  priority.
 base_score: 62
 collected_at: 2026-03-11 18:45:32+00:00
 confidence: 0.85
 duplicate_of: null
-final_score: 62
+final_score: 70
 geo_relevance: Global
 industry: Cross-Industry
 priority_hint: medium
@@ -14,7 +16,7 @@ source_name: NVIDIA Newsroom
 source_type: Company Blog
 source_url: https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai/
 status: triaged
-tier: candidate
+tier: publish
 ---
 
 # Signal Summary

@@ -1,26 +1,25 @@
 --- 
-ai_adjustment: 8
-ai_reasoning: Strong alignment with Agentic Enterprise thesis; boosted for strategic
-  priority.
-base_score: 49
-collected_at: 2026-03-11 18:45:26+00:00
+ai_adjustment: -4
+ai_reasoning: Signal focused on pricing/costs rather than strategic/technical breakthrough.
+base_score: 47
+collected_at: 2026-03-11 18:45:22+00:00
 confidence: 0.85
 duplicate_of: null
-final_score: 57
+final_score: 43
 geo_relevance: Global
 industry: Cross-Industry
 priority_hint: medium
 signal_category: Enterprise AI
-signal_id: sig-2026-03-11-2df9d8
+signal_id: sig-2026-03-11-8c3681
 source_name: VentureBeat AI
 source_type: News Outlet
-source_url: https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and
-status: triaged
-tier: candidate
+source_url: https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free
+status: archived
+tier: archive
 ---
 
 # Signal Summary
-Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI: Salesforce on Tuesday launched an entirely rebuilt version of Slackbot, the company&#x27;s workplace assistant, transforming it from a simple notification tool into what executives describe as a fully powered AI agent capable of searching enterprise data, drafting documents, and taking action on beh
+Claude Code costs up to $200 a month. Goose does the same thing for free.: The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive.Claude Code, Anthropic&#x27;s terminal-based AI agent that can write, debug, and deploy code autonomously, has captured the imagination of software developers worldwide. But its pricing — ranging from $20 to $200 p
 
 ## Why It Matters
 This signal represents a key development in Enterprise AI originating from a Tier 1 source. It warrants monitoring for shifts in enterprise AI infrastructure or deployment standards.
