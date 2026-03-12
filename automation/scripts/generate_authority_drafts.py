@@ -101,7 +101,14 @@ def process_insights():
             if insight_id in generated_ids or status.get("used_for_content"):
                 continue
             
-            confidence = float(insight_data.get("confidence", 0))
+            raw_conf = insight_data.get("confidence", 0)
+            try:
+                confidence = float(raw_conf)
+            except (ValueError, TypeError):
+                # Handle string-based confidence found in some model outputs
+                if isinstance(raw_conf, str) and "high" in raw_conf.lower(): confidence = 0.95
+                else: confidence = 0.85
+
             if confidence < MIN_CONFIDENCE:
                 continue
 

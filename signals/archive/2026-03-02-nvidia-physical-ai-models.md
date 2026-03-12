@@ -1,10 +1,10 @@
 --- 
 ai_adjustment: 0
-base_score: 40
+base_score: 35
 collected_at: 2026-03-10 21:23:00+00:00
 confidence: 1.0
 duplicate_of: null
-final_score: 40
+final_score: 35
 geo_relevance: Global
 industry: Manufacturing
 priority_hint: high
@@ -13,7 +13,7 @@ signal_id: sig-2026-03-02-nv-01
 source_name: NVIDIA Newsroom
 source_type: Company Blog
 source_url: https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
-status: archived
+status: triaged
 tier: archive
 ---
 

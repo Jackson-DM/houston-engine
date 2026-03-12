@@ -1,0 +1,31 @@
+{
+  "id": "2026-03-11-nvidia-newsroom-new-nvidia-nemotron-3-super-delivers-5x-",
+  "created_at": "2026-03-12T01:48:01.158629Z",
+  "source_signal_path": "signals/scored/2026-03-11-nvidia-newsroom-new-nvidia-nemotron-3-super-delivers-5x-.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 70,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "AI Model Release",
+    "summary": "NVIDIA Nemotron 3 Super, a 120B parameter model with 12B active parameters, is launched, enhancing agentic AI throughput for complex systems.",
+    "why_it_matters": "This release signifies advancements in enterprise AI infrastructure, potentially impacting deployment standards and autonomous agent capabilities.",
+    "business_implication": "Enterprises should evaluate Nemotron 3 Super for improved efficiency and accuracy in autonomous AI tasks, potentially leading to competitive advantages.",
+    "regional_angle": "Houston's energy and logistics sectors need to monitor and adapt to these global AI infrastructure changes to maintain competitiveness and efficiency.",
+    "content_angles": [
+      "Strategic implications for 2026 industrial AI roadmaps.",
+      "Analysis of the importance of this Industrial AI shift for enterprise operators.",
+      "Assessment of consulting alignment for local firms integrating NVIDIA Nemotron technology."
+    ],
+    "recommended_angle": "Analyze the potential for local energy and logistics firms to leverage Nemotron 3 Super to automate complex operational tasks and improve decision-making.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

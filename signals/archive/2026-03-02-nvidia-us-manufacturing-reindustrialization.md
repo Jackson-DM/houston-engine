@@ -1,11 +1,10 @@
 --- 
-ai_adjustment: -4
-ai_reasoning: Signal focused on pricing/costs rather than strategic/technical breakthrough.
-base_score: 40
+ai_adjustment: 0
+base_score: 20
 collected_at: 2026-03-10 21:49:00+00:00
 confidence: 0.95
 duplicate_of: null
-final_score: 36
+final_score: 20
 geo_relevance: US
 industry: Manufacturing
 priority_hint: high
@@ -14,8 +13,8 @@ signal_id: sig-2026-03-02-nv-03
 source_name: NVIDIA Newsroom
 source_type: Company Blog
 source_url: https://nvidianews.nvidia.com/news/nvidia-us-manufacturing-robotics-physical-ai
-status: archived
-tier: archive
+status: triaged
+tier: ignore
 ---
 
 # Signal Summary

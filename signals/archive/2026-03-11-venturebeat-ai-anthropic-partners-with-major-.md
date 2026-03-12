@@ -1,11 +1,10 @@
 --- 
 ai_adjustment: 0
-ai_reasoning: Base score too low for AI evaluation.
-base_score: 32
+base_score: 35
 collected_at: 2026-03-11 18:39:07+00:00
 confidence: 0.9
 duplicate_of: null
-final_score: 32
+final_score: 35
 geo_relevance: Global
 industry: Technology
 priority_hint: medium
@@ -14,7 +13,7 @@ signal_id: sig-2026-03-11-63e337
 source_name: VentureBeat AI
 source_type: News Outlet
 source_url: https://venturebeat.com/category/ai/
-status: archived
+status: triaged
 tier: archive
 ---
 

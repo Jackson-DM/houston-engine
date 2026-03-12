@@ -1,16 +1,20 @@
----
+--- 
+ai_adjustment: 0
+base_score: 35
+collected_at: 2026-03-11 18:45:22+00:00
+confidence: 0.85
+duplicate_of: null
+final_score: 35
+geo_relevance: Global
+industry: Cross-Industry
+priority_hint: medium
+signal_category: Enterprise AI
 signal_id: sig-2026-03-11-240d44
-collected_at: 2026-03-11T18:45:22Z
 source_name: VentureBeat AI
 source_type: News Outlet
 source_url: https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud
-signal_category: Enterprise AI
-industry: Cross-Industry
-geo_relevance: Global
-priority_hint: medium
-confidence: 0.85
-duplicate_of: null
-status: raw
+status: triaged
+tier: archive
 ---
 
 # Signal Summary

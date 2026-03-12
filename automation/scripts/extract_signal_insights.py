@@ -72,6 +72,14 @@ def call_model_for_insight(prompt, signal_context, retry_json=False):
     response.raise_for_status()
     
     result = response.json()
+    
+    # DEBUG LOG
+    # print(f"DEBUG: result type: {type(result)}")
+    # print(f"DEBUG: choices type: {type(result.get('choices'))}")
+    
+    if not result or 'choices' not in result or not result['choices']:
+        raise ValueError(f"Invalid API response: {json.dumps(result)}")
+
     content = result['choices'][0]['message']['content']
     
     if "```json" in content:
@@ -79,7 +87,14 @@ def call_model_for_insight(prompt, signal_context, retry_json=False):
     elif "```" in content:
         content = content.split("```")[1].split("```")[0].strip()
         
-    return json.loads(content)
+    # Parse JSON and handle list vs dict
+    try:
+        data = json.loads(content)
+        if isinstance(data, list) and len(data) > 0:
+            return data[0]
+        return data
+    except Exception as e:
+        raise ValueError(f"JSON Parse Error: {str(e)} | Content: {content[:100]}")
 
 def validate_insight(insight):
     required = [
@@ -87,9 +102,15 @@ def validate_insight(insight):
         "business_implication", "regional_angle", 
         "content_angles", "recommended_angle", "confidence"
     ]
-    for field in required:
-        if field not in insight:
-            insight[field] = "None" if field != "content_angles" else []
+    # Normalize confidence to float 0.0-1.0
+    conf = insight.get("confidence", 0.85)
+    if isinstance(conf, str):
+        if "high" in conf.lower(): conf = 0.95
+        elif "med" in conf.lower(): conf = 0.75
+        elif "low" in conf.lower(): conf = 0.40
+        else: conf = 0.85
+    insight["confidence"] = float(conf)
+    
     return insight
 
 def extract_insight_data(frontmatter, body):

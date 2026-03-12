@@ -1,0 +1,57 @@
+{
+  "run_started_at": "2026-03-12T01:44:41.357561Z",
+  "run_completed_at": "2026-03-12T01:48:19.761487Z",
+  "ingestion": {
+    "raw_signals_found": 27,
+    "new_signals_written": 5,
+    "duplicates_skipped": 9
+  },
+  "scoring": {
+    "signals_processed": 21,
+    "publish_count": 0,
+    "candidate_count": 0,
+    "archive_count": 15,
+    "ignore_count": 6
+  },
+  "insights": {
+    "eligible_signals": 7,
+    "generated_count": 7,
+    "skipped_count": 0
+  },
+  "drafts": {
+    "eligible_insights": 1,
+    "generated_count": 1,
+    "skipped_count": 0
+  },
+  "errors": {
+    "count": 21,
+    "items": [
+      "[2026-03-12T01:45:09.815793] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:45:16.161961] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:45:22.514785] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:45:28.142518] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:45:33.785829] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:45:39.636508] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:45:45.119244] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:05.155162] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:11.000048] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:17.128204] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:23.315261] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:28.705122] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:34.679620] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:46:39.944267] Insight Extraction Error: list indices must be integers or slices, not str",
+      "[2026-03-12T01:47:20.799592] Draft Generation Error (insight-2026-03-02-nvidia-us-manufacturing-reindustrialization.json): could not convert string to float: 'High'",
+      "[2026-03-12T01:47:20.801577] Draft Generation Error (insight-2026-03-02-siemens-nvidia-industrial-ai-os.json): could not convert string to float: 'High'",
+      "[2026-03-12T01:47:20.802568] Draft Generation Error (insight-2026-03-05-nvidia-palantir-decision-intelligence.json): could not convert string to float: 'High'",
+      "[2026-03-12T01:47:20.803560] Draft Generation Error (insight-2026-03-11-nvidia-newsroom-new-nvidia-nemotron-3-super-delivers-5x-.json): could not convert string to float: 'High'",
+      "[2026-03-12T01:47:20.805049] Draft Generation Error (insight-2026-03-11-nvidia-newsroom-nvidia-gtc-2026-live-updates-on-what-s-n.json): could not convert string to float: 'High'",
+      "[2026-03-12T01:47:20.806040] Draft Generation Error (insight-2026-03-11-nvidia-newsroom-nvidia-launches-new-blackwell-.json): could not convert string to float: 'High'",
+      "[2026-03-12T01:47:20.807032] Draft Generation Error (insight-2026-03-11-venturebeat-ai-the-creator-of-claude-code-just-revealed.json): could not convert string to float: 'High'"
+    ]
+  },
+  "humanization": {
+    "eligible_drafts": 1,
+    "generated_count": 1,
+    "skipped_count": 0
+  }
+}

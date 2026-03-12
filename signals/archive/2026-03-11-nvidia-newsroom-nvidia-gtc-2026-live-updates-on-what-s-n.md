@@ -1,20 +1,24 @@
----
-signal_id: sig-2026-03-11-62c418
-collected_at: 2026-03-11T18:45:32Z
-source_name: NVIDIA Newsroom
-source_type: Company Blog
-source_url: https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai/
-signal_category: Industrial AI
-industry: Cross-Industry
-geo_relevance: Global
-priority_hint: medium
+--- 
+ai_adjustment: 0
+base_score: 35
+collected_at: 2026-03-11 18:45:32+00:00
 confidence: 0.85
 duplicate_of: null
-status: raw
+final_score: 35
+geo_relevance: Global
+industry: Cross-Industry
+priority_hint: medium
+signal_category: Industrial AI
+signal_id: sig-2026-03-11-de78af
+source_name: NVIDIA Newsroom
+source_type: Company Blog
+source_url: https://blogs.nvidia.com/blog/gtc-2026-news/
+status: triaged
+tier: archive
 ---
 
 # Signal Summary
-New NVIDIA Nemotron 3 Super Delivers 5x Higher Throughput for Agentic AI: Launched today, NVIDIA Nemotron 3 Super is a 120‑billion‑parameter open model with 12 billion active parameters designed to run complex agentic AI systems at scale.  Available now, the model combines advanced reasoning capabilities to efficiently complete tasks with high accuracy for autonomous agen
+NVIDIA GTC 2026: Live Updates on What’s Next in AI: Rolling coverage from San Jose, including NVIDIA CEO Jensen Huang’s keynote, news highlights, live demos and on‑the‑ground color through March 20.
 
 ## Why It Matters
 This signal represents a key development in Industrial AI originating from a Tier 1 source. It warrants monitoring for shifts in enterprise AI infrastructure or deployment standards.

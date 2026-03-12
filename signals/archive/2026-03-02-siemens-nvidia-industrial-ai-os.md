@@ -1,16 +1,20 @@
----
+--- 
+ai_adjustment: 0
+base_score: 35
+collected_at: 2026-03-10 21:49:00+00:00
+confidence: 1.0
+duplicate_of: null
+final_score: 35
+geo_relevance: Global
+industry: Manufacturing / Energy
+priority_hint: high
+signal_category: Industrial AI
 signal_id: sig-2026-03-02-nv-02
-collected_at: 2026-03-10T21:49:00Z
 source_name: NVIDIA Newsroom
 source_type: Company Blog
 source_url: https://nvidianews.nvidia.com/news/siemens-and-nvidia-expand-partnership-industrial-ai-operating-system
-signal_category: Industrial AI
-industry: Manufacturing / Energy
-geo_relevance: Global
-priority_hint: high
-confidence: 1.0
-duplicate_of: null
-status: raw
+status: triaged
+tier: archive
 ---
 
 # Signal Summary

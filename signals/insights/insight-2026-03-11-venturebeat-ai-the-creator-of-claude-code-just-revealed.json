@@ -1,0 +1,31 @@
+{
+  "id": "2026-03-11-venturebeat-ai-the-creator-of-claude-code-just-revealed",
+  "created_at": "2026-03-12T01:48:12.444364Z",
+  "source_signal_path": "signals/scored/2026-03-11-venturebeat-ai-the-creator-of-claude-code-just-revealed.md",
+  "source": {
+    "publisher": "VentureBeat AI",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 63,
+    "route": "candidate"
+  },
+  "insight": {
+    "signal_type": "Enterprise AI Adoption",
+    "summary": "The creator of Claude Code at Anthropic revealed his workflow, sparking significant interest in the developer community.",
+    "why_it_matters": "This reflects an important development in Enterprise AI, prompting monitoring for infrastructure or deployment standard changes.",
+    "business_implication": "Enterprises should evaluate how the revealed workflow impacts their AI strategies and coding practices, potentially adapting to new, more efficient methodologies.",
+    "regional_angle": "Houston's energy and logistics sectors should monitor these global AI standards to adapt infrastructure and operational strategies accordingly.",
+    "content_angles": [
+      "Strategic implications for 2026 industrial AI roadmaps.",
+      "Analysis of the impact of this Enterprise AI shift on enterprise operations.",
+      "Assessment of potential consulting alignment for local firms integrating VentureBeat AI technology."
+    ],
+    "recommended_angle": "Analyze how Houston-based companies can leverage insights from Claude Code's workflow to optimize AI implementation in industrial applications, enhancing efficiency and reducing operational costs.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

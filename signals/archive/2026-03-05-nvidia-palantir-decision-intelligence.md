@@ -1,16 +1,20 @@
----
+--- 
+ai_adjustment: 0
+base_score: 35
+collected_at: 2026-03-10 21:55:00+00:00
+confidence: 0.95
+duplicate_of: null
+final_score: 35
+geo_relevance: US
+industry: Enterprise / Industrial
+priority_hint: high
+signal_category: Enterprise AI / Decision Intelligence
 signal_id: sig-2026-03-05-nv-01
-collected_at: 2026-03-10T21:55:00Z
 source_name: NVIDIA Newsroom
 source_type: Company Blog
 source_url: https://nvidianews.nvidia.com/news/nvidia-palantir-ai-enterprise-data-intelligence
-signal_category: Enterprise AI / Decision Intelligence
-industry: Enterprise / Industrial
-geo_relevance: US
-priority_hint: high
-confidence: 0.95
-duplicate_of: null
-status: raw
+status: triaged
+tier: archive
 ---
 
 # Signal Summary

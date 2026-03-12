@@ -1,0 +1,31 @@
+{
+  "id": "2026-03-11-nvidia-newsroom-nvidia-gtc-2026-live-updates-on-what-s-n",
+  "created_at": "2026-03-12T01:48:04.630667Z",
+  "source_signal_path": "signals/scored/2026-03-11-nvidia-newsroom-nvidia-gtc-2026-live-updates-on-what-s-n.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "candidate"
+  },
+  "insight": {
+    "signal_type": "Strategic Insight Artifact",
+    "summary": "NVIDIA GTC 2026 live updates signal key Industrial AI developments and potential enterprise AI infrastructure shifts.",
+    "why_it_matters": "Indicates emerging trends in enterprise AI infrastructure and deployment standards necessitating monitoring and adaptation.",
+    "business_implication": "Enterprises need to assess and potentially adjust their AI strategies and infrastructure to align with NVIDIA's advancements.",
+    "regional_angle": "Houston's energy and logistics sectors must adapt to global AI standard shifts driven by NVIDIA's technology.",
+    "content_angles": [
+      "Strategic implications of the NVIDIA announcement for 2026 industrial AI roadmaps.",
+      "Analysis of why this Industrial AI shift matters for enterprise operators.",
+      "Assessment of potential consulting alignment for local firms integrating NVIDIA technology."
+    ],
+    "recommended_angle": "Analyze the strategic implications for Houston's energy sector, focusing on infrastructure adaptation and competitive advantage.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

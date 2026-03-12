@@ -1,16 +1,20 @@
----
+--- 
+ai_adjustment: 0
+base_score: 35
+collected_at: 2026-03-11 18:39:07+00:00
+confidence: 0.9
+duplicate_of: null
+final_score: 35
+geo_relevance: Global
+industry: Technology
+priority_hint: medium
+signal_category: Enterprise AI
 signal_id: sig-2026-03-11-5e4ac7
-collected_at: 2026-03-11T18:39:07Z
 source_name: OpenAI Blog
 source_type: Company Blog
 source_url: https://openai.com/blog
-signal_category: Enterprise AI
-industry: Technology
-geo_relevance: Global
-priority_hint: medium
-confidence: 0.9
-duplicate_of: null
-status: raw
+status: triaged
+tier: archive
 ---
 
 # Signal Summary

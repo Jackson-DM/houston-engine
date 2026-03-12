@@ -1,0 +1,31 @@
+{
+  "id": "2026-03-11-nvidia-newsroom-nvidia-launches-new-blackwell-",
+  "created_at": "2026-03-12T01:48:08.625152Z",
+  "source_signal_path": "signals/scored/2026-03-11-nvidia-newsroom-nvidia-launches-new-blackwell-.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "candidate"
+  },
+  "insight": {
+    "signal_type": "Product Release",
+    "summary": "NVIDIA releases specialized Blackwell GPU configurations optimized for industrial data centers, signaling a focus on enterprise-grade AI solutions.",
+    "why_it_matters": "Indicates NVIDIA's strategic shift towards enterprise-grade AI reliability and scalable deployment, potentially impacting infrastructure planning and technology adoption strategies.",
+    "business_implication": "Enterprises should reassess their AI infrastructure roadmap to leverage the enhanced reliability and scalability offered by these new GPUs. Potential integration points with existing industrial data centers need evaluation.",
+    "regional_angle": "While NVIDIA's announcement is global, its implications are important for Houston's growing tech and energy sectors, particularly concerning the adoption of AI in industrial applications and data processing.",
+    "content_angles": [
+      "How NVIDIA's Blackwell GPUs affect 2026 AI infrastructure planning.",
+      "The 'Enterprise First' shift at NVIDIA and its impact on the Houston AI ecosystem.",
+      "Enterprise adoption and monitoring within Houston's energy corridor."
+    ],
+    "recommended_angle": "Analyze the impact of NVIDIA's Blackwell GPUs on Houston's energy sector's AI infrastructure and potential benefits for industrial automation and data analytics.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

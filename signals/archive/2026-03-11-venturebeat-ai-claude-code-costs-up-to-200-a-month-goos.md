@@ -1,11 +1,10 @@
 --- 
-ai_adjustment: -4
-ai_reasoning: Signal focused on pricing/costs rather than strategic/technical breakthrough.
-base_score: 47
+ai_adjustment: 0
+base_score: 35
 collected_at: 2026-03-11 18:45:22+00:00
 confidence: 0.85
 duplicate_of: null
-final_score: 43
+final_score: 35
 geo_relevance: Global
 industry: Cross-Industry
 priority_hint: medium
@@ -14,7 +13,7 @@ signal_id: sig-2026-03-11-8c3681
 source_name: VentureBeat AI
 source_type: News Outlet
 source_url: https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free
-status: archived
+status: triaged
 tier: archive
 ---
 
