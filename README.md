@@ -34,8 +34,11 @@ The engine moves beyond generic "AI news" by applying a multi-layer evaluation p
   [ INSIGHT EXTRACTION ] (Active)
   (Strategic Artifact Generation)
          ↓
-  [ CONTENT GENERATION ] (Active)
-  (LinkedIn Authority Drafts)
+  [ CONTENT DRAFTING ] (Active)
+  (Initial LinkedIn Drafts)
+         ↓
+  [ CONTENT HUMANIZATION ] (Active)
+  (Final Polish via Humanizer.md)
          ↓
   [ PUBLISHED CONTENT ] (Upcoming)
   (Executive Memos & LinkedIn Posts)
@@ -53,6 +56,7 @@ The engine moves beyond generic "AI news" by applying a multi-layer evaluation p
 *   **Automated Routing:** Logic-driven file movement between `scored` and `archive` directories.
 *   **Insight Extraction:** Automated generation of structured strategic insight artifacts from high-scoring signals.
 *   **Content Generation:** Automated LinkedIn authority post drafting based on strategic insights.
+*   **Content Humanization:** Post-processing of drafts using the `humanizer.md` guidance to remove "AI slop" and add soul.
 *   **Production Operations:** GitHub Actions workflow (`signal-hunter.yml`) for 24/7 automation.
 
 ---
@@ -62,8 +66,8 @@ The engine moves beyond generic "AI news" by applying a multi-layer evaluation p
 The engine is hardened for unattended execution via GitHub Actions:
 
 - **Schedule:** Runs every 6 hours (minute 17).
-- **No-Op Safety:** Every stage (Ingestion through Content Generation) handles empty candidate sets gracefully without failing the workflow.
-- **Git Safety:** The commit/push step only executes if file changes are detected, avoiding "nothing to commit" errors.
+- **No-Op Safety:** Every stage (Ingestion through Content Humanization) handles empty candidate sets gracefully.
+- **Git Safety:** The commit/push step only executes if file changes are detected.
 - **Observability:** Every run generates a `automation/logs/latest-run-summary.json` providing a breakdown of metrics across all stages.
 
 ---
@@ -74,10 +78,9 @@ The engine is hardened for unattended execution via GitHub Actions:
 *   `signals/scored/`: High-value signals triaged for content generation.
 *   `signals/insights/`: Structured JSON artifacts containing strategic analysis.
 *   `signals/archive/`: Filtered signals stored for historical reference.
-*   `content/drafts/`: Automated LinkedIn authority post drafts (JSON).
+*   `content/drafts/`: Automated initial LinkedIn drafts (JSON).
+*   `content/final/`: Humanized, copy-paste ready LinkedIn posts (JSON).
 *   `automation/scripts/`: Executable Python logic (Ingestion, Scoring, Insights, Content).
-*   `automation/state/`: Persistent JSON files tracking "seen" signals, insights, and drafts.
-*   `automation/logs/latest-run-summary.json`: High-level metrics for the most recent run.
 *   `commands/`: Executable entrypoints for agentic and manual operations.
 
 ---
@@ -87,7 +90,7 @@ The engine is hardened for unattended execution via GitHub Actions:
 The engine utilizes a **Hybrid Scoring Model** to ensure stability and accuracy:
 
 1.  **Deterministic Base:** Regex and keyword-weighted analysis of regional (Houston), industrial, and enterprise relevance.
-2.  **Bounded AI Adjustment:** An AI "opinion" layer that can nudge scores up or down based on tactical nuance, strictly bounded to prevent hallucinated extremes.
+2.  **Bounded AI Adjustment:** An AI "opinion" layer that can nudge scores up or down based on tactical nuance.
 3.  **Tiered Routing:**
     *   **Publish (68+):** Immediate candidates for the content pipeline.
     *   **Candidate (45-67):** Signals requiring minor refinement or human review.
@@ -101,7 +104,8 @@ The engine utilizes a **Hybrid Scoring Model** to ensure stability and accuracy:
 *   **Phase 4.2:** **Insight Extraction Layer** — Generating automated Executive Memos from scored signals.
 *   **Phase 4.3:** **CRM Autopush** — Directly syncing high-value scores to the CRM tracking system.
 *   **Phase 5.0:** **Authority Content Generation** — Automated LinkedIn/Social drafting (Active).
-*   **Phase 6.0:** **Omni-Channel Distribution** — Multi-format output for Newsletter/Web.
+*   **Phase 7.0:** **Content Humanization** — AI-slop removal and voice polish (Active).
+*   **Phase 8.0:** **Omni-Channel Distribution** — Multi-format output for Newsletter/Web.
 
 ---
 
@@ -113,11 +117,12 @@ To run a manual cycle from the repository root:
 # Set your API Key
 export OPENROUTER_API_KEY="your_key"
 
-# Ingest, Score, Extract, and Generate
+# Ingest, Score, Extract, Draft, and Humanize
 python automation/scripts/ingest_signal_hunter.py
 python automation/scripts/score_signals.py
 python automation/scripts/extract_signal_insights.py
 python automation/scripts/generate_authority_drafts.py
+python automation/scripts/humanize_authority_drafts.py
 ```
 
 ---

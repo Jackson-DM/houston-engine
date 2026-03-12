@@ -55,13 +55,20 @@ jobs:
           MIN_INSIGHT_CONFIDENCE_FOR_DRAFTS: 0.70
         run: python automation/scripts/generate_authority_drafts.py
 
+      - name: Run Content Humanization
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HUMANIZER_MODEL: "google/gemini-2.0-flash-001"
+          MAX_HUMANIZATION_PER_RUN: 2
+        run: python automation/scripts/humanize_authority_drafts.py
+
       - name: Commit and Push Results
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
           # Add directory changes
-          git add signals/raw/ signals/scored/ signals/archive/ signals/insights/ content/drafts/ automation/state/ automation/logs/
+          git add signals/raw/ signals/scored/ signals/archive/ signals/insights/ content/drafts/ content/final/ automation/state/ automation/logs/
           
           # Safe commit
           if [[ -n "$(git status --porcelain)" ]]; then
