@@ -7,6 +7,7 @@ import re
 import feedparser
 import requests
 from datetime import datetime
+import run_logger
 
 # ==============================================================================
 # Script: ingest_signal_hunter.py
@@ -22,14 +23,12 @@ RAW_SIGNALS_DIR = os.path.join(REPO_ROOT, "signals/raw")
 
 LAST_RUN_PATH = os.path.join(STATE_DIR, "signal-hunter-last-run.json")
 SEEN_SIGNALS_PATH = os.path.join(STATE_DIR, "signal-hunter-seen-signals.json")
-SOURCE_REGISTRY_PATH = os.path.join(REPO_ROOT, "automation/ingestion-agents/source_registry.md")
 
 # Ensure directories exist
 for d in [STATE_DIR, LOG_DIR, RAW_SIGNALS_DIR]:
     os.makedirs(d, exist_ok=True)
 
-# Sources Mapping (Extracted from Golden Set with specific RSS endpoints)
-# Note: These represent the "Golden Set" from the registry mapped to actual RSS feeds.
+# Sources Mapping
 RSS_FEEDS = [
     {"name": "VentureBeat AI", "url": "https://venturebeat.com/category/ai/feed/", "type": "News Outlet", "category": "Enterprise AI"},
     {"name": "NVIDIA Newsroom", "url": "https://nvidianews.nvidia.com/releases.xml", "type": "Company Blog", "category": "Industrial AI"},
@@ -60,7 +59,6 @@ def generate_signal_content(source, entry):
     
     title = entry.get('title', 'Unknown Title')
     summary = entry.get('summary', entry.get('description', 'No summary provided.'))
-    # Basic HTML strip for summary
     summary = re.sub('<[^<]+?>', '', summary).replace('\n', ' ').strip()[:300]
     
     content = f"""---
@@ -80,55 +78,44 @@ status: raw
 
 # Signal Summary
 {title}: {summary}
-
-## Why It Matters
-This signal represents a key development in {source['category']} originating from a Tier 1 source. It warrants monitoring for shifts in enterprise AI infrastructure or deployment standards.
-
-## Houston Relevance
-Indirect / Potential Direct. As global AI standards are set by frontier firms, Houston energy and logistics sectors must adapt to these infrastructure changes.
-
-## Suggested Angles
-- **Memo Angle:** Strategic implications of this {source['name']} announcement for 2026 industrial AI roadmaps.
-- **LinkedIn Angle:** Analysis of why this {source['category']} shift matters for enterprise operators.
-- **CRM Implication:** Assess potential consulting alignment for local firms integrating {source['name']} technology.
 """
     return sig_id, content
 
 def run_ingestion():
+    print("--- [Inference Running] Ingestion Layer ---")
+    run_logger.init_summary()
+    
     last_run = load_json(LAST_RUN_PATH, {"last_successful_run": None, "signals_created": 0})
     seen_signals = load_json(SEEN_SIGNALS_PATH, [])
     
     accepted_signals = []
     new_seen_entries = []
     created_count = 0
+    duplicate_count = 0
+    raw_found = 0
     
-    print(f"Starting RSS ingestion for {len(RSS_FEEDS)} sources...")
-    
+    MAX_PER_RUN = int(os.getenv("MAX_INGESTION_PER_RUN", 5))
+
     for source in RSS_FEEDS:
-        if created_count >= 3:
+        if created_count >= MAX_PER_RUN:
             break
             
-        print(f"Fetching {source['name']}...")
         try:
             feed = feedparser.parse(source['url'])
             if not feed.entries:
-                print(f"  No entries found for {source['name']}.")
                 continue
                 
+            raw_found += len(feed.entries)
             for entry in feed.entries:
-                if created_count >= 3:
+                if created_count >= MAX_PER_RUN:
                     break
                     
                 entry_id = getattr(entry, 'id', entry.link)
-                
-                # Deduplication check
                 if entry_id in seen_signals:
+                    duplicate_count += 1
                     continue
                 
-                # Transform to Signal
                 sig_id, content = generate_signal_content(source, entry)
-                
-                # File Writing
                 filename_title = clean_filename(entry.get('title', 'signal'))[:40]
                 date_str = datetime.utcnow().strftime("%Y-%m-%d")
                 source_slug = clean_filename(source['name'])
@@ -141,40 +128,29 @@ def run_ingestion():
                 accepted_signals.append(sig_id)
                 new_seen_entries.append(entry_id)
                 created_count += 1
-                print(f"  Accepted: {entry.get('title')[:50]}...")
                 
         except Exception as e:
-            print(f"  Error fetching {source['name']}: {str(e)}")
-            continue
+            run_logger.add_error(f"Ingestion Error ({source['name']}): {str(e)}")
 
-    # Update State
     if created_count > 0:
         seen_signals.extend(new_seen_entries)
         last_run["last_successful_run"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         last_run["signals_created"] = created_count
         save_json(LAST_RUN_PATH, last_run)
         save_json(SEEN_SIGNALS_PATH, seen_signals)
-    else:
-        # Update last run even if no signals added, per requirements
-        last_run["last_successful_run"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-        save_json(LAST_RUN_PATH, last_run)
     
-    # Create Run Log
-    log_filename = f"{datetime.utcnow().strftime('%Y-%m-%d-%H%M')}-run.md"
-    log_path = os.path.join(LOG_DIR, log_filename)
+    run_logger.update_summary("ingestion", {
+        "raw_signals_found": raw_found,
+        "new_signals_written": created_count,
+        "duplicates_skipped": duplicate_count
+    })
     
-    with open(log_path, 'w', encoding='utf-8') as f:
-        f.write(f"# Signal Hunter Run Log: {datetime.utcnow().strftime('%Y-%m-%d %H:%M')}\n\n")
-        f.write(f"Status: {'SUCCESS' if created_count > 0 else 'COMPLETED (No New Signals)'}\n")
-        f.write(f"Signals Created: {created_count}\n")
-        f.write(f"New Signal IDs: {', '.join(accepted_signals) if accepted_signals else 'None'}\n")
-    
-    print(f"Summary: {created_count} new signals ingested.")
+    print(f"Ingestion complete. Found: {raw_found}, Written: {created_count}, Duplicates: {duplicate_count}")
     return 0
 
 if __name__ == "__main__":
     try:
         sys.exit(run_ingestion())
     except Exception as e:
-        print(f"CRITICAL ERROR: {str(e)}")
+        run_logger.add_error(f"Critical Ingestion Error: {str(e)}")
         sys.exit(1)

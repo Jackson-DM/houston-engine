@@ -57,6 +57,17 @@ The engine moves beyond generic "AI news" by applying a multi-layer evaluation p
 
 ---
 
+## 🤖 Unattended Operations
+
+The engine is hardened for unattended execution via GitHub Actions:
+
+- **Schedule:** Runs every 6 hours (minute 17).
+- **No-Op Safety:** Every stage (Ingestion through Content Generation) handles empty candidate sets gracefully without failing the workflow.
+- **Git Safety:** The commit/push step only executes if file changes are detected, avoiding "nothing to commit" errors.
+- **Observability:** Every run generates a `automation/logs/latest-run-summary.json` providing a breakdown of metrics across all stages.
+
+---
+
 ## 📂 Repository Structure
 
 *   `signals/raw/`: Newly ingested, unverified signal files.
@@ -64,10 +75,9 @@ The engine moves beyond generic "AI news" by applying a multi-layer evaluation p
 *   `signals/insights/`: Structured JSON artifacts containing strategic analysis.
 *   `signals/archive/`: Filtered signals stored for historical reference.
 *   `content/drafts/`: Automated LinkedIn authority post drafts (JSON).
-*   `automation/scripts/`: Executable Python/Bash logic (Ingestion, Scoring, Insights, Content).
-*   `automation/ingestion-agents/`: Logic definitions (Specs, Source Registries, Schemas).
+*   `automation/scripts/`: Executable Python logic (Ingestion, Scoring, Insights, Content).
 *   `automation/state/`: Persistent JSON files tracking "seen" signals, insights, and drafts.
-*   `automation/logs/`: Detailed execution logs for runtime and ingestion cycles.
+*   `automation/logs/latest-run-summary.json`: High-level metrics for the most recent run.
 *   `commands/`: Executable entrypoints for agentic and manual operations.
 
 ---

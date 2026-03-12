@@ -3,10 +3,9 @@ name: Signal Hunter Ingestion
 on:
   workflow_dispatch:
   schedule:
-    # Run every 6 hours at minute 17 (avoiding top-of-hour congestion)
+    # Run every 6 hours
     - cron: '17 */6 * * *'
 
-# Ensure only one run happens at a time to prevent state conflicts
 concurrency:
   group: signal-hunter-run
   cancel-in-progress: false
@@ -15,13 +14,13 @@ jobs:
   ingest-and-score:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Crucial for pushing back to the repo
+      contents: write
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: uses/checkout@v4
         with:
-          fetch-depth: 0 # Full history needed for reliable git status
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -34,6 +33,8 @@ jobs:
           pip install feedparser requests PyYAML
 
       - name: Run Signal Ingestion
+        env:
+          MAX_INGESTION_PER_RUN: 5
         run: python automation/scripts/ingest_signal_hunter.py
 
       - name: Run Signal Scoring
@@ -43,12 +44,15 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           SIGNAL_INSIGHT_MODEL: "google/gemini-2.0-flash-001"
+          MIN_CANDIDATE_SCORE_FOR_INSIGHTS: 60
         run: python automation/scripts/extract_signal_insights.py
 
       - name: Run Content Generation
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CONTENT_GEN_MODEL: "google/gemini-2.0-flash-001"
+          MAX_DRAFTS_PER_RUN: 1
+          MIN_INSIGHT_CONFIDENCE_FOR_DRAFTS: 0.70
         run: python automation/scripts/generate_authority_drafts.py
 
       - name: Commit and Push Results
@@ -56,13 +60,13 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Only add specific directory changes for safety
+          # Add directory changes
           git add signals/raw/ signals/scored/ signals/archive/ signals/insights/ content/drafts/ automation/state/ automation/logs/
           
-          # Check if there's anything to commit
+          # Safe commit
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "Changes detected. Committing and pushing..."
-            git commit -m "chore(signal-hunter): automated signal ingestion run $(date +'%Y-%m-%d %H:%M')"
+            git commit -m "chore(signal-hunter): automated signal run summary $(date +'%Y-%m-%d %H:%M')"
             git push origin main
           else
             echo "No changes detected. Skipping commit."
