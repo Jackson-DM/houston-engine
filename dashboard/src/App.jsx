@@ -2,18 +2,23 @@
  * App.jsx — Houston AI Authority Engine Pipeline Dashboard
  *
  * Layout:
- *   Header        (status strip)
- *   PipelineFunnel (full width)
- *   RunMetrics | ThroughputSnapshot  (side by side)
- *   ReviewQueue   (full width)
+ *   Header
+ *   Row 1: Pipeline Funnel           (full width)
+ *   Row 2: Score Distribution        (full width)
+ *   Row 3: Source Intelligence | Pillar Coverage   (50/50)
+ *   Row 4: Run Metrics | Throughput Snapshot       (50/50)
+ *   Row 5: Active Review Queue       (full width)
  */
 
-import { useSnapshot } from './data/useSnapshot.js'
-import { PipelineFunnel }     from './components/PipelineFunnel.jsx'
-import { RunMetrics }         from './components/RunMetrics.jsx'
-import { ThroughputSnapshot } from './components/ThroughputSnapshot.jsx'
-import { ReviewQueue }        from './components/ReviewQueue.jsx'
-import { StatusBadge }        from './components/ui/StatusBadge.jsx'
+import { useSnapshot }         from './data/useSnapshot.js'
+import { PipelineFunnel }      from './components/PipelineFunnel.jsx'
+import { ScoreDistribution }   from './components/ScoreDistribution.jsx'
+import { SourceIntelligence }  from './components/SourceIntelligence.jsx'
+import { PillarCoverage }      from './components/PillarCoverage.jsx'
+import { RunMetrics }          from './components/RunMetrics.jsx'
+import { ThroughputSnapshot }  from './components/ThroughputSnapshot.jsx'
+import { ReviewQueue }         from './components/ReviewQueue.jsx'
+import { StatusBadge }         from './components/ui/StatusBadge.jsx'
 
 function formatTimestamp(iso) {
   if (!iso) return ''
@@ -38,13 +43,19 @@ export default function App() {
     )
   }
 
-  const { funnel, run_summary, final_content, generated_at, is_live } = snapshot ?? {}
+  const {
+    funnel, run_summary, final_content, scored_signals,
+    source_intelligence, pillar_coverage, thresholds,
+    generated_at, is_live,
+  } = snapshot ?? {}
+
   const errorCount = run_summary?.errors?.count ?? 0
   const runStatus  = errorCount === 0 ? 'ready' : errorCount <= 5 ? 'warning' : 'error'
 
   return (
     <div className="app">
-      {/* ── Header ───────────────────────────────────────────────────── */}
+
+      {/* ── Header ─────────────────────────────────────────────────── */}
       <header className="app-header">
         <div className="app-header__left">
           <div className="app-header__logo">◈</div>
@@ -54,12 +65,8 @@ export default function App() {
           </div>
         </div>
         <div className="app-header__right">
-          {!is_live && (
-            <StatusBadge label="MOCK DATA" variant="warning" />
-          )}
-          {is_live && (
-            <StatusBadge label="LIVE DATA" variant="live" />
-          )}
+          {!is_live && <StatusBadge label="MOCK DATA" variant="warning" />}
+          {is_live  && <StatusBadge label="LIVE DATA" variant="live"    />}
           <StatusBadge
             label={errorCount > 0 ? `${errorCount} ERRORS` : 'RUN OK'}
             variant={runStatus}
@@ -72,7 +79,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* ── Data source notice ────────────────────────────────────────── */}
+      {/* ── Data source notice ─────────────────────────────────────── */}
       {error && (
         <div className="data-notice">
           <span className="data-notice__icon">ℹ</span>
@@ -80,23 +87,36 @@ export default function App() {
         </div>
       )}
 
-      {/* ── Main grid ────────────────────────────────────────────────── */}
+      {/* ── Main grid ─────────────────────────────────────────────── */}
       <main className="dashboard">
-        {/* Row 1: Funnel (full width) */}
+
+        {/* Row 1: Funnel */}
         <div className="dashboard__row dashboard__row--full">
           <PipelineFunnel funnel={funnel} runSummary={run_summary} />
         </div>
 
-        {/* Row 2: Metrics + Throughput side by side */}
+        {/* Row 2: Score Distribution */}
+        <div className="dashboard__row dashboard__row--full">
+          <ScoreDistribution scoredSignals={scored_signals} thresholds={thresholds} />
+        </div>
+
+        {/* Row 3: Source Intelligence + Pillar Coverage */}
+        <div className="dashboard__row dashboard__row--split">
+          <SourceIntelligence sourceIntelligence={source_intelligence} />
+          <PillarCoverage pillarCoverage={pillar_coverage} />
+        </div>
+
+        {/* Row 4: Run Metrics + Throughput */}
         <div className="dashboard__row dashboard__row--split">
           <RunMetrics runSummary={run_summary} />
           <ThroughputSnapshot funnel={funnel} runSummary={run_summary} />
         </div>
 
-        {/* Row 3: Review Queue (full width) */}
+        {/* Row 5: Review Queue */}
         <div className="dashboard__row dashboard__row--full">
           <ReviewQueue finalContent={final_content} />
         </div>
+
       </main>
 
       <footer className="app-footer">
