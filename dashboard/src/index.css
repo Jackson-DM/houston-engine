@@ -712,6 +712,18 @@ code {
   from { opacity: 0; transform: scale(0.4); }
   to   { opacity: 1; transform: scale(1);   }
 }
+/* Subtle organic drift applied after dots have appeared */
+@keyframes dot-micro-drift {
+  0%   { transform: translateY(0);     }
+  30%  { transform: translateY(-1.6px);}
+  65%  { transform: translateY(0.8px); }
+  100% { transform: translateY(0);     }
+}
+/* Cluster-level gentle breathe — barely perceptible scale pulse */
+@keyframes area-breathe {
+  0%, 100% { transform: scale(1);     }
+  50%       { transform: scale(1.018); }
+}
 @keyframes flow-particle {
   0%   { left: -6px;          opacity: 0;   }
   12%  { opacity: 0.7; }
@@ -772,6 +784,10 @@ code {
   align-items: flex-end;
   justify-content: center;
 }
+/* Cluster-level breathe — each stage on a different cycle so they're out of phase */
+.cmp-stage--raw     .cmp-dots-area { animation: area-breathe 7.0s ease-in-out infinite 2.2s; }
+.cmp-stage--cyan    .cmp-dots-area { animation: area-breathe 6.2s ease-in-out infinite 2.8s; }
+.cmp-stage--magenta .cmp-dots-area { animation: area-breathe 5.5s ease-in-out infinite 3.4s; }
 
 /* ── Dot grid ─────────────────────────────────────────────────────────────── */
 .cmp-dot-grid {
@@ -786,7 +802,17 @@ code {
   opacity: 0;
 }
 .cmp-dot--on {
-  animation: dot-appear 0.35s ease forwards;
+  /* Two animations: appear once, then drift forever.
+     Delays are set per-dot via CSS custom properties in the JSX:
+       --appear-delay  controls the fade-in stagger
+       --drift-delay   starts drift after the dot has fully appeared
+       --drift-dur     varies 3.2s–5s so dots don't all move in sync  */
+  animation-name:            dot-appear, dot-micro-drift;
+  animation-duration:        0.35s, var(--drift-dur, 3.8s);
+  animation-timing-function: ease, ease-in-out;
+  animation-fill-mode:       forwards, none;
+  animation-iteration-count: 1, infinite;
+  animation-delay:           var(--appear-delay, 0ms), var(--drift-delay, 1s);
 }
 
 /* Dot colors per stage */

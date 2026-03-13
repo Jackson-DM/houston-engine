@@ -68,7 +68,13 @@ function DotGrid({ dotCount, colorKey, stageDelay, visible }) {
           <div
             key={i}
             className={`cmp-dot cmp-dot--${colorKey}${visible ? ' cmp-dot--on' : ''}`}
-            style={{ animationDelay: `${delay}ms` }}
+            style={{
+              '--appear-delay': `${delay}ms`,
+              // Drift starts after this dot has finished appearing, staggered by index mod 7
+              '--drift-delay':  `${delay + 380 + (i % 7) * 260}ms`,
+              // Duration varies 3.2s–5s so dots move out of phase with each other
+              '--drift-dur':    `${3200 + (i % 5) * 440}ms`,
+            }}
           />
         )
       })}
