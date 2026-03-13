@@ -12,6 +12,16 @@
 import { EmptyState } from './ui/EmptyState.jsx'
 import { CountUp }    from './CountUp.jsx'
 
+function DeltaBadge({ value }) {
+  if (value === 0 || value == null) return null
+  const positive = value > 0
+  return (
+    <span className={`delta-badge delta-badge--${positive ? 'up' : 'down'}`}>
+      {positive ? '↑' : '↓'}{Math.abs(value)}
+    </span>
+  )
+}
+
 const STAGES = [
   { key: 'raw',      label: 'RAW SIGNALS',  path: 'signals/raw/',      icon: '⬡', color: 'cyan'    },
   { key: 'scored',   label: 'SCORED',       path: 'signals/scored/',   icon: '◈', color: 'cyan'    },
@@ -32,14 +42,16 @@ function dropColor(rate) {
   return 'var(--red)'
 }
 
-export function PipelineFunnel({ funnel, runSummary }) {
+export function PipelineFunnel({ funnel, runSummary, archiveDigest, deltas }) {
   if (!funnel) return <EmptyState icon="⬡" message="No funnel data available." />
 
   // Use run summary ingestion count as the "true raw" total if available,
   // since RSS polling finds more signals than what stays in signals/raw/
   const runRaw = runSummary?.ingestion?.raw_signals_found ?? null
 
-  const stages = STAGES.map(s => ({ ...s, count: funnel[s.key] ?? 0 }))
+  // Map funnel stage keys to delta keys
+  const DELTA_KEY_MAP = { raw: 'signals_ingested', scored: 'signals_scored', final: 'content_drafted' }
+  const stages = STAGES.map(s => ({ ...s, count: funnel[s.key] ?? 0, delta: deltas?.[DELTA_KEY_MAP[s.key]] ?? null }))
   const maxCount = Math.max(...stages.map(s => s.count), 1)
 
   // Overall conversion: final / raw_signals_from_run (or file count)
@@ -85,7 +97,10 @@ export function PipelineFunnel({ funnel, runSummary }) {
               {/* Stage card */}
               <div className={`funnel-stage funnel-stage--${stage.color}`}>
                 <div className="funnel-stage__icon">{stage.icon}</div>
-                <div className="funnel-stage__count"><CountUp value={stage.count} duration={850} /></div>
+                <div className="funnel-stage__count">
+                  <CountUp value={stage.count} duration={850} />
+                  <DeltaBadge value={stage.delta} />
+                </div>
                 <div className="funnel-stage__label">{stage.label}</div>
                 <div className="funnel-stage__path">{stage.path}</div>
 
@@ -111,6 +126,17 @@ export function PipelineFunnel({ funnel, runSummary }) {
 
       {/* Bottleneck callout */}
       <BottleneckCallout stages={stages} />
+
+      {/* Archive count annotation */}
+      {archiveDigest && archiveDigest.count > 0 && (
+        <div className="funnel-archive-ann">
+          <span className="funnel-archive-ann__icon">⬡</span>
+          <span>
+            <strong><CountUp value={archiveDigest.count} duration={900} /></strong> additional signals in{' '}
+            <code>signals/archive/</code> — scored but below publish/candidate thresholds
+          </span>
+        </div>
+      )}
     </section>
   )
 }

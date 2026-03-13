@@ -29,7 +29,7 @@ function tierColor(tier) {
   }[tier] ?? 'var(--text-muted)'
 }
 
-export function ScoreDistribution({ scoredSignals, thresholds }) {
+export function ScoreDistribution({ scoredSignals, thresholds, archiveDigest, onSelectSignal }) {
   if (!scoredSignals?.length) {
     return (
       <section className="panel score-dist-panel">
@@ -109,8 +109,9 @@ export function ScoreDistribution({ scoredSignals, thresholds }) {
               <div
                 key={s.signal_id ?? i}
                 className="score-dot"
-                style={{ left, color, '--dot-color': color }}
+                style={{ left, color, '--dot-color': color, cursor: onSelectSignal ? 'pointer' : 'default' }}
                 title={`${s.source_name} · Score: ${s.final_score} · ${s.signal_category}`}
+                onClick={() => onSelectSignal?.(s)}
               />
             )
           })}
@@ -140,7 +141,12 @@ export function ScoreDistribution({ scoredSignals, thresholds }) {
           const tier  = tierLabel(s.final_score, t)
           const color = tierColor(tier)
           return (
-            <div key={s.signal_id ?? i} className="score-top-row">
+            <div
+              key={s.signal_id ?? i}
+              className="score-top-row"
+              style={{ cursor: onSelectSignal ? 'pointer' : 'default' }}
+              onClick={() => onSelectSignal?.(s)}
+            >
               <span className="score-top-row__rank">{i + 1}</span>
               <div className="score-top-row__bar-track">
                 <div className="score-top-row__bar" style={{ width: `${s.final_score}%`, background: color }} />
@@ -155,6 +161,30 @@ export function ScoreDistribution({ scoredSignals, thresholds }) {
           )
         })}
       </div>
+
+      {/* Archive digest section */}
+      {archiveDigest && archiveDigest.count > 0 && (
+        <div className="score-archive-section">
+          <div className="score-archive-section__header">
+            <span className="score-archive-section__label">SIGNALS/ARCHIVE</span>
+            <span className="score-archive-section__count">
+              <CountUp value={archiveDigest.count} duration={700} /> archived
+            </span>
+          </div>
+          {archiveDigest.samples?.length > 0 && (
+            <div className="score-archive-list">
+              {archiveDigest.samples.map((s, i) => (
+                <div key={s.signal_id ?? i} className="score-archive-row">
+                  <span className="score-archive-row__score">{s.final_score}</span>
+                  <span className="score-archive-row__source">{s.source_name}</span>
+                  <span className="score-archive-row__cat">{s.signal_category}</span>
+                  <span className="score-archive-row__geo">{s.geo_relevance}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </section>
   )
 }

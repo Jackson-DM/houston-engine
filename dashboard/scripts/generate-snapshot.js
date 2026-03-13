@@ -9,9 +9,10 @@
  * FILE PATHS — update these if the repo structure changes:
  */
 
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'fs'
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from 'fs'
 import { resolve, dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import { execSync } from 'child_process'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -22,6 +23,7 @@ const PATHS = {
   raw:        join(REPO_ROOT, 'signals/raw'),
   scored:     join(REPO_ROOT, 'signals/scored'),
   insights:   join(REPO_ROOT, 'signals/insights'),
+  archive:    join(REPO_ROOT, 'signals/archive'),
   drafts:     join(REPO_ROOT, 'content/drafts'),
   final:      join(REPO_ROOT, 'content/final'),
   runSummary: join(REPO_ROOT, 'automation/logs/latest-run-summary.json'),
@@ -135,6 +137,7 @@ function loadFinalContent() {
       body:                data.final?.body ?? null,
       closing:             data.final?.closing ?? null,
       full_text:           data.final?.full_text ?? null,
+      original_text:       data.original?.full_text ?? null,
       editorial_status:    data.editorial?.status ?? 'unknown',
       needs_review:        data.editorial?.needs_review ?? false,
       used_for_publishing: data.editorial?.used_for_publishing ?? false,
@@ -155,17 +158,126 @@ function loadInsightSummaries() {
     const data = readJSON(join(PATHS.insights, file))
     if (!data) return null
     return {
-      id:         data.id ?? file.replace('.json', ''),
-      created_at: data.created_at ?? null,
-      publisher:  data.source?.publisher ?? null,
-      score:      data.scoring?.final_score ?? null,
-      route:      data.scoring?.route ?? null,
-      confidence: data.insight?.confidence ?? null,
-      summary:    data.insight?.summary ?? null,
-      used:       data.status?.used_for_content ?? false,
-      filename:   file,
+      id:                   data.id ?? file.replace('.json', ''),
+      created_at:           data.created_at ?? null,
+      publisher:            data.source?.publisher ?? null,
+      score:                data.scoring?.final_score ?? null,
+      route:                data.scoring?.route ?? null,
+      confidence:           data.insight?.confidence ?? null,
+      summary:              data.insight?.summary ?? null,
+      why_it_matters:       data.insight?.why_it_matters ?? null,
+      business_implication: data.insight?.business_implication ?? null,
+      regional_angle:       data.insight?.regional_angle ?? null,
+      recommended_angle:    data.insight?.recommended_angle ?? null,
+      content_angles:       data.insight?.content_angles ?? [],
+      used:                 data.status?.used_for_content ?? false,
+      filename:             file,
     }
   }).filter(Boolean)
+}
+
+/**
+ * Read signals/archive/*.md, parse frontmatter, and return a count + top-5 by score.
+ */
+function loadArchiveDigest() {
+  const files = listFiles(PATHS.archive, '.md').sort()
+  if (!files.length) return { count: 0, samples: [] }
+
+  const parsed = files.map(file => {
+    let content = ''
+    try { content = readFileSync(join(PATHS.archive, file), 'utf8') } catch { return null }
+    const fm = parseFrontmatter(content)
+    return {
+      filename:        file,
+      signal_id:       fm.signal_id     ?? file.replace('.md', ''),
+      final_score:     fm.final_score   ?? fm.base_score ?? 0,
+      tier:            fm.tier          ?? 'archive',
+      source_name:     fm.source_name   ?? 'Unknown',
+      signal_category: fm.signal_category ?? 'Other',
+      industry:        fm.industry      ?? 'Cross-Industry',
+      geo_relevance:   fm.geo_relevance ?? 'Global',
+    }
+  }).filter(Boolean)
+
+  const top5 = [...parsed]
+    .sort((a, b) => b.final_score - a.final_score)
+    .slice(0, 5)
+
+  return { count: parsed.length, samples: top5 }
+}
+
+/**
+ * Derive industry breakdown from scored_signals.
+ * Groups by industry, tracks publish vs candidate tier counts, and geo_relevance.
+ */
+/**
+ * Load recent git commits and return a run history array.
+ * Filters to pipeline-relevant commits; falls back to all 20 if none match.
+ */
+function loadRunHistory() {
+  try {
+    const raw = execSync('git log --pretty=format:"%H|%s|%ai|%an" -20', {
+      cwd: REPO_ROOT,
+      encoding: 'utf8',
+      timeout: 10000,
+    })
+    const lines = raw.trim().split('\n').filter(Boolean)
+    const entries = lines.map(line => {
+      const parts = line.replace(/^"|"$/g, '').split('|')
+      const sha     = (parts[0] ?? '').slice(0, 7)
+      const message = parts[1] ?? ''
+      const date    = parts[2] ?? ''
+      return { sha, message, date }
+    }).filter(e => e.sha)
+
+    // Prefer pipeline-relevant commits; fall back to all
+    const filtered = entries.filter(e =>
+      e.message.includes('signal') ||
+      e.message.includes('pipeline') ||
+      e.message.includes('chore(signal') ||
+      e.message.startsWith('feat(') ||
+      e.message.startsWith('fix(') ||
+      e.message.startsWith('chore(')
+    )
+    const result = (filtered.length > 0 ? filtered : entries).slice(0, 15)
+    return result
+  } catch {
+    return []
+  }
+}
+
+function buildIndustryBreakdown(signals) {
+  const map = {}
+  for (const s of signals) {
+    const industry = s.industry ?? 'Cross-Industry'
+    if (!map[industry]) {
+      map[industry] = {
+        industry,
+        total: 0,
+        publish_count: 0,
+        candidate_count: 0,
+        archive_count: 0,
+        geo_tags: {},
+      }
+    }
+    map[industry].total++
+    if (s.final_score >= THRESHOLDS.publish)        map[industry].publish_count++
+    else if (s.final_score >= THRESHOLDS.candidate) map[industry].candidate_count++
+    else                                             map[industry].archive_count++
+    const geo = s.geo_relevance ?? 'Global'
+    map[industry].geo_tags[geo] = (map[industry].geo_tags[geo] ?? 0) + 1
+  }
+  return Object.values(map)
+    .sort((a, b) => b.total - a.total)
+    .map(row => ({
+      industry:         row.industry,
+      total:            row.total,
+      publish_count:    row.publish_count,
+      candidate_count:  row.candidate_count,
+      archive_count:    row.archive_count,
+      // top geo tag for this industry
+      top_geo:          Object.entries(row.geo_tags).sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'Global',
+    }))
 }
 
 /**
@@ -233,6 +345,16 @@ function buildSnapshot() {
   console.log('Houston AI Authority Engine — Pipeline Snapshot Generator')
   console.log('─'.repeat(55))
 
+  // ── Load previous snapshot for delta computation ──────────────────────────
+  let prevSnapshot = null
+  try {
+    if (existsSync(OUTPUT)) {
+      prevSnapshot = readJSON(OUTPUT)
+    }
+  } catch { /* ignore */ }
+  const prevFunnel  = prevSnapshot?.funnel ?? null
+  const prevErrors  = prevSnapshot?.run_summary?.errors?.count ?? null
+
   const funnel = {
     raw:      countFiles(PATHS.raw),
     scored:   countFiles(PATHS.scored),
@@ -241,24 +363,41 @@ function buildSnapshot() {
     final:    countFiles(PATHS.final),
   }
 
-  const runSummary      = readJSON(PATHS.runSummary)
-  const scoredSignals   = loadScoredSignals()
-  const finalContent    = loadFinalContent()
-  const insightSummaries = loadInsightSummaries()
+  const runSummary         = readJSON(PATHS.runSummary)
+  const currentErrors      = runSummary?.errors?.count ?? 0
+
+  // ── Compute deltas vs previous snapshot ──────────────────────────────────
+  const deltas = {
+    signals_ingested: funnel.raw      - (prevFunnel?.raw      ?? funnel.raw),
+    signals_scored:   funnel.scored   - (prevFunnel?.scored   ?? funnel.scored),
+    content_drafted:  funnel.final    - (prevFunnel?.final    ?? funnel.final),
+    errors:           currentErrors   - (prevErrors           ?? currentErrors),
+  }
+
+  const scoredSignals      = loadScoredSignals()
+  const finalContent       = loadFinalContent()
+  const insightSummaries   = loadInsightSummaries()
   const sourceIntelligence = buildSourceIntelligence(scoredSignals)
-  const pillarCoverage  = buildPillarCoverage(scoredSignals)
+  const pillarCoverage     = buildPillarCoverage(scoredSignals)
+  const archiveDigest      = loadArchiveDigest()
+  const industryBreakdown  = buildIndustryBreakdown(scoredSignals)
+  const runHistory         = loadRunHistory()
 
   const snapshot = {
-    generated_at:      new Date().toISOString(),
-    is_live:           true,
-    thresholds:        THRESHOLDS,
+    generated_at:        new Date().toISOString(),
+    is_live:             true,
+    thresholds:          THRESHOLDS,
     funnel,
-    run_summary:       runSummary,
-    scored_signals:    scoredSignals,
+    deltas,
+    run_summary:         runSummary,
+    scored_signals:      scoredSignals,
     source_intelligence: sourceIntelligence,
-    pillar_coverage:   pillarCoverage,
-    final_content:     finalContent,
-    insight_summaries: insightSummaries,
+    pillar_coverage:     pillarCoverage,
+    final_content:       finalContent,
+    insight_summaries:   insightSummaries,
+    archive_digest:      archiveDigest,
+    industry_breakdown:  industryBreakdown,
+    run_history:         runHistory,
   }
 
   mkdirSync(dirname(OUTPUT), { recursive: true })
@@ -281,7 +420,15 @@ function buildSnapshot() {
   console.log()
   console.log(`Scored signals parsed: ${scoredSignals.length}`)
   console.log(`Final content items:   ${finalContent.length}`)
+  console.log(`Archive signals:       ${archiveDigest.count}`)
+  console.log(`Run history:           ${runHistory.length} commits`)
+  console.log()
+  console.log('Industry Breakdown:')
+  industryBreakdown.forEach(row =>
+    console.log(`  ${row.industry.padEnd(28)} total:${row.total}  publish:${row.publish_count}  cand:${row.candidate_count}  geo:${row.top_geo}`)
+  )
   if (runSummary) {
+    console.log()
     console.log(`Last run:              ${runSummary.run_started_at}`)
     console.log(`Errors:                ${runSummary.errors?.count ?? 0}`)
   }

@@ -58,7 +58,11 @@ function DotGrid({ dotCount, colorKey, stageDelay, visible }) {
   return (
     <div
       className={`cmp-dot-grid cmp-dot-grid--${colorKey}`}
-      style={{ gridTemplateColumns: `repeat(${GRID_COLS}, ${DOT_PX}px)`, width: `${gridW}px` }}
+      style={{ 
+        gridTemplateColumns: `repeat(${GRID_COLS}, ${DOT_PX}px)`, 
+        width: `${gridW}px`,
+        contain: 'layout paint' // Prevent dot animations from triggering whole-page reflows
+      }}
     >
       {Array.from({ length: dotCount }, (_, i) => {
         // Stagger: stage delay + per-dot delay spread over 500ms window
@@ -128,14 +132,20 @@ export function SignalCompressionEngine({ funnel, runSummary }) {
 
   // Trigger animation when panel scrolls into view
   useEffect(() => {
+    let active = true
     const el = ref.current
     if (!el) return
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
+      ([entry]) => {
+        if (active && entry.isIntersecting) setVisible(true)
+      },
       { threshold: 0.15 }
     )
     obs.observe(el)
-    return () => obs.disconnect()
+    return () => {
+      active = false
+      obs.disconnect()
+    }
   }, [])
 
   // ── Data ──────────────────────────────────────────────────────────────────

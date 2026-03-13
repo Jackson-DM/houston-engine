@@ -12,6 +12,7 @@
  *   - Content type + date
  */
 
+import { useState }    from 'react'
 import { StatusBadge } from './ui/StatusBadge.jsx'
 import { EmptyState } from './ui/EmptyState.jsx'
 
@@ -50,6 +51,86 @@ function ConfidenceBar({ value }) {
   )
 }
 
+function QueueCard({ item, index }) {
+  const [showOriginal, setShowOriginal] = useState(false)
+  const hasOriginal = Boolean(item.original_text)
+
+  const badge = editorialBadge(item)
+  const date  = formatDate(item.created_at)
+  const slug  = item.filename
+    ? item.filename.replace(/^final-/, '').replace('.json', '')
+    : item.id?.replace(/^final-/, '')
+
+  return (
+    <div className="queue-card">
+      {/* Header row */}
+      <div className="queue-card__header">
+        <div className="queue-card__meta">
+          <span className="queue-card__type">{item.content_type ?? 'post'}</span>
+          {date && <span className="queue-card__date">{date}</span>}
+          {item.score !== null && item.score !== undefined && (
+            <span className="queue-card__score">signal score: {item.score}</span>
+          )}
+        </div>
+        <div className="queue-card__header-right">
+          {hasOriginal && (
+            <div className="queue-card__toggle">
+              <button
+                className={`queue-toggle-btn${!showOriginal ? ' queue-toggle-btn--active' : ''}`}
+                onClick={() => setShowOriginal(false)}
+              >
+                HUMANIZED
+              </button>
+              <button
+                className={`queue-toggle-btn${showOriginal ? ' queue-toggle-btn--active' : ''}`}
+                onClick={() => setShowOriginal(true)}
+              >
+                ORIGINAL
+              </button>
+            </div>
+          )}
+          <StatusBadge label={badge.label} variant={badge.variant} />
+        </div>
+      </div>
+
+      {/* Content — toggle between humanized and original */}
+      {showOriginal && hasOriginal ? (
+        <div className="queue-card__original">
+          <span className="queue-card__hook-label">AI DRAFT (ORIGINAL)</span>
+          <p className="queue-card__original-text">{truncate(item.original_text, 400)}</p>
+        </div>
+      ) : (
+        <>
+          {/* HOOK — hero element */}
+          {item.hook ? (
+            <blockquote className="queue-card__hook">
+              <span className="queue-card__hook-label">HUMANIZED HOOK</span>
+              {item.hook}
+            </blockquote>
+          ) : (
+            <div className="queue-card__hook queue-card__hook--missing">
+              Hook not available
+            </div>
+          )}
+
+          {/* Body preview */}
+          {item.body && (
+            <p className="queue-card__body">{truncate(item.body)}</p>
+          )}
+        </>
+      )}
+
+      {/* Footer */}
+      <div className="queue-card__footer">
+        <ConfidenceBar value={item.confidence} />
+        {slug && (
+          <span className="queue-card__slug">{slug}</span>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export function ReviewQueue({ finalContent }) {
   const items = (finalContent ?? []).slice(0, 5)
 
@@ -70,54 +151,9 @@ export function ReviewQueue({ finalContent }) {
         />
       ) : (
         <div className="queue-list">
-          {items.map((item, i) => {
-            const badge = editorialBadge(item)
-            const date  = formatDate(item.created_at)
-            const slug  = item.filename
-              ? item.filename.replace(/^final-/, '').replace('.json', '')
-              : item.id?.replace(/^final-/, '')
-
-            return (
-              <div key={item.id ?? i} className="queue-card">
-                {/* Header row */}
-                <div className="queue-card__header">
-                  <div className="queue-card__meta">
-                    <span className="queue-card__type">{item.content_type ?? 'post'}</span>
-                    {date && <span className="queue-card__date">{date}</span>}
-                    {item.score !== null && item.score !== undefined && (
-                      <span className="queue-card__score">signal score: {item.score}</span>
-                    )}
-                  </div>
-                  <StatusBadge label={badge.label} variant={badge.variant} />
-                </div>
-
-                {/* HOOK — hero element */}
-                {item.hook ? (
-                  <blockquote className="queue-card__hook">
-                    <span className="queue-card__hook-label">HUMANIZED HOOK</span>
-                    {item.hook}
-                  </blockquote>
-                ) : (
-                  <div className="queue-card__hook queue-card__hook--missing">
-                    Hook not available
-                  </div>
-                )}
-
-                {/* Body preview */}
-                {item.body && (
-                  <p className="queue-card__body">{truncate(item.body)}</p>
-                )}
-
-                {/* Footer */}
-                <div className="queue-card__footer">
-                  <ConfidenceBar value={item.confidence} />
-                  {slug && (
-                    <span className="queue-card__slug">{slug}</span>
-                  )}
-                </div>
-              </div>
-            )
-          })}
+          {items.map((item, i) => (
+            <QueueCard key={item.id ?? i} item={item} index={i} />
+          ))}
         </div>
       )}
     </section>
