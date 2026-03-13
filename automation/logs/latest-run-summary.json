@@ -1,16 +1,16 @@
 {
-  "run_started_at": "2026-03-13T07:13:52.597274Z",
+  "run_started_at": "2026-03-13T13:35:16.985833Z",
   "run_completed_at": null,
   "ingestion": {
     "raw_signals_found": 912,
     "new_signals_written": 5,
-    "duplicates_skipped": 42
+    "duplicates_skipped": 47
   },
   "scoring": {
     "signals_processed": 5,
     "publish_count": 0,
-    "candidate_count": 1,
-    "archive_count": 4,
+    "candidate_count": 0,
+    "archive_count": 5,
     "ignore_count": 0
   },
   "insights": {
