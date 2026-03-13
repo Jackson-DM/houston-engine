@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-03-13T00:57:51.059Z",
+  "is_live": true,
+  "funnel": {
+    "raw": 2,
+    "scored": 24,
+    "insights": 7,
+    "drafts": 1,
+    "final": 1
+  },
+  "run_summary": {
+    "run_started_at": "2026-03-12T19:12:59.294446Z",
+    "run_completed_at": null,
+    "ingestion": {
+      "raw_signals_found": 912,
+      "new_signals_written": 5,
+      "duplicates_skipped": 32
+    },
+    "scoring": {
+      "signals_processed": 5,
+      "publish_count": 0,
+      "candidate_count": 1,
+      "archive_count": 4,
+      "ignore_count": 0
+    },
+    "insights": {
+      "eligible_signals": 0,
+      "generated_count": 0,
+      "skipped_count": 0
+    },
+    "drafts": {
+      "eligible_insights": 0,
+      "generated_count": 0,
+      "skipped_count": 0
+    },
+    "errors": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "final_content": [
+    {
+      "id": "final-2026-03-02-nvidia-us-manufacturing-reindustrialization",
+      "created_at": "2026-03-12T01:48:23.848452Z",
+      "content_type": "linkedin_post",
+      "hook": "Just saw NVIDIA drop a serious robotics and AI architecture. As someone knee-deep in AI here in Houston, I gotta say, this could be a game-changer for U.S. manufacturing.",
+      "body": "This isn't just another tech release; it's a legit framework for merging hardware and software to bring AI automation to the factory floor. Think lower costs, way better precision, and factories that can actually adapt on the fly. If this takes off, it'll give American companies a real edge globally. We're talking about turbocharging innovation and making our manufacturing processes smarter than ever before. This might be the upgrade our industrial sector desperately needs to stay competitive.",
+      "closing": "Bottom line: this isn't just about tech; it's about investing in American smarts and growing our economy.",
+      "full_text": "Just saw NVIDIA drop a serious robotics and AI architecture. As someone knee-deep in AI here in Houston, I gotta say, this could be a game-changer for U.S. manufacturing.\n\nThis isn't just another tech release; it's a legit framework for merging hardware and software to bring AI automation to the factory floor. Think lower costs, way better precision, and factories that can actually adapt on the fly. If this takes off, it'll give American companies a real edge globally. We're talking about turbocharging innovation and making our manufacturing processes smarter than ever before. This might be the upgrade our industrial sector desperately needs to stay competitive.\n\nBottom line: this isn't just about tech; it's about investing in American smarts and growing our economy.\n\nWhat's your take on AI's impact on manufacturing? Drop your thoughts below! #AI #Robotics #Manufacturing #NVIDIA #USManufacturing #IndustrialAutomation #Innovation",
+      "editorial_status": "ready_for_review",
+      "needs_review": true,
+      "used_for_publishing": false,
+      "confidence": 0.95,
+      "score": 80,
+      "filename": "final-2026-03-02-nvidia-us-manufacturing-reindustrialization.json"
+    }
+  ],
+  "insight_summaries": [
+    {
+      "id": "2026-03-11-venturebeat-ai-the-creator-of-claude-code-just-revealed",
+      "created_at": "2026-03-12T01:48:12.444364Z",
+      "publisher": "VentureBeat AI",
+      "score": 63,
+      "route": "candidate",
+      "confidence": 0.95,
+      "summary": "The creator of Claude Code at Anthropic revealed his workflow, sparking significant interest in the developer community.",
+      "used": false,
+      "filename": "insight-2026-03-11-venturebeat-ai-the-creator-of-claude-code-just-revealed.json"
+    },
+    {
+      "id": "2026-03-11-nvidia-newsroom-nvidia-launches-new-blackwell-",
+      "created_at": "2026-03-12T01:48:08.625152Z",
+      "publisher": "NVIDIA Newsroom",
+      "score": 60,
+      "route": "candidate",
+      "confidence": 0.95,
+      "summary": "NVIDIA releases specialized Blackwell GPU configurations optimized for industrial data centers, signaling a focus on enterprise-grade AI solutions.",
+      "used": false,
+      "filename": "insight-2026-03-11-nvidia-newsroom-nvidia-launches-new-blackwell-.json"
+    },
+    {
+      "id": "2026-03-11-nvidia-newsroom-nvidia-gtc-2026-live-updates-on-what-s-n",
+      "created_at": "2026-03-12T01:48:04.630667Z",
+      "publisher": "NVIDIA Newsroom",
+      "score": 60,
+      "route": "candidate",
+      "confidence": 0.95,
+      "summary": "NVIDIA GTC 2026 live updates signal key Industrial AI developments and potential enterprise AI infrastructure shifts.",
+      "used": false,
+      "filename": "insight-2026-03-11-nvidia-newsroom-nvidia-gtc-2026-live-updates-on-what-s-n.json"
+    },
+    {
+      "id": "2026-03-11-nvidia-newsroom-new-nvidia-nemotron-3-super-delivers-5x-",
+      "created_at": "2026-03-12T01:48:01.158629Z",
+      "publisher": "NVIDIA Newsroom",
+      "score": 70,
+      "route": "publish",
+      "confidence": 0.95,
+      "summary": "NVIDIA Nemotron 3 Super, a 120B parameter model with 12B active parameters, is launched, enhancing agentic AI throughput for complex systems.",
+      "used": false,
+      "filename": "insight-2026-03-11-nvidia-newsroom-new-nvidia-nemotron-3-super-delivers-5x-.json"
+    },
+    {
+      "id": "2026-03-05-nvidia-palantir-decision-intelligence",
+      "created_at": "2026-03-12T01:47:57.572192Z",
+      "publisher": "NVIDIA Newsroom",
+      "score": 73,
+      "route": "publish",
+      "confidence": 0.95,
+      "summary": "Palantir and NVIDIA partner to deliver 'Dynamic Decision Intelligence' for enterprise and industrial customers, integrating Palantir's AIP with NVIDIA's CUDA-X and Nemotron for AI-driven automation of complex operations.",
+      "used": false,
+      "filename": "insight-2026-03-05-nvidia-palantir-decision-intelligence.json"
+    },
+    {
+      "id": "2026-03-02-siemens-nvidia-industrial-ai-os",
+      "created_at": "2026-03-12T01:47:53.249952Z",
+      "publisher": "NVIDIA Newsroom",
+      "score": 65,
+      "route": "candidate",
+      "confidence": 0.95,
+      "summary": "Siemens and NVIDIA are collaborating to create an 'Industrial AI Operating System' that integrates Siemens Xcelerator and NVIDIA Omniverse, enabling AI-driven industrial solutions and real-time digital twins.",
+      "used": false,
+      "filename": "insight-2026-03-02-siemens-nvidia-industrial-ai-os.json"
+    },
+    {
+      "id": "2026-03-02-nvidia-us-manufacturing-reindustrialization",
+      "created_at": "2026-03-12T01:47:49.510298Z",
+      "publisher": "NVIDIA Newsroom",
+      "score": 80,
+      "route": "publish",
+      "confidence": 0.95,
+      "summary": "NVIDIA introduces a comprehensive robotics and physical AI reference architecture designed to revitalize U.S. manufacturing by providing a blueprint for hardware/software integration in factories.",
+      "used": true,
+      "filename": "insight-2026-03-02-nvidia-us-manufacturing-reindustrialization.json"
+    }
+  ]
+}

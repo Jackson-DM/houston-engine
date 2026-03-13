@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dashboard/node_modules/
+
+# Vite build output
+dashboard/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.env
