@@ -1308,6 +1308,276 @@ code {
 .pillar-notice--ok   { background: var(--green-dim);  border: 1px solid var(--green);  color: var(--text-secondary); }
 .pillar-notice--ok   span:first-child { color: var(--green); }
 
+/* ══════════════════════════════════════════════════════════════════════════════
+   AUTHORITY IMPACT
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Panel accent bar — green, mirroring the "final" stage color */
+.ai-panel { position: relative; overflow: hidden; }
+.ai-panel::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.18), transparent);
+}
+.ai-panel__accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 5%, var(--green) 40%, var(--cyan) 70%, transparent 95%);
+  opacity: 0.6;
+}
+
+.ai-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Section container ────────────────────────────────────────────────────── */
+.ai-section { display: flex; flex-direction: column; gap: 10px; }
+.ai-section__title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.ai-section__empty {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Output Metrics ───────────────────────────────────────────────────────── */
+.ai-output-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.ai-metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ai-metric-card__val {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.ai-metric-card__label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Split row: Topics + Attribution side by side ─────────────────────────── */
+.ai-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Authority Topics ─────────────────────────────────────────────────────── */
+.ai-topic-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ai-pillar-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: rgba(0, 0, 0, 0.3);
+}
+.ai-pillar-tag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ai-pillar-tag__count {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+.ai-signal-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+.ai-signal-type-tag {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2px 9px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Source Attribution ───────────────────────────────────────────────────── */
+.ai-attribution-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-top: -4px;
+}
+.ai-attribution-list { display: flex; flex-direction: column; gap: 12px; }
+.ai-attribution-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.ai-attribution-row__source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ai-attribution-source-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px rgba(0, 255, 170, 0.5);
+  flex-shrink: 0;
+}
+.ai-attribution-source-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.ai-attribution-row__posts { display: flex; flex-direction: column; gap: 4px; padding-left: 16px; }
+.ai-attribution-post { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ai-attribution-post__status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+.ai-attribution-post__hook {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ── Engagement Layer ─────────────────────────────────────────────────────── */
+.ai-engagement-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: -4px;
+}
+.ai-engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.ai-engagement-card {
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-accent);
+  border-radius: var(--radius);
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  opacity: 0.6;
+}
+.ai-engagement-card__icon {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+.ai-engagement-card__val {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.ai-engagement-card__label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.ai-engagement-card__status {
+  font-size: 0.64rem;
+  color: var(--border-accent);
+  font-style: italic;
+  margin-top: 2px;
+}
+.ai-engagement-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 14px;
+  background: var(--green-dim);
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  border-radius: var(--radius);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.ai-engagement-note__icon {
+  color: var(--green);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Lifecycle trail ──────────────────────────────────────────────────────── */
+.ai-lifecycle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+.ai-lifecycle__step { display: flex; align-items: center; gap: 4px; }
+.ai-lifecycle__label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.ai-lifecycle__label--active {
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid rgba(0, 255, 170, 0.25);
+  text-shadow: 0 0 6px rgba(0, 255, 170, 0.4);
+  font-weight: 700;
+}
+.ai-lifecycle__arrow {
+  color: var(--border-accent);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
 /* ── Footer ─────────────────────────────────────────────────────────────────── */
 .app-footer {
   padding: 16px 24px;

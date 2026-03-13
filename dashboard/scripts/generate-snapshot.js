@@ -114,8 +114,19 @@ function loadFinalContent() {
   return files.map(file => {
     const data = readJSON(join(PATHS.final, file))
     if (!data) return null
+
     const insightFile = file.replace(/^final-/, 'insight-')
     const insight = readJSON(join(PATHS.insights, insightFile))
+
+    // Follow the chain: final → insight → scored signal → signal_category
+    let signal_category = null
+    if (insight?.source_signal_path) {
+      try {
+        const scoredContent = readFileSync(join(REPO_ROOT, insight.source_signal_path), 'utf8')
+        signal_category = parseFrontmatter(scoredContent).signal_category ?? null
+      } catch { /* scored signal may not exist yet */ }
+    }
+
     return {
       id:                  data.id ?? file.replace('.json', ''),
       created_at:          data.created_at ?? null,
@@ -129,6 +140,10 @@ function loadFinalContent() {
       used_for_publishing: data.editorial?.used_for_publishing ?? false,
       confidence:          insight?.insight?.confidence ?? null,
       score:               insight?.scoring?.final_score ?? null,
+      // Attribution chain: which source and topic produced this asset
+      source_name:         insight?.source?.publisher ?? null,
+      signal_type:         insight?.insight?.signal_type ?? null,
+      signal_category,
       filename:            file,
     }
   }).filter(Boolean)

@@ -19,6 +19,7 @@ import { PillarCoverage }      from './components/PillarCoverage.jsx'
 import { RunMetrics }          from './components/RunMetrics.jsx'
 import { ThroughputSnapshot }  from './components/ThroughputSnapshot.jsx'
 import { ReviewQueue }         from './components/ReviewQueue.jsx'
+import { AuthorityImpact }     from './components/AuthorityImpact.jsx'
 import { StatusBadge }         from './components/ui/StatusBadge.jsx'
 
 function formatTimestamp(iso) {
@@ -121,6 +122,11 @@ export default function App() {
         {/* Row 5: Review Queue */}
         <div className="dashboard__row dashboard__row--full">
           <ReviewQueue finalContent={final_content} />
+        </div>
+
+        {/* Row 6: Authority Impact */}
+        <div className="dashboard__row dashboard__row--full">
+          <AuthorityImpact finalContent={final_content} />
         </div>
 
       </main>
