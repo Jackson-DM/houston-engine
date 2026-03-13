@@ -704,6 +704,238 @@ code {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
+   SIGNAL COMPRESSION ENGINE
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Keyframes ────────────────────────────────────────────────────────────── */
+@keyframes dot-appear {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+@keyframes flow-particle {
+  0%   { left: -6px;          opacity: 0;   }
+  12%  { opacity: 0.7; }
+  88%  { opacity: 0.7; }
+  100% { left: calc(100% + 6px); opacity: 0; }
+}
+@keyframes ring-pulse-outer {
+  0%, 100% { transform: scale(1);    opacity: 0.5; box-shadow: 0 0 10px rgba(0, 255, 170, 0.3); }
+  50%       { transform: scale(1.18); opacity: 0.9; box-shadow: 0 0 28px rgba(0, 255, 170, 0.5); }
+}
+@keyframes ring-pulse-inner {
+  0%, 100% { transform: scale(1);    opacity: 0.8; }
+  50%       { transform: scale(1.08); opacity: 1;   }
+}
+@keyframes final-node-appear {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+@keyframes connector-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Panel ────────────────────────────────────────────────────────────────── */
+.cmp-panel::before {
+  background: linear-gradient(90deg, transparent, var(--magenta-mid), transparent);
+}
+
+/* ── Stage row ────────────────────────────────────────────────────────────── */
+.cmp-stages {
+  display: flex;
+  align-items: flex-end;
+  padding: 4px 0 0;
+  gap: 0;
+  min-height: 170px;
+}
+
+.cmp-stage-wrap {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Stage column ─────────────────────────────────────────────────────────── */
+.cmp-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Dot area: fixed height, dots pile up from bottom ────────────────────── */
+.cmp-dots-area {
+  height: 116px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* ── Dot grid ─────────────────────────────────────────────────────────────── */
+.cmp-dot-grid {
+  display: grid;
+  gap: 3px;
+}
+
+.cmp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0;
+}
+.cmp-dot--on {
+  animation: dot-appear 0.35s ease forwards;
+}
+
+/* Dot colors per stage */
+.cmp-dot--raw     { background: rgba(110, 138, 170, 0.45); }
+.cmp-dot--cyan    { background: rgba(0, 234, 255, 0.65); box-shadow: 0 0 3px rgba(0, 234, 255, 0.3); }
+.cmp-dot--magenta { background: rgba(240, 77, 255, 0.75); box-shadow: 0 0 4px rgba(240, 77, 255, 0.35); }
+.cmp-dot--green   { background: rgba(0, 255, 170, 0.85); box-shadow: 0 0 5px rgba(0, 255, 170, 0.4); }
+
+.cmp-empty-stage {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Final node ───────────────────────────────────────────────────────────── */
+.cmp-final-node {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.cmp-final-node--on {
+  animation: final-node-appear 0.5s ease forwards;
+}
+
+.cmp-final-node__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--green);
+}
+.cmp-final-node--on .cmp-final-node__ring--outer {
+  animation: ring-pulse-outer 2.4s ease-in-out infinite 0.5s;
+}
+.cmp-final-node--on .cmp-final-node__ring--inner {
+  inset: 8px;
+  animation: ring-pulse-inner 2.4s ease-in-out infinite 0.8s;
+}
+
+.cmp-final-node__core {
+  font-size: 1.25rem;
+  color: var(--green);
+  text-shadow: var(--green-glow);
+  z-index: 1;
+  position: relative;
+}
+
+/* ── Stage count + label ──────────────────────────────────────────────────── */
+.cmp-stage__count {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.cmp-stage__count--on { opacity: 1; }
+
+.cmp-stage__count--raw     { color: var(--text-secondary); }
+.cmp-stage__count--cyan    { color: var(--cyan);    text-shadow: var(--cyan-glow); }
+.cmp-stage__count--magenta { color: var(--magenta); text-shadow: var(--magenta-glow); }
+.cmp-stage__count--green   { color: var(--green);   text-shadow: var(--green-glow); }
+
+.cmp-stage__label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.cmp-stage__label--on { opacity: 1; }
+
+/* ── Connector ────────────────────────────────────────────────────────────── */
+.cmp-connector {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 32px; /* align with count row */
+  gap: 6px;
+  min-width: 32px;
+}
+
+.cmp-connector__track {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: var(--border-accent);
+  overflow: visible;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.cmp-connector__track--on {
+  transform: scaleX(1);
+}
+
+.cmp-connector__particle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+  opacity: 0;
+  animation: flow-particle 3.2s ease-in-out infinite;
+}
+
+.cmp-connector__label {
+  font-size: 0.64rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.cmp-connector__label--on { opacity: 1; }
+
+/* ── Caption ──────────────────────────────────────────────────────────────── */
+.cmp-caption {
+  margin-top: 16px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border-left: 3px solid var(--green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.5s ease 1.8s, transform 0.5s ease 1.8s;
+}
+.cmp-caption--on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
    SCORE DISTRIBUTION
    ══════════════════════════════════════════════════════════════════════════════ */
 

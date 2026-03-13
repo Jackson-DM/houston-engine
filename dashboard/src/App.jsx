@@ -10,9 +10,10 @@
  *   Row 5: Active Review Queue       (full width)
  */
 
-import { useSnapshot }         from './data/useSnapshot.js'
-import { PipelineFunnel }      from './components/PipelineFunnel.jsx'
-import { ScoreDistribution }   from './components/ScoreDistribution.jsx'
+import { useSnapshot }              from './data/useSnapshot.js'
+import { PipelineFunnel }           from './components/PipelineFunnel.jsx'
+import { SignalCompressionEngine }  from './components/SignalCompressionEngine.jsx'
+import { ScoreDistribution }        from './components/ScoreDistribution.jsx'
 import { SourceIntelligence }  from './components/SourceIntelligence.jsx'
 import { PillarCoverage }      from './components/PillarCoverage.jsx'
 import { RunMetrics }          from './components/RunMetrics.jsx'
@@ -93,6 +94,11 @@ export default function App() {
         {/* Row 1: Funnel */}
         <div className="dashboard__row dashboard__row--full">
           <PipelineFunnel funnel={funnel} runSummary={run_summary} />
+        </div>
+
+        {/* Row 1b: Signal Compression Engine */}
+        <div className="dashboard__row dashboard__row--full">
+          <SignalCompressionEngine funnel={funnel} runSummary={run_summary} />
         </div>
 
         {/* Row 2: Score Distribution */}
