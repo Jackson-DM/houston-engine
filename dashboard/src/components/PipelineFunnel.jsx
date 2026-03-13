@@ -10,6 +10,7 @@
  */
 
 import { EmptyState } from './ui/EmptyState.jsx'
+import { CountUp }    from './CountUp.jsx'
 
 const STAGES = [
   { key: 'raw',      label: 'RAW SIGNALS',  path: 'signals/raw/',      icon: '⬡', color: 'cyan'    },
@@ -84,7 +85,7 @@ export function PipelineFunnel({ funnel, runSummary }) {
               {/* Stage card */}
               <div className={`funnel-stage funnel-stage--${stage.color}`}>
                 <div className="funnel-stage__icon">{stage.icon}</div>
-                <div className="funnel-stage__count">{stage.count}</div>
+                <div className="funnel-stage__count"><CountUp value={stage.count} duration={850} /></div>
                 <div className="funnel-stage__label">{stage.label}</div>
                 <div className="funnel-stage__path">{stage.path}</div>
 
@@ -99,7 +100,7 @@ export function PipelineFunnel({ funnel, runSummary }) {
                 {/* Show run-summary raw count as annotation on first stage */}
                 {stage.key === 'raw' && runRaw !== null && runRaw !== stage.count && (
                   <div className="funnel-stage__ann">
-                    {runRaw} seen by pipeline
+                    <CountUp value={runRaw} duration={1000} /> seen by pipeline
                   </div>
                 )}
               </div>

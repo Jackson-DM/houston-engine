@@ -9,6 +9,7 @@
  */
 
 import { EmptyState } from './ui/EmptyState.jsx'
+import { CountUp }    from './CountUp.jsx'
 
 const DEFAULT_THRESHOLDS = { publish: 60, candidate: 40, archive: 20 }
 
@@ -61,19 +62,19 @@ export function ScoreDistribution({ scoredSignals, thresholds }) {
       {/* Tier summary row */}
       <div className="score-tier-row">
         <div className="score-tier-stat score-tier-stat--green">
-          <span className="score-tier-stat__val">{publishCount}</span>
+          <span className="score-tier-stat__val"><CountUp value={publishCount} /></span>
           <span className="score-tier-stat__label">Publish-eligible <span className="score-tier-stat__range">≥{t.publish}</span></span>
         </div>
         <div className="score-tier-stat score-tier-stat--amber">
-          <span className="score-tier-stat__val">{candidateCount}</span>
+          <span className="score-tier-stat__val"><CountUp value={candidateCount} /></span>
           <span className="score-tier-stat__label">Candidate <span className="score-tier-stat__range">{t.candidate}–{t.publish - 1}</span></span>
         </div>
         <div className="score-tier-stat score-tier-stat--muted">
-          <span className="score-tier-stat__val">{archiveCount}</span>
+          <span className="score-tier-stat__val"><CountUp value={archiveCount} /></span>
           <span className="score-tier-stat__label">Below candidate <span className="score-tier-stat__range">&lt;{t.candidate}</span></span>
         </div>
         <div className="score-tier-stat score-tier-stat--cyan">
-          <span className="score-tier-stat__val">{avg}</span>
+          <span className="score-tier-stat__val"><CountUp value={avg} /></span>
           <span className="score-tier-stat__label">Avg score</span>
         </div>
       </div>

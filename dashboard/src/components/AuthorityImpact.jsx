@@ -14,6 +14,7 @@
  */
 
 import { EmptyState } from './ui/EmptyState.jsx'
+import { CountUp }    from './CountUp.jsx'
 
 // ── Pillar grouping (mirrors PillarCoverage + generate-snapshot.js) ────────────
 const PILLAR_MAP = {
@@ -82,7 +83,7 @@ function OutputMetrics({ items }) {
               className="ai-metric-card__val"
               style={{ color: s.color, textShadow: s.glow ? `0 0 8px ${s.color}88, 0 0 20px ${s.color}44` : 'none' }}
             >
-              {s.val}
+              <CountUp value={s.val} duration={800} />
             </div>
             <div className="ai-metric-card__label">{s.label}</div>
           </div>

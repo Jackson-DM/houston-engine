@@ -27,6 +27,7 @@
 
   --green:         #00ffaa;
   --green-dim:     rgba(0, 255, 170, 0.09);
+  --green-mid:     rgba(0, 255, 170, 0.2);
   --green-glow:    0 0 8px rgba(0, 255, 170, 0.55), 0 0 20px rgba(0, 255, 170, 0.2);
 
   --amber:         #ffaa00;
@@ -49,6 +50,9 @@
 html { font-size: 16px; }
 body {
   background: var(--bg-base);
+  /* Subtle dot grid — depth without clutter */
+  background-image: radial-gradient(circle, rgba(0, 234, 255, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--text-primary);
   font-family: var(--font);
   min-height: 100vh;
@@ -160,13 +164,85 @@ code {
   padding: 20px 22px;
   position: relative;
   overflow: hidden;
+  /* Per-panel accent color — override in specific panel classes */
+  --panel-accent:     var(--cyan);
+  --panel-accent-mid: var(--cyan-mid);
+  --panel-accent-dim: var(--cyan-dim);
+  /* Transitions for hover effects */
+  transition: border-color 0.28s ease, box-shadow 0.28s ease, transform 0.28s ease;
+  /* Entrance animation — delay is set via CSS custom props by row nth-child rules below */
+  animation: panel-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--row-delay, 0ms) + var(--col-offset, 0ms));
 }
+
+/* Hover: ambient glow + 2px lift */
+.panel:hover {
+  border-color: var(--panel-accent-mid);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px var(--panel-accent-dim),
+    0 8px 32px var(--panel-accent-dim),
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 var(--panel-accent-dim);
+}
+
+/* Corner bracket targeting reticle — visible on hover.
+   Uses 8 gradient layers (4 corners × 2 arms each).
+   inset: 8px keeps them safely inside overflow:hidden + border-radius. */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background-image:
+    /* Top-left ┌ */
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    /* Top-right ┐ */
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    /* Bottom-left └ */
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    /* Bottom-right ┘ */
+    linear-gradient(var(--panel-accent), var(--panel-accent)),
+    linear-gradient(var(--panel-accent), var(--panel-accent));
+  background-position:
+    0 0,       /* TL horizontal */
+    0 0,       /* TL vertical */
+    100% 0,    /* TR horizontal */
+    100% 0,    /* TR vertical */
+    0 100%,    /* BL horizontal */
+    0 100%,    /* BL vertical */
+    100% 100%, /* BR horizontal */
+    100% 100%; /* BR vertical */
+  background-size:
+    16px 1.5px,
+    1.5px 16px,
+    16px 1.5px,
+    1.5px 16px,
+    16px 1.5px,
+    1.5px 16px,
+    16px 1.5px,
+    1.5px 16px;
+  background-repeat: no-repeat;
+  z-index: 20;
+}
+.panel:hover::after { opacity: 1; }
+
+/* Per-panel accent overrides for hover glow + corner bracket color */
+.cmp-panel  { --panel-accent: var(--magenta); --panel-accent-mid: var(--magenta-mid); --panel-accent-dim: var(--magenta-dim); }
+.ai-panel   { --panel-accent: var(--green);   --panel-accent-mid: var(--green-mid);   --panel-accent-dim: var(--green-dim);   }
+
+/* Top gradient line — color adapts to panel accent */
 .panel::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--cyan-mid), transparent);
+  background: linear-gradient(90deg, transparent, var(--panel-accent-mid), transparent);
 }
 
 .panel__header {
@@ -1576,6 +1652,114 @@ code {
   color: var(--border-accent);
   font-size: 0.8rem;
   line-height: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE-LEVEL WOW LAYER
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Flowing page-top border ─────────────────────────────────────────────── */
+@keyframes border-flow {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 300% 0; }
+}
+
+.page-border-top {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  /* Wide gradient so the flow motion is smooth and continuous */
+  background: linear-gradient(
+    90deg,
+    var(--cyan)    0%,
+    var(--magenta) 25%,
+    var(--green)   50%,
+    var(--cyan)    75%,
+    var(--magenta) 100%
+  );
+  background-size: 300% 100%;
+  animation: border-flow 6s linear infinite;
+  z-index: 9999;
+  pointer-events: none;
+  /* Faint bloom beneath the line */
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.35), 0 0 30px rgba(240, 77, 255, 0.15);
+}
+
+/* ── Scan line — sweeps viewport every ~14s ──────────────────────────────── */
+@keyframes scan-line {
+  0%   { top: -4px;         opacity: 0; }
+  3%   { opacity: 1; }
+  97%  { opacity: 1; }
+  100% { top: 100vh;        opacity: 0; }
+}
+
+.scan-line {
+  position: fixed;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 234, 255, 0.12) 25%,
+    rgba(0, 234, 255, 0.22) 50%,
+    rgba(0, 234, 255, 0.12) 75%,
+    transparent 100%
+  );
+  animation: scan-line 14s cubic-bezier(0.25, 0, 0.75, 1) infinite 4s;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ── Panel entrance animation ────────────────────────────────────────────── */
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Row stagger — each row's panels enter 85ms later than the previous.
+   Split-row second panel gets an extra 65ms within its row.
+   nth-child counts .dashboard__row divs inside .dashboard. */
+.dashboard__row:nth-child(1) > .panel  { --row-delay:   0ms; }
+.dashboard__row:nth-child(2) > .panel  { --row-delay:  85ms; }
+.dashboard__row:nth-child(3) > .panel  { --row-delay: 170ms; }
+.dashboard__row:nth-child(4) > .panel  { --row-delay: 255ms; }
+.dashboard__row:nth-child(5) > .panel  { --row-delay: 340ms; }
+.dashboard__row:nth-child(6) > .panel  { --row-delay: 425ms; }
+.dashboard__row:nth-child(7) > .panel  { --row-delay: 510ms; }
+
+/* Within split rows, stagger 2nd panel */
+.dashboard__row--split > .panel:nth-child(2) { --col-offset: 65ms; }
+
+/* ── Live clock ──────────────────────────────────────────────────────────── */
+.app-header__clock {
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums; /* prevents width jitter as digits change */
+  letter-spacing: 0.06em;
+  color: var(--cyan);
+  text-shadow: var(--cyan-glow);
+  font-weight: 600;
+  padding-left: 8px;
+  border-left: 1px solid var(--border-accent);
+}
+
+/* ── prefers-reduced-motion — kill all non-essential animations ──────────── */
+@media (prefers-reduced-motion: reduce) {
+  .page-border-top { animation: none; }
+  .scan-line        { display: none; }
+  .panel            { animation: none; opacity: 1; transform: none; filter: none; }
+  .panel:hover      { transform: none; }
+  .cmp-dot--on      { animation: none; opacity: 1; }
+  .cmp-final-node--on { animation: none; opacity: 1; }
+  .cmp-connector__particle { animation: none; }
+  .ai-panel__accent { animation: none; }
 }
 
 /* ── Footer ─────────────────────────────────────────────────────────────────── */

@@ -2,25 +2,30 @@
  * App.jsx — Houston AI Authority Engine Pipeline Dashboard
  *
  * Layout:
- *   Header
+ *   Page border top (fixed, always visible)
+ *   Scan line (fixed, periodic sweep)
+ *   Header (sticky, with live clock)
  *   Row 1: Pipeline Funnel           (full width)
- *   Row 2: Score Distribution        (full width)
- *   Row 3: Source Intelligence | Pillar Coverage   (50/50)
- *   Row 4: Run Metrics | Throughput Snapshot       (50/50)
- *   Row 5: Active Review Queue       (full width)
+ *   Row 2: Signal Compression Engine (full width)
+ *   Row 3: Score Distribution        (full width)
+ *   Row 4: Source Intelligence | Pillar Coverage   (50/50)
+ *   Row 5: Run Metrics | Throughput Snapshot       (50/50)
+ *   Row 6: Active Review Queue       (full width)
+ *   Row 7: Authority Impact          (full width)
  */
 
-import { useSnapshot }              from './data/useSnapshot.js'
-import { PipelineFunnel }           from './components/PipelineFunnel.jsx'
-import { SignalCompressionEngine }  from './components/SignalCompressionEngine.jsx'
-import { ScoreDistribution }        from './components/ScoreDistribution.jsx'
-import { SourceIntelligence }  from './components/SourceIntelligence.jsx'
-import { PillarCoverage }      from './components/PillarCoverage.jsx'
-import { RunMetrics }          from './components/RunMetrics.jsx'
-import { ThroughputSnapshot }  from './components/ThroughputSnapshot.jsx'
-import { ReviewQueue }         from './components/ReviewQueue.jsx'
-import { AuthorityImpact }     from './components/AuthorityImpact.jsx'
-import { StatusBadge }         from './components/ui/StatusBadge.jsx'
+import { useState, useEffect }        from 'react'
+import { useSnapshot }                from './data/useSnapshot.js'
+import { PipelineFunnel }             from './components/PipelineFunnel.jsx'
+import { SignalCompressionEngine }    from './components/SignalCompressionEngine.jsx'
+import { ScoreDistribution }          from './components/ScoreDistribution.jsx'
+import { SourceIntelligence }         from './components/SourceIntelligence.jsx'
+import { PillarCoverage }             from './components/PillarCoverage.jsx'
+import { RunMetrics }                 from './components/RunMetrics.jsx'
+import { ThroughputSnapshot }         from './components/ThroughputSnapshot.jsx'
+import { ReviewQueue }                from './components/ReviewQueue.jsx'
+import { AuthorityImpact }            from './components/AuthorityImpact.jsx'
+import { StatusBadge }                from './components/ui/StatusBadge.jsx'
 
 function formatTimestamp(iso) {
   if (!iso) return ''
@@ -33,15 +38,29 @@ function formatTimestamp(iso) {
   } catch { return iso }
 }
 
+function useClock() {
+  const fmt = () => new Date().toLocaleTimeString('en-US', { hour12: false })
+  const [time, setTime] = useState(fmt)
+  useEffect(() => {
+    const id = setInterval(() => setTime(fmt()), 1000)
+    return () => clearInterval(id)
+  }, [])
+  return time
+}
+
 export default function App() {
   const { snapshot, loading, error } = useSnapshot()
+  const clock = useClock()
 
   if (loading) {
     return (
-      <div className="loading-screen">
-        <div className="loading-screen__spinner">◈</div>
-        <div>Loading pipeline data…</div>
-      </div>
+      <>
+        <div className="page-border-top" aria-hidden="true" />
+        <div className="loading-screen">
+          <div className="loading-screen__spinner">◈</div>
+          <div>Loading pipeline data…</div>
+        </div>
+      </>
     )
   }
 
@@ -56,6 +75,10 @@ export default function App() {
 
   return (
     <div className="app">
+
+      {/* ── Fixed page decorations ──────────────────────────────────── */}
+      <div className="page-border-top" aria-hidden="true" />
+      <div className="scan-line"       aria-hidden="true" />
 
       {/* ── Header ─────────────────────────────────────────────────── */}
       <header className="app-header">
@@ -78,6 +101,7 @@ export default function App() {
               Snapshot: {formatTimestamp(generated_at)}
             </span>
           )}
+          <span className="app-header__clock">{clock}</span>
         </div>
       </header>
 
@@ -97,34 +121,34 @@ export default function App() {
           <PipelineFunnel funnel={funnel} runSummary={run_summary} />
         </div>
 
-        {/* Row 1b: Signal Compression Engine */}
+        {/* Row 2: Signal Compression Engine */}
         <div className="dashboard__row dashboard__row--full">
           <SignalCompressionEngine funnel={funnel} runSummary={run_summary} />
         </div>
 
-        {/* Row 2: Score Distribution */}
+        {/* Row 3: Score Distribution */}
         <div className="dashboard__row dashboard__row--full">
           <ScoreDistribution scoredSignals={scored_signals} thresholds={thresholds} />
         </div>
 
-        {/* Row 3: Source Intelligence + Pillar Coverage */}
+        {/* Row 4: Source Intelligence + Pillar Coverage */}
         <div className="dashboard__row dashboard__row--split">
           <SourceIntelligence sourceIntelligence={source_intelligence} />
           <PillarCoverage pillarCoverage={pillar_coverage} />
         </div>
 
-        {/* Row 4: Run Metrics + Throughput */}
+        {/* Row 5: Run Metrics + Throughput */}
         <div className="dashboard__row dashboard__row--split">
           <RunMetrics runSummary={run_summary} />
           <ThroughputSnapshot funnel={funnel} runSummary={run_summary} />
         </div>
 
-        {/* Row 5: Review Queue */}
+        {/* Row 6: Review Queue */}
         <div className="dashboard__row dashboard__row--full">
           <ReviewQueue finalContent={final_content} />
         </div>
 
-        {/* Row 6: Authority Impact */}
+        {/* Row 7: Authority Impact */}
         <div className="dashboard__row dashboard__row--full">
           <AuthorityImpact finalContent={final_content} />
         </div>
