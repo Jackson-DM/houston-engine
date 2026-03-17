@@ -1,10 +1,10 @@
 {
-  "run_started_at": "2026-03-17T03:14:26.754782Z",
+  "run_started_at": "2026-03-17T07:31:19.654136Z",
   "run_completed_at": null,
   "ingestion": {
     "raw_signals_found": 27,
     "new_signals_written": 5,
-    "duplicates_skipped": 7
+    "duplicates_skipped": 12
   },
   "scoring": {
     "signals_processed": 5,
