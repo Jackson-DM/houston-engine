@@ -43,14 +43,14 @@ jobs:
       - name: Run Insight Extraction
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          SIGNAL_INSIGHT_MODEL: "google/gemini-2.0-flash-001"
+          SIGNAL_INSIGHT_MODEL: "google/gemini-3.1-flash-lite-preview"
           MIN_CANDIDATE_SCORE_FOR_INSIGHTS: 60
         run: python automation/scripts/extract_signal_insights.py
 
       - name: Run Content Generation
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          CONTENT_GEN_MODEL: "google/gemini-2.0-flash-001"
+          CONTENT_GEN_MODEL: "google/gemini-3.1-flash-lite-preview"
           MAX_DRAFTS_PER_RUN: 1
           MIN_INSIGHT_CONFIDENCE_FOR_DRAFTS: 0.70
         run: python automation/scripts/generate_authority_drafts.py
@@ -58,7 +58,7 @@ jobs:
       - name: Run Content Humanization
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          HUMANIZER_MODEL: "google/gemini-2.0-flash-001"
+          HUMANIZER_MODEL: "google/gemini-3.1-flash-lite-preview"
           MAX_HUMANIZATION_PER_RUN: 2
         run: python automation/scripts/humanize_authority_drafts.py
 

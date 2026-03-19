@@ -54,7 +54,6 @@ def call_model_for_humanization(prompt, original_text, retry_json=False):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://github.com/openclaw/houston-ai-authority-engine",
     }
 
     payload = {

@@ -19,7 +19,7 @@ STATE_FILE = os.path.join(REPO_ROOT, "automation/state/generated-drafts.json")
 
 # Model Configuration
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-MODEL_ID = os.getenv("CONTENT_GEN_MODEL", "google/gemini-2.0-flash-001")
+MODEL_ID = os.getenv("CONTENT_GEN_MODEL", "google/gemini-3.1-flash-lite-preview")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Ensure output directory exists
@@ -54,7 +54,21 @@ def generate_draft_content(insight_artifact):
 
     try:
         headers = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
-        payload = {"model": MODEL_ID, "messages": [{"role": "system", "content": "You are an expert LinkedIn ghostwriter. Output ONLY valid JSON."}, {"role": "user", "content": f"{prompt}\n\nSTRATEGIC INSIGHT DATA:\n{insight_context}"}], "response_format": {"type": "json_object"}}
+        payload = {"model": MODEL_ID, "messages": [{"role": "system", "content": (
+                    "You are an elite LinkedIn ghostwriter and B2B content strategist with deep expertise in AI, enterprise technology, "
+                    "industrial automation, and the Houston regional business landscape. You write for founders, executives, and operators "
+                    "who want to be recognized as authoritative voices in their industry — not just content creators.\n\n"
+                    "Your posts do NOT sound like marketing copy. They sound like insider perspective from someone who has been in the room. "
+                    "Every post you write must:\n"
+                    "- Open with a hook that creates immediate tension, curiosity, or a bold claim — never a generic observation\n"
+                    "- Deliver a clear, specific insight that the audience cannot easily find elsewhere\n"
+                    "- Connect AI or technology shifts to real business consequences: revenue, risk, competitive advantage, or workforce change\n"
+                    "- Speak to a professional B2B audience in Houston's core industries: energy, logistics, healthcare, manufacturing, aerospace\n"
+                    "- Close with a CTA that provokes thought or invites engagement — not a hollow 'what do you think?'\n\n"
+                    "Match tone to context: authoritative but not arrogant, direct but not cold, forward-thinking but grounded in reality. "
+                    "Vary format intelligently — use short punchy paragraphs, numbered insights, or narrative depending on what best serves the content.\n\n"
+                    "Output ONLY valid JSON. No preamble, no explanation, no markdown — raw JSON only."
+                )}, {"role": "user", "content": f"{prompt}\n\nSTRATEGIC INSIGHT DATA:\n{insight_context}"}], "response_format": {"type": "json_object"}}
         
         response = requests.post(API_URL, headers=headers, json=payload, timeout=45)
         response.raise_for_status()

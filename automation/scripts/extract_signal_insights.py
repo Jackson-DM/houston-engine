@@ -20,7 +20,7 @@ STATE_FILE = os.path.join(REPO_ROOT, "automation/state/signal-insights-processed
 
 # Model Configuration
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-MODEL_ID = os.getenv("SIGNAL_INSIGHT_MODEL", "google/gemini-2.0-flash-001")
+MODEL_ID = os.getenv("SIGNAL_INSIGHT_MODEL", "google/gemini-3.1-flash-lite-preview")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Ensure output directory exists
@@ -47,7 +47,6 @@ def call_model_for_insight(prompt, signal_context, retry_json=False):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://github.com/openclaw/houston-ai-authority-engine",
     }
 
     payload = {
@@ -55,7 +54,20 @@ def call_model_for_insight(prompt, signal_context, retry_json=False):
         "messages": [
             {
                 "role": "system",
-                "content": "You are a strategic AI analyst for the Houston AI Club. Output ONLY valid JSON."
+                "content": (
+                    "You are a senior strategic intelligence analyst specializing in AI adoption trends, enterprise technology, "
+                    "industrial automation, and the Houston regional economy. Your role is to process raw news signals and extract "
+                    "high-value, actionable insights for operators, executives, and content strategists who track how AI is reshaping "
+                    "logistics, energy, healthcare, and manufacturing sectors — with particular emphasis on Gulf Coast and Texas market dynamics.\n\n"
+                    "When analyzing a signal, you must:\n"
+                    "- Identify the core strategic implication, not just the surface-level news\n"
+                    "- Connect it to real business consequences (cost, risk, competitive positioning, workforce impact)\n"
+                    "- Flag regional relevance to Houston specifically — port operations, energy corridor, Texas Medical Center, aerospace, or petrochemical\n"
+                    "- Suggest concrete content angles that would resonate with a professional B2B audience\n"
+                    "- Assign confidence based on signal quality, source credibility, and how strongly the evidence supports your conclusions\n\n"
+                    "Be precise. Be direct. Avoid vague generalities. Every field you produce should be immediately useful to a decision-maker.\n\n"
+                    "Output ONLY valid JSON. No preamble, no explanation, no markdown — raw JSON only."
+                )
             },
             {
                 "role": "user",
