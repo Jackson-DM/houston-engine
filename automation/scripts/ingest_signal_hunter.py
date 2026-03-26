@@ -110,7 +110,13 @@ def run_ingestion():
                 if created_count >= MAX_PER_RUN:
                     break
                     
-                entry_id = getattr(entry, 'id', entry.link)
+                def normalize_id(raw_id):
+                    """Normalize RSS entry IDs to prevent http/https duplicates."""
+                    if raw_id and raw_id.startswith("http://"):
+                        return "https://" + raw_id[7:]
+                    return raw_id
+
+                entry_id = normalize_id(getattr(entry, 'id', entry.link))
                 if entry_id in seen_signals:
                     duplicate_count += 1
                     continue
