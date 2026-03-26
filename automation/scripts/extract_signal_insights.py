@@ -151,6 +151,7 @@ def extract_insight_data(frontmatter, body):
 def process_signals():
     print("--- [Inference Running] Extraction Layer ---")
     if not OPENROUTER_API_KEY:
+        run_logger.add_error("OPENROUTER_API_KEY not set — insight extraction skipped.")
         print("ERROR: OPENROUTER_API_KEY not set.")
         return 0
 
