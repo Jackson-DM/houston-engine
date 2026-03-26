@@ -81,6 +81,8 @@ def generate_draft_content(insight_artifact):
 def process_insights():
     print("--- [Inference Running] Content Generation Layer ---")
     if not OPENROUTER_API_KEY:
+        run_logger.add_error("OPENROUTER_API_KEY not set — draft generation skipped.")
+        run_logger.complete_run()
         print("ERROR: OPENROUTER_API_KEY not set.")
         return 0
 
