@@ -98,7 +98,7 @@ def process_insights():
     skipped_count = 0
     
     # Configurable limits
-    MAX_PER_RUN = int(os.getenv("MAX_DRAFTS_PER_RUN", 1))
+    MAX_PER_RUN = int(os.getenv("MAX_DRAFTS_PER_RUN", 3))
     MIN_CONFIDENCE = float(os.getenv("MIN_INSIGHT_CONFIDENCE_FOR_DRAFTS", 0.70))
 
     for filename in insight_files:
