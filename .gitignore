@@ -4,6 +4,7 @@ dashboard/node_modules/
 
 # Vite build output
 dashboard/dist/
+dashboard/*.log
 
 # OS
 .DS_Store
