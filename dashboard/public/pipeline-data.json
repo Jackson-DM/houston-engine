@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-13T08:01:25.843Z",
+  "generated_at": "2026-03-25T08:13:06.443Z",
   "is_live": true,
   "thresholds": {
     "publish": 60,
@@ -8,7 +8,7 @@
   },
   "funnel": {
     "raw": 2,
-    "scored": 25,
+    "scored": 66,
     "insights": 7,
     "drafts": 1,
     "final": 1
@@ -20,18 +20,18 @@
     "errors": 0
   },
   "run_summary": {
-    "run_started_at": "2026-03-13T03:10:11.966183Z",
+    "run_started_at": "2026-03-19T03:22:38.342221Z",
     "run_completed_at": null,
     "ingestion": {
-      "raw_signals_found": 912,
+      "raw_signals_found": 916,
       "new_signals_written": 5,
-      "duplicates_skipped": 37
+      "duplicates_skipped": 121
     },
     "scoring": {
       "signals_processed": 5,
       "publish_count": 0,
-      "candidate_count": 1,
-      "archive_count": 4,
+      "candidate_count": 3,
+      "archive_count": 2,
       "ignore_count": 0
     },
     "insights": {
@@ -424,18 +424,633 @@
       "geo_relevance": "Global",
       "confidence": 0.85,
       "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-13-openai-blog-how-axios-uses-ai-to-help-deliver-high-i.md",
+      "signal_id": "sig-2026-03-13-a32c42",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-13-openai-blog-openai-and-amazon-announce-strategic-par.md",
+      "signal_id": "sig-2026-03-13-4d69c2",
+      "final_score": 55,
+      "base_score": 55,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-13-openai-blog-pacific-northwest-national-laboratory-an.md",
+      "signal_id": "sig-2026-03-13-75f7b3",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-14-openai-blog-disrupting-malicious-uses-of-ai-february.md",
+      "signal_id": "sig-2026-03-14-87d1b5",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-14-openai-blog-introducing-openai-for-india.md",
+      "signal_id": "sig-2026-03-14-46e266",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-14-openai-blog-introducing-openai-frontier.md",
+      "signal_id": "sig-2026-03-14-f85b40",
+      "final_score": 55,
+      "base_score": 55,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-14-openai-blog-openai-announces-frontier-alliance-partn.md",
+      "signal_id": "sig-2026-03-14-bd8511",
+      "final_score": 55,
+      "base_score": 55,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-14-openai-blog-testing-ads-in-chatgpt.md",
+      "signal_id": "sig-2026-03-14-3403ce",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-15-openai-blog-introducing-gpt-5-3-codex.md",
+      "signal_id": "sig-2026-03-15-7ce601",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-15-openai-blog-snowflake-and-openai-partner-to-bring-fr.md",
+      "signal_id": "sig-2026-03-15-fb5a88",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-15-openai-blog-taisei-corporation-shapes-the-next-gener.md",
+      "signal_id": "sig-2026-03-15-fb1334",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-ai-for-self-empowerment.md",
+      "signal_id": "sig-2026-03-16-68f94a",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-cisco-and-openai-redefine-enterprise-eng.md",
+      "signal_id": "sig-2026-03-16-67215f",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-how-countries-can-end-the-capability-ove.md",
+      "signal_id": "sig-2026-03-16-98f27c",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-inside-gpt-5-for-work-how-businesses-use.md",
+      "signal_id": "sig-2026-03-16-6e75f3",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-investing-in-merge-labs.md",
+      "signal_id": "sig-2026-03-16-65abe1",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-stargate-community.md",
+      "signal_id": "sig-2026-03-16-50c4fb",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-strengthening-the-u-s-ai-supply-chain-th.md",
+      "signal_id": "sig-2026-03-16-280cc5",
+      "final_score": 60,
+      "base_score": 60,
+      "ai_adjustment": 0,
+      "tier": "publish",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-16-openai-blog-why-codex-security-doesn-t-include-a-sas.md",
+      "signal_id": "sig-2026-03-16-46f18d",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-and-global-industrial-software-gi.md",
+      "signal_id": "sig-2026-03-17-a9efdb",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-and-global-robotics-leaders-take-.md",
+      "signal_id": "sig-2026-03-17-205389",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-announces-nemoclaw-for-the-opencl.md",
+      "signal_id": "sig-2026-03-17-19a3ab",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-announces-open-physical-ai-data-f.md",
+      "signal_id": "sig-2026-03-17-ccc229",
+      "final_score": 80,
+      "base_score": 80,
+      "ai_adjustment": 0,
+      "tier": "publish",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-ignites-the-next-industrial-revol.md",
+      "signal_id": "sig-2026-03-17-19c7d7",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-launches-space-computing-rocketin.md",
+      "signal_id": "sig-2026-03-17-c1aae6",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-releases-vera-rubin-dsx-ai-factor.md",
+      "signal_id": "sig-2026-03-17-485945",
+      "final_score": 60,
+      "base_score": 60,
+      "ai_adjustment": 0,
+      "tier": "publish",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-t-mobile-and-partners-integrate-p.md",
+      "signal_id": "sig-2026-03-17-e12830",
+      "final_score": 55,
+      "base_score": 55,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-nvidia-telecom-leaders-build-ai-grids-to.md",
+      "signal_id": "sig-2026-03-17-9c864f",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-17-nvidia-newsroom-roche-scales-nvidia-ai-factories-globall.md",
+      "signal_id": "sig-2026-03-17-81f9bb",
+      "final_score": 65,
+      "base_score": 65,
+      "ai_adjustment": 0,
+      "tier": "publish",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-and-global-industrial-software-gi.md",
+      "signal_id": "sig-2026-03-18-ecc430",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-and-global-robotics-leaders-take-.md",
+      "signal_id": "sig-2026-03-18-87f69c",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-announces-nemoclaw-for-the-opencl.md",
+      "signal_id": "sig-2026-03-18-51f7e8",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-announces-open-physical-ai-data-f.md",
+      "signal_id": "sig-2026-03-18-b7859f",
+      "final_score": 80,
+      "base_score": 80,
+      "ai_adjustment": 0,
+      "tier": "publish",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-ignites-the-next-industrial-revol.md",
+      "signal_id": "sig-2026-03-18-803004",
+      "final_score": 45,
+      "base_score": 45,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-launches-space-computing-rocketin.md",
+      "signal_id": "sig-2026-03-18-6c9962",
+      "final_score": 40,
+      "base_score": 40,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-releases-vera-rubin-dsx-ai-factor.md",
+      "signal_id": "sig-2026-03-18-66a783",
+      "final_score": 60,
+      "base_score": 60,
+      "ai_adjustment": 0,
+      "tier": "publish",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-nvidia-newsroom-nvidia-t-mobile-and-partners-integrate-p.md",
+      "signal_id": "sig-2026-03-18-35896e",
+      "final_score": 55,
+      "base_score": 55,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "NVIDIA Newsroom",
+      "source_type": "Company Blog",
+      "signal_category": "Industrial AI",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-18-openai-blog-zenken-boosts-a-lean-sales-team-with-cha.md",
+      "signal_id": "sig-2026-03-18-38619e",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-19-openai-blog-netomi-s-lessons-for-scaling-agentic-sys.md",
+      "signal_id": "sig-2026-03-19-017ded",
+      "final_score": 55,
+      "base_score": 55,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-19-openai-blog-openai-and-softbank-group-partner-with-s.md",
+      "signal_id": "sig-2026-03-19-1db8ad",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
+    },
+    {
+      "filename": "2026-03-19-openai-blog-openai-for-healthcare.md",
+      "signal_id": "sig-2026-03-19-782e24",
+      "final_score": 50,
+      "base_score": 50,
+      "ai_adjustment": 0,
+      "tier": "candidate",
+      "source_name": "OpenAI Blog",
+      "source_type": "Company Blog",
+      "signal_category": "AI Research",
+      "industry": "Cross-Industry",
+      "geo_relevance": "Global",
+      "confidence": 0.85,
+      "priority_hint": "medium"
     }
   ],
   "source_intelligence": [
     {
       "source_name": "NVIDIA Newsroom",
       "source_type": "Company Blog",
-      "signal_count": 13,
-      "avg_score": 59,
+      "signal_count": 31,
+      "avg_score": 55,
       "max_score": 80,
       "min_score": 40,
-      "publish_count": 8,
-      "candidate_count": 5
+      "publish_count": 13,
+      "candidate_count": 18
     },
     {
       "source_name": "VentureBeat AI",
@@ -450,21 +1065,28 @@
     {
       "source_name": "OpenAI Blog",
       "source_type": "Company Blog",
-      "signal_count": 4,
-      "avg_score": 41,
-      "max_score": 45,
+      "signal_count": 27,
+      "avg_score": 46,
+      "max_score": 60,
       "min_score": 40,
-      "publish_count": 0,
-      "candidate_count": 4
+      "publish_count": 1,
+      "candidate_count": 26
     }
   ],
   "pillar_coverage": [
     {
       "pillar": "Industrial AI",
-      "count": 11,
-      "avg_score": 58,
+      "count": 29,
+      "avg_score": 54,
       "max_score": 80,
       "top_signal_id": "sig-2026-03-02-nv-03"
+    },
+    {
+      "pillar": "AI Research & Tools",
+      "count": 26,
+      "avg_score": 46,
+      "max_score": 60,
+      "top_signal_id": "sig-2026-03-16-280cc5"
     },
     {
       "pillar": "Enterprise AI",
@@ -472,13 +1094,6 @@
       "avg_score": 55,
       "max_score": 73,
       "top_signal_id": "sig-2026-03-05-nv-01"
-    },
-    {
-      "pillar": "AI Research & Tools",
-      "count": 3,
-      "avg_score": 40,
-      "max_score": 40,
-      "top_signal_id": "sig-2026-03-12-26beaf"
     }
   ],
   "final_content": [
@@ -647,7 +1262,7 @@
     }
   ],
   "archive_digest": {
-    "count": 42,
+    "count": 121,
     "samples": [
       {
         "filename": "2026-03-02-nvidia-physical-ai-models.md",
@@ -704,9 +1319,9 @@
   "industry_breakdown": [
     {
       "industry": "Cross-Industry",
-      "total": 18,
-      "publish_count": 5,
-      "candidate_count": 13,
+      "total": 59,
+      "publish_count": 11,
+      "candidate_count": 48,
       "archive_count": 0,
       "top_geo": "Global"
     },
@@ -745,79 +1360,79 @@
   ],
   "run_history": [
     {
-      "sha": "63321d7",
-      "message": "feat(dashboard): add WOW layer — borders, hover, count-up, entrance, clock",
-      "date": "2026-03-12 22:29:58 -0700"
+      "sha": "a9a003e",
+      "message": "feat(pipeline): upgrade models, prompts, and add scoring docs",
+      "date": "2026-03-18 21:37:46 -0700"
     },
     {
-      "sha": "53b36d6",
-      "message": "feat(dashboard): add Authority Impact panel — final lifecycle stage",
-      "date": "2026-03-12 20:05:33 -0700"
+      "sha": "ecda8fb",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-19 03:22",
+      "date": "2026-03-19 03:22:40 +0000"
     },
     {
-      "sha": "535dc23",
-      "message": "chore(signal-hunter): automated signal run summary 2026-03-13 03:10",
-      "date": "2026-03-13 03:10:14 +0000"
+      "sha": "63fee6e",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-18 19:18",
+      "date": "2026-03-18 19:18:55 +0000"
     },
     {
-      "sha": "677a4e0",
-      "message": "feat(dashboard): add subtle motion to compression engine particle clusters",
-      "date": "2026-03-12 19:56:15 -0700"
+      "sha": "80e7974",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-18 13:55",
+      "date": "2026-03-18 13:55:39 +0000"
     },
     {
-      "sha": "a0b7dda",
-      "message": "feat(dashboard): add Signal Compression Engine panel",
-      "date": "2026-03-12 19:45:34 -0700"
+      "sha": "5ac2f65",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-18 07:19",
+      "date": "2026-03-18 07:19:27 +0000"
     },
     {
-      "sha": "d5db05c",
-      "message": "feat(dashboard): second-pass intelligence upgrade",
-      "date": "2026-03-12 19:04:04 -0700"
+      "sha": "4c8b0be",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-18 03:21",
+      "date": "2026-03-18 03:21:59 +0000"
     },
     {
-      "sha": "33c4453",
-      "message": "feat(dashboard): add React pipeline operator dashboard",
-      "date": "2026-03-12 18:07:46 -0700"
+      "sha": "2448778",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-17 19:30",
+      "date": "2026-03-17 19:30:33 +0000"
     },
     {
-      "sha": "5171787",
-      "message": "chore(signal-hunter): automated signal run summary 2026-03-12 19:13",
-      "date": "2026-03-12 19:13:01 +0000"
+      "sha": "ba321d3",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-17 13:53",
+      "date": "2026-03-17 13:53:23 +0000"
     },
     {
-      "sha": "f29f80f",
-      "message": "chore(signal-hunter): automated signal run summary 2026-03-12 13:38",
-      "date": "2026-03-12 13:38:18 +0000"
+      "sha": "44e40cb",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-17 07:31",
+      "date": "2026-03-17 07:31:20 +0000"
     },
     {
-      "sha": "58534b4",
-      "message": "chore(signal-hunter): automated signal run summary 2026-03-12 07:14",
-      "date": "2026-03-12 07:14:38 +0000"
+      "sha": "2cb4fca",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-17 03:14",
+      "date": "2026-03-17 03:14:28 +0000"
     },
     {
-      "sha": "6511c22",
-      "message": "chore(signal-hunter): automated signal run summary 2026-03-12 03:13",
-      "date": "2026-03-12 03:13:15 +0000"
+      "sha": "ef5e3d7",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-16 19:30",
+      "date": "2026-03-16 19:30:24 +0000"
     },
     {
-      "sha": "2c56533",
-      "message": "chore(signal-hunter): automated signal run summary 2026-03-12 02:13",
-      "date": "2026-03-12 02:13:51 +0000"
+      "sha": "af5b246",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-16 13:56",
+      "date": "2026-03-16 13:56:17 +0000"
     },
     {
-      "sha": "6f90ec9",
-      "message": "fix(workflow): correct typo in checkout action name",
-      "date": "2026-03-11 19:12:47 -0700"
+      "sha": "114bb9b",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-16 07:49",
+      "date": "2026-03-16 07:49:45 +0000"
     },
     {
-      "sha": "8f5d89a",
-      "message": "Calibrate scoring engine for strategic AI signals Improved signal scoring to better capture high-impact AI developments. Changes: - Added provider authority weights for major AI labs - Added strategic pillar scoring (agentic systems, enterprise AI, infrastructure) - Added Houston vertical relevance weights (energy, manufacturing, logistics, healthcare) - Added negative guardrails for consumer/gaming fluff - Adjusted thresholds: - Publish: 60 - Candidate: 40 Backtested against archived signals to verify improved signal routing. This update significantly improves throughput of high-value signals into the insight pipeline.",
-      "date": "2026-03-11 19:00:51 -0700"
+      "sha": "5807416",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-16 03:36",
+      "date": "2026-03-16 03:36:29 +0000"
     },
     {
-      "sha": "51d44d2",
-      "message": "Phase 6: Harden unattended signal pipeline Improve reliability for scheduled GitHub Actions runs with: - centralized run logging - no-op-safe stage behavior - configurable runtime thresholds - hardened commit/push workflow logic - run summary artifact generation - unattended operations documentation Pipeline is now production-stable for recurring execution.",
-      "date": "2026-03-11 18:31:52 -0700"
+      "sha": "b09c057",
+      "message": "chore(signal-hunter): automated signal run summary 2026-03-15 19:00",
+      "date": "2026-03-15 19:00:06 +0000"
     }
   ]
 }

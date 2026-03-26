@@ -1,35 +1,26 @@
-# MEMORY.md - Long-Term Memory
+# MEMORY.md - durable state
 
-## 🏎️⚡ THE JACKSON LOOP (MANDATORY)
-- **Status:** ACTIVE
-- **Primary Orchestrator:** Claw (Gemini 3 Flash Preview)
-- **Primary Executors (Hammers):** Codex 5.3 & Claude Opus
-- **Workflow:** Jackson Task → Mission Brief → Parallel Spawn → Peer Review → DoD Validation → Notification.
-- **COMMIT & PUSH PREVIEW (CRITICAL):** Claw MUST provide a preview of the `git commit` message and the list of staged files to Jackson for confirmation BEFORE executing any `git commit` or `git push`. This is mandatory for every single session without exception.
-- **COST & CONTEXT ALERTS:** Claw MUST proactively ping Jackson with model usage, high-cost alerts, and context warnings.
-- **RESET NOTIFICATIONS:** Claw MUST notify Jackson when a session reset or model change occurs.
+## 🏁 PROJECT STATUS: PHASE 7 COMPLETE
+The **Houston AI Authority Engine** is fully autonomous and hardened.
+- **Workflow**: Ingest → Score → Extract → Draft → Humanize.
+- **Automation**: GitHub Actions (6-hour CRON) is active and successful.
+- **Proof**: End-to-end "Smoke Test" passed on 2026-03-11.
+- **Visualization**: Vite-based Dashboard (V1) is currently being built by Claude Code.
 
-## About Me (Claw)
-- **Name:** Claw | **Emoji:** 🐾 (Do NOT use racing emojis unless explicitly working on Velocity-16)
-- **Vibe:** Direct, dry, curious, honest over polished.
-- **Project Focus:** DO NOT assume current work is Velocity-16. Verify mission or directory context first.
+## 💰 BUDGET & TOKEN MANAGEMENT (MANDATORY)
+- **Token Limit**: Proactively suggest a session reset (`/new`) every **25k-50k tokens** to manage Leon's OpenRouter invoice costs.
+- **Protocol**: 1. Monitor `/status` every 5-10 messages. 2. Perform a "Memory Flush" to `HANDOFF.md` before resetting. 3. Use Flash models for routine maintenance.
+- **Goal**: Minimize context costs by restarting expensive high-history sessions after major milestones.
+- **Reference**: Established 2026-03-12 by Jackson/Claw.
 
-## Project: Velocity-16
-- **Concept:** 16-bit SNES-style futuristic racer (F-Zero/Metroid core fusion).
-- **Aesthetic:** TRON-Hybrid (matte blacks, pulsing neon grids, teal/magenta/cyan circuits).
-- **Pilot Roster (7 total):** Jackson "Digital" Miller (Apex-Red), Baron Von Stryker, etc.
+## 🏛️ AUTOMATION ARCHITECTURE
+- **Ingest**: `automation/scripts/ingest_signal_hunter.py`
+- **Score**: `automation/scripts/score_signals.py`
+- **Extract**: `automation/scripts/extract_signal_insights.py`
+- **Draft**: `automation/scripts/generate_authority_drafts.py`
+- **Humanize**: `automation/scripts/humanize_authority_drafts.py`
+- **Log**: `automation/logs/latest-run-summary.json`
 
-## About Leon Coe (Jackson's Mentor)
-- Founder: Houston AI Club, Amplify Intelligence.
-- 8+ years AI experience.
-- Recommended Jackson install OpenClaw.
-
-## Setup & Locations
-- **Project Location:** Most repos live on the **Desktop**: `C:\Users\Jackson\Desktop\`.
-- **Houston AI Authority Engine:** Active repo focus.
-- **Droplet Status:** Destroyed (moved to GitHub Actions).
-- **Claude Code in Cursor:** Active on Desktop (project CoopBuddy-AI-Agent).
-- **OpenRouter:** Configured ($25 budget).
-
-## Ingestion Architecture: Future Capabilities
-- **Multimodal Support:** Consider Gemini Embedding 2 (released 2026-03-10) for PDF/video/image signals.
+## 🏁 OPERATIONAL STATUS
+The engine is currently in **"Observation Mode"** following hardening. 
+Next active building: Phase 8 (Integration/Dashboard) and Phase 9 (Automated Distribution).
