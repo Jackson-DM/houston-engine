@@ -187,7 +187,7 @@ def process_signals():
             final_score = frontmatter.get("final_score", 0)
             
             # Use Configurable Min Score
-            MIN_SCORE = int(os.getenv("MIN_CANDIDATE_SCORE_FOR_INSIGHTS", 60))
+            MIN_SCORE = int(os.getenv("MIN_CANDIDATE_SCORE_FOR_INSIGHTS", 45))
             is_eligible = (tier == "publish") or (tier == "candidate" and final_score >= MIN_SCORE)
             
             if not is_eligible:
