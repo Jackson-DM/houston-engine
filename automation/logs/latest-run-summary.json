@@ -1,16 +1,16 @@
 {
-  "run_started_at": "2026-03-27T03:31:20.319334Z",
-  "run_completed_at": "2026-03-27T03:31:22.344091Z",
+  "run_started_at": "2026-03-27T07:36:20.507059Z",
+  "run_completed_at": "2026-03-27T07:36:21.885031Z",
   "ingestion": {
-    "raw_signals_found": 935,
+    "raw_signals_found": 926,
     "new_signals_written": 5,
-    "duplicates_skipped": 283
+    "duplicates_skipped": 279
   },
   "scoring": {
     "signals_processed": 5,
     "publish_count": 0,
-    "candidate_count": 0,
-    "archive_count": 5,
+    "candidate_count": 1,
+    "archive_count": 4,
     "ignore_count": 0
   },
   "insights": {
@@ -26,8 +26,8 @@
   "errors": {
     "count": 2,
     "items": [
-      "[2026-03-27T03:31:22.190859] OPENROUTER_API_KEY not set \u2014 insight extraction skipped.",
-      "[2026-03-27T03:31:22.343775] OPENROUTER_API_KEY not set \u2014 draft generation skipped."
+      "[2026-03-27T07:36:21.741253] OPENROUTER_API_KEY not set \u2014 insight extraction skipped.",
+      "[2026-03-27T07:36:21.884756] OPENROUTER_API_KEY not set \u2014 draft generation skipped."
     ]
   }
 }
