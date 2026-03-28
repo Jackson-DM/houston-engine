@@ -1,0 +1,21 @@
+--- 
+ai_adjustment: 0
+base_score: 35
+collected_at: 2026-03-28 13:27:54+00:00
+confidence: 0.85
+duplicate_of: null
+final_score: 35
+geo_relevance: Global
+industry: Cross-Industry
+priority_hint: medium
+signal_category: AI Research
+signal_id: sig-2026-03-28-3c9185
+source_name: OpenAI Blog
+source_type: Company Blog
+source_url: https://openai.com/index/mixi
+status: archived
+tier: archive
+---
+
+# Signal Summary
+Mixi reimagines communication with ChatGPT: Discover how MIXI, a leader in digital entertainment and lifestyle services in Japan, uses ChatGPT Enterprise to transform productivity, boost AI adoption across teams, and create a secure environment for innovation.
