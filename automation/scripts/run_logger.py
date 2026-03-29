@@ -9,11 +9,13 @@ from datetime import datetime
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 SUMMARY_FILE = os.path.join(REPO_ROOT, "automation/logs/latest-run-summary.json")
+ARCHIVE_DIR = os.path.join(REPO_ROOT, "automation/logs/archive")
 
 def init_summary():
     summary = {
         "run_started_at": datetime.utcnow().isoformat() + "Z",
         "run_completed_at": None,
+        "budget_warning": None,
         "ingestion": {"raw_signals_found": 0, "new_signals_written": 0, "duplicates_skipped": 0},
         "scoring": {"signals_processed": 0, "publish_count": 0, "candidate_count": 0, "archive_count": 0, "ignore_count": 0},
         "insights": {"eligible_signals": 0, "generated_count": 0, "skipped_count": 0},
@@ -50,3 +52,15 @@ def complete_run():
     summary = load_summary()
     summary["run_completed_at"] = datetime.utcnow().isoformat() + "Z"
     save_summary(summary)
+
+    # Archive a dated copy of this run summary
+    started_at = summary.get("run_started_at", datetime.utcnow().isoformat() + "Z")
+    try:
+        dt = datetime.fromisoformat(started_at.replace("Z", ""))
+        archive_filename = f"run-summary-{dt.strftime('%Y-%m-%dT%H%M')}Z.json"
+    except (ValueError, AttributeError):
+        archive_filename = f"run-summary-{datetime.utcnow().strftime('%Y-%m-%dT%H%M')}Z.json"
+    os.makedirs(ARCHIVE_DIR, exist_ok=True)
+    archive_path = os.path.join(ARCHIVE_DIR, archive_filename)
+    with open(archive_path, 'w', encoding='utf-8') as f:
+        json.dump(summary, f, indent=2)
