@@ -62,6 +62,13 @@ jobs:
           MAX_HUMANIZATION_PER_RUN: 2
         run: python automation/scripts/humanize_authority_drafts.py
 
+      - name: Run Keyword Watchlist Scanner
+        working-directory: automation/scripts
+        env:
+          PYTHONPATH: automation/scripts
+        run: python keyword_watchlist.py
+        continue-on-error: true
+
       - name: Check API Budget
         run: |
           python -c "
