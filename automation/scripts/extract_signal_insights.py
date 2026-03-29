@@ -7,6 +7,7 @@ import requests
 import time
 from datetime import datetime
 import run_logger
+import budget_tracker
 
 # ==============================================================================
 # Script: extract_signal_insights.py
@@ -84,7 +85,13 @@ def call_model_for_insight(prompt, signal_context, retry_json=False):
     response.raise_for_status()
     
     result = response.json()
-    
+    usage = result.get("usage", {})
+    budget_tracker.record_usage(
+        MODEL_ID,
+        usage.get("prompt_tokens", 0),
+        usage.get("completion_tokens", 0)
+    )
+
     # DEBUG LOG
     # print(f"DEBUG: result type: {type(result)}")
     # print(f"DEBUG: choices type: {type(result.get('choices'))}")

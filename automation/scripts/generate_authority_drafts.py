@@ -6,6 +6,7 @@ import requests
 import time
 from datetime import datetime
 import run_logger
+import budget_tracker
 
 # ==============================================================================
 # Script: generate_authority_drafts.py
@@ -72,7 +73,14 @@ def generate_draft_content(insight_artifact):
         
         response = requests.post(API_URL, headers=headers, json=payload, timeout=45)
         response.raise_for_status()
-        content = response.json()['choices'][0]['message']['content']
+        result = response.json()
+        usage = result.get("usage", {})
+        budget_tracker.record_usage(
+            MODEL_ID,
+            usage.get("prompt_tokens", 0),
+            usage.get("completion_tokens", 0)
+        )
+        content = result['choices'][0]['message']['content']
         return json.loads(content)
     except Exception as e:
         run_logger.add_error(f"Content generation failed: {str(e)}")

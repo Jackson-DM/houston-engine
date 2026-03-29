@@ -6,6 +6,7 @@ import requests
 import time
 from datetime import datetime
 import run_logger
+import budget_tracker
 
 # ==============================================================================
 # Script: humanize_authority_drafts.py
@@ -78,6 +79,12 @@ def call_model_for_humanization(prompt, original_text, retry_json=False):
     response.raise_for_status()
     
     result = response.json()
+    usage = result.get("usage", {})
+    budget_tracker.record_usage(
+        MODEL_ID,
+        usage.get("prompt_tokens", 0),
+        usage.get("completion_tokens", 0)
+    )
     content = result['choices'][0]['message']['content']
     
     if "```json" in content:
