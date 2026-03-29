@@ -1,0 +1,32 @@
+{
+  "id": "2026-03-16-openai-blog-strengthening-the-u-s-ai-supply-chain-th",
+  "created_at": "2026-03-29T06:52:29.113208Z",
+  "source_signal_path": "signals/scored/2026-03-16-openai-blog-strengthening-the-u-s-ai-supply-chain-th.md",
+  "source": {
+    "publisher": "OpenAI Blog",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Policy & Infrastructure Investment",
+    "summary": "OpenAI has initiated an RFP process to catalyze domestic manufacturing of AI infrastructure components within the United States.",
+    "why_it_matters": "It marks a shift from pure software development to physical, asset-heavy industrial policy, signaling that AI scaling is currently constrained by hardware supply chain bottlenecks rather than algorithmic capabilities.",
+    "business_implication": "Enterprises should expect a transition toward 'onshoring' AI server components. This creates opportunities for firms in power management, cooling systems, and specialized manufacturing, but increases procurement volatility for companies currently reliant on foreign-sourced hardware.",
+    "regional_angle": "Houston is uniquely positioned as a beneficiary given its existing concentration of heavy industrial infrastructure, energy surplus capacity, and the Texas Medical Center\u2019s growing demand for high-compute local data centers. The city serves as a critical candidate site for the power and infrastructure requirements of this renewed domestic supply chain.",
+    "content_angles": [
+      "The energy-AI nexus: How Houston\u2019s power grid enables domestic AI hardware scaling.",
+      "Supply chain resilience: What OpenAI's RFP means for Texas-based industrial manufacturers.",
+      "Repurposing legacy infrastructure: Can the Bayou City lead the data center build-out?",
+      "Workforce evolution: Transitioning energy sector roles to AI infrastructure construction."
+    ],
+    "recommended_angle": "The energy-AI nexus: Why Gulf Coast power infrastructure is the silent partner to OpenAI's domestic manufacturing surge.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

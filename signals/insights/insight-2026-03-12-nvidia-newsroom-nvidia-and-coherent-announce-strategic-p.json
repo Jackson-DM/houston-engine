@@ -1,0 +1,32 @@
+{
+  "id": "2026-03-12-nvidia-newsroom-nvidia-and-coherent-announce-strategic-p",
+  "created_at": "2026-03-29T06:52:58.633636Z",
+  "source_signal_path": "signals/scored/2026-03-12-nvidia-newsroom-nvidia-and-coherent-announce-strategic-p.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Vendor Partnership",
+    "summary": "NVIDIA and Coherent Corp have entered a multi-year partnership to accelerate the development and manufacturing scale of next-generation optical interconnects for AI-driven data centers.",
+    "why_it_matters": "Scaling AI infrastructure faces a major bottleneck in data movement speed between GPUs. Advancements in optical transceivers are critical to overcome electrical bandwidth limitations, essentially allowing data centers to function as massive single compute engines.",
+    "business_implication": "Enterprise IT executives must prepare for a shift in data center architecture where optical I/O density becomes the primary limiter of TCO and performance. This partnership signals a move toward vertical integration in the hardware supply chain, likely squeezing smaller vendors and increasing lead times for non-partnered enterprise customers.",
+    "regional_angle": "Houston\u2019s position as a hub for 'Edge AI' in energy and manufacturing\u2014where low-latency data processing is vital for remote site operations\u2014is directly impacted. Furthermore, local data center providers and cloud services operating in the Houston/Gulf Coast corridor will need to audit their infrastructure refresh cycles to accommodate these new, higher-throughput optical standards.",
+    "content_angles": [
+      "How High-Speed Photonics are Rewriting the ROI for Industrial AI at the Edge",
+      "The Data Center Bottleneck: Is Your Infrastructure Ready for the Optical Revolution?",
+      "Why Houston\u2019s Energy Sector Depends on the Future of Interconnect Technology",
+      "Supply Chain Concentration: Strategic Risks for IT Execs in the Era of NVIDIA Dominance"
+    ],
+    "recommended_angle": "The Data Center Bottleneck: Is Your Infrastructure Ready for the Optical Revolution?",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

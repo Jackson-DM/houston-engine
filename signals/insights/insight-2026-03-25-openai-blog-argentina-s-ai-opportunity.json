@@ -1,0 +1,31 @@
+{
+  "id": "2026-03-25-openai-blog-argentina-s-ai-opportunity",
+  "created_at": "2026-03-29T06:53:02.232556Z",
+  "source_signal_path": "signals/scored/2026-03-25-openai-blog-argentina-s-ai-opportunity.md",
+  "source": {
+    "publisher": "OpenAI Blog",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Infrastructure Partnership",
+    "summary": "OpenAI and Sur Energy are initiating a 'Stargate' project in Argentina, linking large-scale AI compute infrastructure directly to dedicated clean energy generation.",
+    "why_it_matters": "It establishes a replicable blueprint for 'energy-as-a-service' for AI data centers, decoupling compute growth from grid-constrained urban power supplies.",
+    "business_implication": "Enterprises must shift from viewing energy as an overhead expense to viewing it as a primary capital stack dependency; AI feasibility will increasingly hinge on proprietary energy access rather than just software capability.",
+    "regional_angle": "Houston, as the global energy capital, is uniquely positioned to export this model. Texas energy providers and infrastructure firms should pivot to pitch 'Power-for-Compute' siting packages to hyperscalers, leveraging the ERCOT grid's unique agility.",
+    "content_angles": [
+      "The Data Center Paradox: Why Houston's grid is actually the biggest asset for AI dominance",
+      "Beyond Software: How the next generation of AI success stories will be led by Power CEOs",
+      "Lessons from the Argentine Stargate: Infrastructure sovereignty in the age of generative AI"
+    ],
+    "recommended_angle": "The 'Power-as-a-Product' mandate: Why Gulf Coast energy infra and hyperscalers must converge to support the next generation of data centers.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

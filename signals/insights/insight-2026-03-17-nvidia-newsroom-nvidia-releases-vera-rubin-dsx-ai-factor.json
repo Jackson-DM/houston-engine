@@ -1,0 +1,32 @@
+{
+  "id": "2026-03-17-nvidia-newsroom-nvidia-releases-vera-rubin-dsx-ai-factor",
+  "created_at": "2026-03-29T06:52:26.141319Z",
+  "source_signal_path": "signals/scored/2026-03-17-nvidia-newsroom-nvidia-releases-vera-rubin-dsx-ai-factor.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Infrastructure/Technology Launch",
+    "summary": "NVIDIA released the Vera Rubin DSX AI Factory reference design paired with the Omniverse DSX Blueprint, accelerating the deployment of physically accurate digital twins for industrial-scale manufacturing and logistics.",
+    "why_it_matters": "The integration of blueprint-level AI infrastructure reduces the time-to-value for companies building 'AI Factories'\u2014facilities designed to simulate, optimize, and automate physical processes before deployment in the real world.",
+    "business_implication": "Companies in capital-intensive sectors can now de-risk operational expenditures by testing automation and robotics workflows in virtual environments, significantly lowering the cost of failure in physical facility upgrades.",
+    "regional_angle": "Highly relevant to Houston's petrochemical plants and Port of Houston operations, where high-fidelity simulation of supply chain bottlenecks and hazardous plant environments can maximize safety and throughput while reducing downtime.",
+    "content_angles": [
+      "How digital twins are enabling predictive maintenance in deep-water energy assets.",
+      "The transition of Houston's industrial sector from manual facilities to autonomous 'AI Factories'.",
+      "Overcoming infrastructure barriers for Texas firms attempting high-fidelity industrial simulation.",
+      "ROI analysis: Simulating versus building for Houston\u2019s midstream energy logistics."
+    ],
+    "recommended_angle": "The Shift from Passive Automation to GenAI-driven Manufacturing: How Houston operators can use the Omniverse DSX Blueprint to optimize plant safety and asset lifecycle management.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

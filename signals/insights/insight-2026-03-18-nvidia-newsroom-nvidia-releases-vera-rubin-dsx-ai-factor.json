@@ -1,0 +1,32 @@
+{
+  "id": "2026-03-18-nvidia-newsroom-nvidia-releases-vera-rubin-dsx-ai-factor",
+  "created_at": "2026-03-29T06:53:05.206797Z",
+  "source_signal_path": "signals/scored/2026-03-18-nvidia-newsroom-nvidia-releases-vera-rubin-dsx-ai-factor.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Infrastructure/Technology Launch",
+    "summary": "NVIDIA released the Vera Rubin DSX AI Factory reference design, coupled with Omniverse DSX Blueprints, to standardize the creation of physically accurate, AI-integrated digital twins for large-scale industrial facilities.",
+    "why_it_matters": "This reduces the R&D and implementation friction for enterprises attempting to synchronize real-time physical operations with virtual factory models, shifting digital twins from static visualizations to active, AI-optimized operational engines.",
+    "business_implication": "Companies investing in this architecture gain the ability to simulate production bottlenecks, worker safety, and predictive maintenance in a high-fidelity virtual environment before committing capital expenditures, significantly reducing risk in heavy industrial deployments.",
+    "regional_angle": "High impact for Houston's energy corridor, petrochemical plants, and Port of Houston infrastructure. These facilities are prime candidates for digital twin optimization to drive energy efficiency, safety compliance, and logistics throughput automation.",
+    "content_angles": [
+      "How Houston's energy giants can use NVIDIA's Vera Rubin architecture to reduce unplanned downtime.",
+      "The role of high-fidelity digital twins in optimizing Port of Houston supply chain logistics.",
+      "Bridging IT and OT: A roadmap for industrial executives to deploy AI-ready infrastructure.",
+      "Calculating the ROI of integrating generative AI with physical asset management models."
+    ],
+    "recommended_angle": "Houston's competitive edge: Transforming aging petrochemical infrastructure into predictive AI-ready digital factories using the Omniverse DSX framework.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "2026-03-21-openai-blog-inside-mirakl-s-agentic-commerce-vision",
+  "created_at": "2026-03-29T06:52:36.354369Z",
+  "source_signal_path": "signals/scored/2026-03-21-openai-blog-inside-mirakl-s-agentic-commerce-vision.md",
+  "source": {
+    "publisher": "OpenAI Blog",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Enterprise AI Strategy",
+    "summary": "Mirakl is transitioning from traditional e-commerce platforms to an 'agent-native' commerce architecture, integrating OpenAI's models to automate customer support, documentation, and transactional workflows.",
+    "why_it_matters": "The shift to agentic commerce represents the move from 'software that stores data' to 'software that executes business processes.' For procurement and B2B marketplace leaders, this reduces the friction between supplier onboarding and order fulfillment.",
+    "business_implication": "Companies adopting agentic commerce can expect significant reduction in OpEx related to manual procurement and customer service queries. It shifts the competitive landscape toward those who can orchestrate these agents across their supply chain, rather than just hosting a digital catalog.",
+    "regional_angle": "Houston's petrochemical and energy supply chain vendors, which currently rely on fragmented, legacy procurement portals, could streamline complex industrial maintenance, repair, and operations (MRO) procurement via agentic automation, significantly shortening lead times for specialized parts.",
+    "content_angles": [
+      "Can Agentic Commerce Solve the Energy Industry's Procurement Bottlenecks?",
+      "Moving Beyond Chatbots: How Enterprise Marketplaces are Automating Supply Chains",
+      "The Future of B2B Trade: Why Houston Energy Service Providers Must Adopt Agentic Workflows Now"
+    ],
+    "recommended_angle": "How agentic commerce platforms can eliminate procurement delays for Houston-based energy service companies by automating complex, high-variability supply chain interactions.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}
