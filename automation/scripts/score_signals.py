@@ -21,6 +21,179 @@ ARCHIVE_DIR = os.path.join(REPO_ROOT, "signals/archive")
 for d in [SCORED_DIR, ARCHIVE_DIR]:
     os.makedirs(d, exist_ok=True)
 
+def calculate_hub_score(frontmatter, content, filename=""):
+    """Assign a content hub and competitive gap multiplier from article text."""
+    full_text = (
+        f"{frontmatter.get('source_name', '')} "
+        f"{frontmatter.get('title', '')} "
+        f"{content} "
+        f"{filename}"
+    ).lower()
+
+    hub_keywords = {
+        "amplify_intelligence": [
+            "ai consulting",
+            "ai strategy",
+            "ai implementation",
+            "fractional ai officer",
+            "ai readiness assessment",
+            "agentic ai consulting",
+            "ai workflow automation",
+            "enterprise ai",
+            "ai governance",
+            "ai roi",
+            "decision intelligence",
+            "enterprise adoption",
+            "workforce ai",
+            "automation roi",
+            "ai transformation",
+            "ai roadmap",
+            "palantir",
+            "deployment",
+            "production ai",
+        ],
+        "amplified_exec": [
+            "executive ai training",
+            "ai leadership",
+            "c-suite ai",
+            "board ai training",
+            "ai for executives",
+            "ai executive program",
+            "ai immersion",
+            "ai workshop executives",
+        ],
+        "houston_ai_club": [
+            "ai community",
+            "ai meetup",
+            "ai events houston",
+            "houston ai",
+            "ai networking",
+            "ai education houston",
+            "ai workshops houston",
+        ],
+        "leon_coe": [
+            "ai speaker",
+            "ai thought leader",
+            "ai consultant texas",
+            "houston ai expert",
+            "ai keynote",
+            "ai educator",
+            "houston",
+            "houston ai",
+            "texas ai",
+        ],
+    }
+
+    hub_scores = {
+        hub: sum(1 for keyword in keywords if keyword in full_text)
+        for hub, keywords in hub_keywords.items()
+    }
+
+    best_hub, best_score = max(hub_scores.items(), key=lambda item: item[1])
+    hub_assignment = best_hub if best_score > 0 else "general"
+
+    gap_terms = {
+        "fractional ai officer": 1.8,
+        "agentic ai consulting": 1.6,
+        "ai workflow automation": 1.6,
+        "ai governance consulting": 1.5,
+        "houston energy ai": 1.7,
+        "houston healthcare ai": 1.6,
+        "houston aerospace ai": 1.5,
+        "executive ai training houston": 1.8,
+        "ai for energy executives": 1.7,
+        "board ai training": 1.6,
+    }
+
+    matching_multipliers = [
+        multiplier
+        for term, multiplier in gap_terms.items()
+        if term in full_text
+    ]
+    gap_multiplier = max(matching_multipliers, default=1.0)
+
+    return {
+        "hub_assignment": hub_assignment,
+        "gap_multiplier": gap_multiplier,
+        "hub_scores": hub_scores,
+    }
+
+def determine_industry_vertical(frontmatter, content):
+    """Return all matching Houston industry vertical tags for an article."""
+    full_text = (
+        f"{frontmatter.get('title', '')} "
+        f"{frontmatter.get('source_name', '')} "
+        f"{content}"
+    ).lower()
+
+    vertical_keywords = {
+        "energy": [
+            "oil",
+            "gas",
+            "refinery",
+            "energy",
+            "grid",
+            "pipeline",
+            "upstream",
+            "downstream",
+            "lng",
+            "clean energy",
+            "solar",
+            "wind",
+            "power generation",
+            "exxon",
+            "chevron",
+            "halliburton",
+            "schlumberger",
+        ],
+        "healthcare": [
+            "hospital",
+            "medical",
+            "health",
+            "patient",
+            "clinical",
+            "ehr",
+            "hipaa",
+            "texas medical center",
+            "uthealth",
+            "healthcare ai",
+            "pharma",
+            "biotech",
+            "life sciences",
+        ],
+        "logistics": [
+            "supply chain",
+            "port",
+            "shipping",
+            "freight",
+            "warehouse",
+            "distribution",
+            "logistics",
+            "last mile",
+            "port houston",
+            "cargo",
+        ],
+        "aerospace": [
+            "nasa",
+            "space",
+            "rocket",
+            "aviation",
+            "aerospace",
+            "defense",
+            "lockheed",
+            "boeing",
+            "spacex",
+            "johnson space center",
+        ],
+    }
+
+    matches = [
+        vertical
+        for vertical, keywords in vertical_keywords.items()
+        if any(keyword in full_text for keyword in keywords)
+    ]
+    return matches or ["general"]
+
 def calculate_base_score(frontmatter, content):
     """
     Deterministic scoring based on keywords and metadata.
@@ -109,15 +282,24 @@ def process_signals(target_dir=RAW_DIR, dry_run=False):
             body = parts[2]
             
             base_score = calculate_base_score(frontmatter, body)
-            tier = determine_tier(base_score)
-            
+            hub_result = calculate_hub_score(frontmatter, body, filename)
+            verticals = determine_industry_vertical(frontmatter, body)
+            gap_adjusted_score = min(round(base_score * hub_result["gap_multiplier"]), 100)
+            tier = determine_tier(gap_adjusted_score)
+
+            print(f"  [{filename}] Hub: {hub_result['hub_assignment']} | Verticals: {verticals} | Score: {base_score} -> {gap_adjusted_score} ({tier})")
+
             if not dry_run:
                 frontmatter.update({
-                    "base_score": base_score, 
-                    "ai_adjustment": 0, 
-                    "final_score": base_score, 
-                    "tier": tier, 
-                    "status": "triaged" if tier in ["publish", "candidate"] else "archived"
+                    "base_score": base_score,
+                    "ai_adjustment": 0,
+                    "final_score": gap_adjusted_score,
+                    "tier": tier,
+                    "status": "triaged" if tier in ["publish", "candidate"] else "archived",
+                    "hub_assignment": hub_result["hub_assignment"],
+                    "gap_multiplier": hub_result["gap_multiplier"],
+                    "hub_scores": hub_result["hub_scores"],
+                    "industry_verticals": verticals
                 })
                 
                 new_content = f"--- \n{yaml.dump(frontmatter)}---{body}"
