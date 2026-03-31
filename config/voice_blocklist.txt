@@ -1,0 +1,64 @@
+# Leon Coe Voice Blocklist
+# One forbidden phrase per line. Lines starting with # are comments.
+# The Voice Guardian flags any draft that contains these phrases.
+# Add new phrases here — no code changes needed.
+
+# Classic AI-generated filler
+delve
+navigate the landscape
+it's worth noting
+it is worth noting
+in today's rapidly evolving
+in today's fast-paced
+in the ever-evolving
+as we move forward
+the landscape of
+testament to
+pivotal moment
+pivotal role
+stands at the forefront
+at the forefront of
+game-changer
+game changer
+groundbreaking
+revolutionize
+revolutionizing
+transformative
+transforming the way we
+paradigm shift
+seamlessly
+synergy
+synergies
+leverage (when used as a verb meaning "use")
+utilize
+utilize the power of
+harness the power of
+in conclusion
+in summary
+to summarize
+
+# Hype phrases Leon doesn't use
+unlock your potential
+unlock the full potential
+the future is now
+the future of [X] is here
+buckle up
+hold onto your hats
+fasten your seatbelts
+
+# Hollow hedges that kill the take
+it remains to be seen
+only time will tell
+love it or hate it
+whether you like it or not
+needless to say
+
+# Corporate filler
+at the end of the day
+move the needle
+circle back
+touch base
+bandwidth (used for people, not networks)
+take this offline
+low-hanging fruit
+deep dive (as a noun: "let's do a deep dive")

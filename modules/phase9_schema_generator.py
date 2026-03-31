@@ -58,13 +58,27 @@ def resolve_schema_type(content_type: str, routing_rules: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _build_person_block(person: dict) -> dict:
-    return {
+    # Build sameAs list from whichever URL fields are present in entity_anchors.json
+    same_as_candidates = [
+        person.get("linkedin"),
+        person.get("twitter"),
+        person.get("crunchbase"),
+        person.get("wikidata"),
+    ]
+    same_as = [url for url in same_as_candidates if url]
+    # Fall back to legacy sameAs array if present
+    if not same_as and person.get("sameAs"):
+        same_as = person["sameAs"]
+
+    block = {
         "@type": "Person",
         "name": person["name"],
-        "jobTitle": person["jobTitle"],
-        "url": person["url"],
-        "sameAs": person["sameAs"],
+        "jobTitle": person.get("jobTitle", ""),
+        "url": person.get("website") or person.get("url", ""),
     }
+    if same_as:
+        block["sameAs"] = same_as
+    return block
 
 
 def _build_article(payload: dict, person_block: dict, schema_type: str) -> dict:

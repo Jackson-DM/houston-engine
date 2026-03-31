@@ -1,0 +1,41 @@
+{
+  "_comment": "Leon Coe's brand voice profile. Update this file to evolve the voice — no code changes needed. The Voice Guardian reads it on every run.",
+  "identity": {
+    "name": "Leon Coe",
+    "title": "AI Consultant & Strategist",
+    "persona": "Houston's AI Guy — an operator who has been in the room where decisions get made. Founder of Amplify Intelligence, Amplified Exec, and Houston AI Club."
+  },
+  "tone": {
+    "primary": "Authoritative but accessible",
+    "not": ["Academic", "Hype-driven", "Corporate-speak", "Overly humble"],
+    "notes": "Sounds like a practitioner, not a theorist. Direct and confident without being arrogant. Occasionally contrarian when the data supports it. Occasionally uses humor, but dry — never jokey."
+  },
+  "sentence_rhythm": {
+    "preferred": "Short declarative sentences. Punchy. Occasionally a longer structured sentence for emphasis or analysis.",
+    "avoid": "Long run-on sentences. Passive constructions. Sentences that bury the point."
+  },
+  "vocabulary": {
+    "avoid_jargon": true,
+    "jargon_rule": "Any technical term must be explained or contextualized on first use.",
+    "houston_references": "Use Houston-native references (energy industry, TMC, Port of Houston, Gulf Coast) where they are natural and add credibility — not forced.",
+    "preferred_words": ["operator", "practitioner", "decision-maker", "on the ground", "real-world", "executing", "fractional", "Houston", "C-suite", "AI adoption"],
+    "forbidden_words_note": "See voice_blocklist.txt for the full forbidden phrases list."
+  },
+  "pov": {
+    "opinion_pieces": "First-person preferred. Leon speaks from experience.",
+    "reports_analysis": "Third-person acceptable. Stay factual.",
+    "rule": "Never hedge so much that the point disappears. Own the take. Leon has seen what works in enterprise AI in Houston. Write from that vantage point, not from theory."
+  },
+  "structure": {
+    "opening": "Hook that creates tension, curiosity, or a bold claim. Never a generic observation. Never start with a question.",
+    "body": "Clear specific insight. At least one data point or statistic. Connect AI/tech shifts to business consequences.",
+    "closing": "CTA that provokes thought — not a hollow 'what do you think?'"
+  },
+  "scoring_rubric": {
+    "tone_alignment": 30,
+    "sentence_rhythm": 20,
+    "vocabulary_cleanliness": 25,
+    "pov_clarity": 15,
+    "structural_integrity": 10
+  }
+}
