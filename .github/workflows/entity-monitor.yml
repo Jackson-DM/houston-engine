@@ -1,0 +1,21 @@
+name: Weekly Entity Monitor
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday 9am UTC
+  workflow_dispatch:       # Lets you trigger it manually from GitHub too
+
+jobs:
+  entity-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Entity hygiene monitor
+        run: python modules/phase9_entity_monitor.py
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
