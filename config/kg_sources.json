@@ -1,0 +1,88 @@
+{
+  "_comment": "Corroboration sources for Leon Coe's Knowledge Graph tracker. Update known_urls and action_guidance here — no code changes needed.",
+  "subject": {
+    "name": "Leon Coe",
+    "description": "AI Consultant & Strategist, Houston TX",
+    "wikidata_search_term": "Leon Coe AI Houston"
+  },
+  "sources": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn Profile",
+      "weight": "high",
+      "check": "url_liveness",
+      "known_urls": ["https://www.linkedin.com/in/leoncoe/"],
+      "action_if_gap": "Ensure LinkedIn profile is complete with current title, company, and summary.",
+      "note": "405 from LinkedIn = alive (bot block)"
+    },
+    {
+      "id": "crunchbase",
+      "label": "Crunchbase Profile",
+      "weight": "high",
+      "check": "url_liveness",
+      "known_urls": ["https://www.crunchbase.com/person/leon-coe"],
+      "action_if_gap": "Create or complete Crunchbase profile at crunchbase.com/person/leon-coe"
+    },
+    {
+      "id": "wikidata",
+      "label": "Wikidata",
+      "weight": "very_high",
+      "check": "wikidata_api",
+      "known_urls": [],
+      "action_if_gap": "Submit a Wikidata entry for Leon Coe. Include sameAs links to LinkedIn, Crunchbase, and website. This is the single highest-ROI KG action."
+    },
+    {
+      "id": "google_scholar",
+      "label": "Google Scholar / Academia",
+      "weight": "medium",
+      "check": "web_search",
+      "known_urls": [],
+      "action_if_gap": "Publish a citable piece (white paper, research note) and submit to Academia.edu or SSRN."
+    },
+    {
+      "id": "hbj",
+      "label": "Houston Business Journal",
+      "weight": "high",
+      "check": "web_search",
+      "known_urls": ["https://www.bizjournals.com/houston/"],
+      "action_if_gap": "Pitch a byline or contribute a quote to an HBJ reporter covering AI in Houston."
+    },
+    {
+      "id": "innovationmap",
+      "label": "InnovationMap",
+      "weight": "high",
+      "check": "web_search",
+      "known_urls": ["https://innovationmap.com/"],
+      "action_if_gap": "Pitch InnovationMap for a profile, op-ed, or event mention."
+    },
+    {
+      "id": "speaking_bios",
+      "label": "Speaking Bio Pages",
+      "weight": "medium",
+      "check": "web_search",
+      "known_urls": [],
+      "action_if_gap": "Speak at a Houston-area event and ensure the event page lists a full bio with title and company."
+    },
+    {
+      "id": "podcasts",
+      "label": "Podcast Guest Appearances",
+      "weight": "medium",
+      "check": "web_search",
+      "known_urls": [],
+      "action_if_gap": "Guest on a Houston business or AI podcast. Target shows with > 1k listeners."
+    },
+    {
+      "id": "university_affiliation",
+      "label": "University / Org Affiliation Pages",
+      "weight": "high",
+      "check": "web_search",
+      "known_urls": [],
+      "action_if_gap": "Formalize an affiliation with Rice, UH, or TMC as an advisor, instructor, or fellow."
+    }
+  ],
+  "weight_points": {
+    "very_high": 4,
+    "high": 3,
+    "medium": 2
+  }
+}

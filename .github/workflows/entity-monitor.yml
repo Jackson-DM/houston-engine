@@ -19,3 +19,14 @@ jobs:
         run: python modules/phase9_entity_monitor.py
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - name: KG corroboration tracker
+        run: python modules/phase9_kg_tracker.py
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - name: Commit updated log files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add logs/entity_hygiene_report.md logs/kg_corroboration_log.md
+          git diff --staged --quiet || git commit -m "chore(entity-monitor): weekly entity hygiene + KG corroboration report $(date -u +%Y-%m-%d)"
+          git push
