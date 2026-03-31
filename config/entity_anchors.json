@@ -1,0 +1,49 @@
+{
+  "person": {
+    "name": "Leon Coe",
+    "jobTitle": "AI Consultant & Strategist",
+    "description": "Houston's leading AI authority — founder of Amplify Intelligence, Amplified Exec, and Houston AI Club.",
+    "website": "https://www.leoncoe.com/",
+    "linkedin": "https://www.linkedin.com/in/leoncoe/",
+    "twitter": "https://x.com/leonjcoe"
+  },
+  "organizations": {
+    "amplify_intelligence": {
+      "name": "Amplify Intelligence",
+      "description": "AI consulting firm — primary business vehicle for Leon Coe's enterprise AI work.",
+      "url": "https://www.amplifyintelligence.ai/",
+      "linkedin": "https://www.linkedin.com/company/amplifyintelligence-ai/"
+    },
+    "amplified_exec": {
+      "name": "Amplified Exec",
+      "description": "Executive AI immersion program for C-suite and board-level leaders.",
+      "url": "https://www.amplifiedexec.com/"
+    },
+    "houston_ai_club": {
+      "name": "Houston AI Club",
+      "description": "Houston's largest AI community and meetup brand.",
+      "url": "https://www.houstonaiclub.com/",
+      "linkedin": "https://www.linkedin.com/company/houston-ai-club/"
+    }
+  },
+  "content_hubs": [
+    "leon_coe",
+    "amplify_intelligence",
+    "amplified_exec",
+    "houston_ai_club"
+  ],
+  "monitored_companies": {
+    "nvidia": { "name": "NVIDIA", "url": "https://www.nvidia.com/" },
+    "openai": { "name": "OpenAI", "url": "https://www.openai.com/" },
+    "anthropic": { "name": "Anthropic", "url": "https://www.anthropic.com/" },
+    "roche": { "name": "Roche", "url": "https://www.roche.com/" },
+    "siemens": { "name": "Siemens", "url": "https://www.siemens.com/" },
+    "palantir": { "name": "Palantir", "url": "https://www.palantir.com/" },
+    "foxconn": { "name": "Foxconn", "url": "https://www.foxconn.com/" },
+    "coherent_corp": { "name": "Coherent Corp", "url": "https://www.coherent.com/" },
+    "mirakl": { "name": "Mirakl", "url": "https://www.mirakl.com/" },
+    "chevron": { "name": "Chevron", "url": "https://www.chevron.com/" },
+    "texas_medical_center": { "name": "Texas Medical Center", "url": "https://www.tmc.edu/" },
+    "port_of_houston": { "name": "Port of Houston", "url": "https://porthouston.com/" }
+  }
+}

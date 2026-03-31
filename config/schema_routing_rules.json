@@ -1,0 +1,19 @@
+{
+  "_comment": "Maps content_type tags (from Phase 8 classifier) to JSON-LD schema types. Add new mappings here — no code changes needed.",
+  "routing": {
+    "opinion": "Article",
+    "thought_leadership": "Article",
+    "linkedin_post": "Article",
+    "how_to": "HowTo",
+    "howto": "HowTo",
+    "tutorial": "HowTo",
+    "faq": "FAQPage",
+    "explainer": "FAQPage",
+    "news": "NewsArticle",
+    "news_coverage": "NewsArticle",
+    "event_coverage": "NewsArticle",
+    "industry_report": "Report",
+    "report": "Report"
+  },
+  "default": "Article"
+}
