@@ -1,8 +1,8 @@
 {
   "month": "2026-04",
-  "total_input_tokens": 4614,
-  "total_output_tokens": 4039,
-  "estimated_spend_usd": 0.00155775,
-  "run_count": 6,
-  "last_updated": "2026-04-01T14:06:58.113653Z"
+  "total_input_tokens": 6085,
+  "total_output_tokens": 5251,
+  "estimated_spend_usd": 0.002031675,
+  "run_count": 8,
+  "last_updated": "2026-04-01T19:33:26.928746Z"
 }
