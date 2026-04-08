@@ -1,0 +1,107 @@
+{
+  "queue_version": "1.1",
+  "description": "Weekly topic queue for Phase 10 content pipeline. Topics are consumed in order by brand rotation.",
+  "brand_rotation": ["ai_first_work", "houston_ai_club", "amplify_intelligence"],
+  "next_brand_index": 0,
+  "topics": [
+    {
+      "title": "The Hidden Cost of Agent Fragility",
+      "angle": "Why the fastest path to AI adoption is making the system boring, reliable, and observable first.",
+      "key_points": [
+        "Agent demos are easy; dependable agent workflows are hard.",
+        "The real cost is in retries, confusion, and hidden failure modes.",
+        "Small reliability improvements compound into leverage.",
+        "The teams that win are the ones that make AI operational, not theatrical."
+      ],
+      "processed": false
+    },
+    {
+      "title": "Why Houston Needs More AI Operators, Not More AI Opinions",
+      "angle": "A locally grounded case for builders who can actually ship systems, automate work, and create measurable business value.",
+      "key_points": [
+        "Houston has enough noise; it needs operators.",
+        "Operational AI means workflows, repeatability, and proof.",
+        "The strongest local advantage is practical implementation.",
+        "Communities grow when they produce builders, not just commentators."
+      ],
+      "processed": false
+    },
+    {
+      "title": "What an Authority Engine Actually Does for a Business",
+      "angle": "Explain the mechanics of an authority engine in consulting terms: signal intake, scoring, content creation, and distribution.",
+      "key_points": [
+        "An authority engine is a system, not a posting habit.",
+        "It turns external signals into internal clarity and public content.",
+        "It should save time, sharpen positioning, and create inbound opportunities.",
+        "The value is leverage over repeated manual marketing labor."
+      ],
+      "processed": false
+    },
+    {
+      "title": "Claude, Codex, and the New Role of the AI Orchestrator",
+      "angle": "Frame the agent stack as a coordination problem: different models for different jobs, with orchestration as the real skill.",
+      "key_points": [
+        "Not every task needs the same model.",
+        "Analysis, coding, and strategy have different cost/benefit profiles.",
+        "The orchestrator decides what to offload and what to keep local.",
+        "Better systems come from role clarity, not model worship."
+      ],
+      "processed": false
+    },
+    {
+      "title": "The Texas Advantage in Practical AI Adoption",
+      "angle": "A business-first piece on why Texas companies can win with grounded AI workflows instead of hype-driven experiments.",
+      "key_points": [
+        "Texas rewards execution and ROI.",
+        "Practical AI fits operations-heavy businesses especially well.",
+        "The adoption curve is faster when the outcome is visible.",
+        "Local credibility matters when you are selling transformation."
+      ],
+      "processed": false
+    },
+    {
+      "title": "How to Build a Consulting-Grade Content Engine Without Burnout",
+      "angle": "Show a sustainable content workflow that preserves quality while reducing manual effort.",
+      "key_points": [
+        "A good content engine is designed for repeatability.",
+        "Use a clear pipeline: ingest, score, draft, humanize, publish.",
+        "Guardrails keep the output from becoming generic.",
+        "Sustainability beats bursty output every time."
+      ],
+      "processed": false
+    },
+    {
+      "title": "From Hospitality to AI Systems: Lessons from Building in Public",
+      "angle": "A personal, credible narrative about translating service-industry discipline into AI systems work.",
+      "key_points": [
+        "Hospitality taught speed, calm under pressure, and service design.",
+        "AI systems work rewards the same operational instincts.",
+        "Building in public creates proof and learning at the same time.",
+        "Career transitions are easier when the story is concrete and honest."
+      ],
+      "processed": false
+    },
+    {
+      "title": "A Simple Framework for Turning a Local AI Community into Signal",
+      "angle": "Explain how community activity becomes useful business intelligence and content opportunities when it is captured well.",
+      "key_points": [
+        "Communities create signal when events, conversations, and patterns are tracked.",
+        "The best insights become posts, notes, and relationship follow-ups.",
+        "Local networks can feed a larger authority engine.",
+        "The goal is to turn participation into reusable knowledge."
+      ],
+      "processed": false
+    },
+    {
+      "title": "The Difference Between AI Theater and AI Leverage",
+      "angle": "Contrast flashy demos with systems that save time, reduce cost, and improve decision-making.",
+      "key_points": [
+        "AI theater looks impressive but doesn’t move the business.",
+        "AI leverage is measurable and repeatable.",
+        "The best systems are boring in the right ways.",
+        "Ask whether the workflow still helps when nobody is watching."
+      ],
+      "processed": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pipeline_version": "10.0.0",
+  "schedule": "Tuesdays 10:00 UTC",
+  "brands": {
+    "ai_first_work": {
+      "name": "AI-First Work",
+      "linkedin_page": "https://www.linkedin.com/company/ai-first-work",
+      "voice": "Professional, practical, forward-thinking. Speaks to professionals adopting AI in their daily work.",
+      "audience": "Professionals, knowledge workers, mid-career adopters",
+      "tone": "Direct, helpful, no-nonsense"
+    },
+    "houston_ai_club": {
+      "name": "Houston AI Club",
+      "linkedin_page": "https://www.linkedin.com/company/houston-ai-club",
+      "voice": "Community-warm, locally grounded, inclusive. Celebrates Houston's AI ecosystem.",
+      "audience": "Houston AI community members, local tech professionals",
+      "tone": "Warm, community-driven, locally proud"
+    },
+    "amplify_intelligence": {
+      "name": "Amplify Intelligence",
+      "linkedin_page": "https://www.linkedin.com/company/amplify-intelligence",
+      "voice": "Boardroom-sharp, consulting-grade. Speaks to senior decision-makers.",
+      "audience": "C-suite, VPs, enterprise decision-makers",
+      "tone": "Authoritative, strategic, premium"
+    }
+  },
+  "article_settings": {
+    "min_words": 800,
+    "max_words": 1200,
+    "model": "google/gemini-3.1-flash-lite-preview",
+    "api_url": "https://openrouter.ai/api/v1/chat/completions",
+    "max_retries": 2,
+    "timeout_seconds": 60
+  },
+  "intelligence_inputs": {
+    "scored_signals": "signals/scored/",
+    "insights": "signals/insights/",
+    "final_content": "content/final/",
+    "humanized_drafts": "automation/state/humanized-drafts.json",
+    "keyword_watchlist": "automation/state/keyword-watchlist.json"
+  },
+  "output_path": "outputs/phase10_content/{brand}/{date}_{slug}.md"
+}
