@@ -1,7 +1,11 @@
 {
   "queue_version": "1.1",
   "description": "Weekly topic queue for Phase 10 content pipeline. Topics are consumed in order by brand rotation.",
-  "brand_rotation": ["ai_first_work", "houston_ai_club", "amplify_intelligence"],
+  "brand_rotation": [
+    "ai_first_work",
+    "houston_ai_club",
+    "amplify_intelligence"
+  ],
   "next_brand_index": 0,
   "topics": [
     {
@@ -13,7 +17,9 @@
         "Small reliability improvements compound into leverage.",
         "The teams that win are the ones that make AI operational, not theatrical."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-08T16:24:46.401789Z",
+      "output_path": "outputs/phase10_content/ai_first_work/2026-04-08_the-hidden-cost-of-agent-fragility.md"
     },
     {
       "title": "Why Houston Needs More AI Operators, Not More AI Opinions",
@@ -24,7 +30,9 @@
         "The strongest local advantage is practical implementation.",
         "Communities grow when they produce builders, not just commentators."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T02:34:03.699747Z",
+      "output_path": "outputs/phase10_content/houston_ai_club/2026-04-09_why-houston-needs-more-ai-operators-not-more-ai-opinions.md"
     },
     {
       "title": "What an Authority Engine Actually Does for a Business",
@@ -35,7 +43,9 @@
         "It should save time, sharpen positioning, and create inbound opportunities.",
         "The value is leverage over repeated manual marketing labor."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T02:45:06.291736Z",
+      "output_path": "outputs/phase10_content/amplify_intelligence/2026-04-09_what-an-authority-engine-actually-does-for-a-business.md"
     },
     {
       "title": "Claude, Codex, and the New Role of the AI Orchestrator",
@@ -46,7 +56,9 @@
         "The orchestrator decides what to offload and what to keep local.",
         "Better systems come from role clarity, not model worship."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T02:57:34.858667Z",
+      "output_path": "outputs/phase10_content/ai_first_work/2026-04-09_claude-codex-and-the-new-role-of-the-ai-orchestrator.md"
     },
     {
       "title": "The Texas Advantage in Practical AI Adoption",
@@ -57,7 +69,9 @@
         "The adoption curve is faster when the outcome is visible.",
         "Local credibility matters when you are selling transformation."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T03:07:03.190451Z",
+      "output_path": "outputs/phase10_content/houston_ai_club/2026-04-09_the-texas-advantage-in-practical-ai-adoption.md"
     },
     {
       "title": "How to Build a Consulting-Grade Content Engine Without Burnout",
@@ -68,7 +82,9 @@
         "Guardrails keep the output from becoming generic.",
         "Sustainability beats bursty output every time."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T03:15:35.263578Z",
+      "output_path": "outputs/phase10_content/amplify_intelligence/2026-04-09_how-to-build-a-consulting-grade-content-engine-without-burno.md"
     },
     {
       "title": "From Hospitality to AI Systems: Lessons from Building in Public",
@@ -79,7 +95,9 @@
         "Building in public creates proof and learning at the same time.",
         "Career transitions are easier when the story is concrete and honest."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T03:20:15.293419Z",
+      "output_path": "outputs/phase10_content/ai_first_work/2026-04-09_from-hospitality-to-ai-systems-lessons-from-building-in-publ.md"
     },
     {
       "title": "A Simple Framework for Turning a Local AI Community into Signal",
@@ -90,18 +108,22 @@
         "Local networks can feed a larger authority engine.",
         "The goal is to turn participation into reusable knowledge."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T03:26:39.763236Z",
+      "output_path": "outputs/phase10_content/houston_ai_club/2026-04-09_a-simple-framework-for-turning-a-local-ai-community-into-sig.md"
     },
     {
       "title": "The Difference Between AI Theater and AI Leverage",
       "angle": "Contrast flashy demos with systems that save time, reduce cost, and improve decision-making.",
       "key_points": [
-        "AI theater looks impressive but doesn’t move the business.",
+        "AI theater looks impressive but doesn\u2019t move the business.",
         "AI leverage is measurable and repeatable.",
         "The best systems are boring in the right ways.",
         "Ask whether the workflow still helps when nobody is watching."
       ],
-      "processed": false
+      "processed": true,
+      "processed_at": "2026-04-09T03:28:55.901124Z",
+      "output_path": "outputs/phase10_content/amplify_intelligence/2026-04-09_the-difference-between-ai-theater-and-ai-leverage.md"
     }
   ]
 }
