@@ -96,8 +96,10 @@ def load_intelligence_context(config):
 
 def build_article_prompt(topic, brand_config, intelligence_context):
     """Build the system and user prompts for article generation."""
+    author_line = f"Author: {brand_config['author']}\n" if brand_config.get("author") else ""
     system_prompt = (
         f"You are a LinkedIn article writer for {brand_config['name']}.\n"
+        f"{author_line}"
         f"Voice: {brand_config['voice']}\n"
         f"Audience: {brand_config['audience']}\n"
         f"Tone: {brand_config['tone']}\n\n"

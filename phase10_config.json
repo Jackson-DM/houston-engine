@@ -7,21 +7,24 @@
       "linkedin_page": "https://www.linkedin.com/company/ai-first-work",
       "voice": "Professional, practical, forward-thinking. Speaks to professionals adopting AI in their daily work.",
       "audience": "Professionals, knowledge workers, mid-career adopters",
-      "tone": "Direct, helpful, no-nonsense"
+      "tone": "Direct, helpful, no-nonsense",
+      "author": "Leon Coe — strategic AI consultant and executive. Background in business strategy, organizational leadership, and enterprise AI adoption. No hospitality or service-industry background. Writes from the lens of a senior practitioner helping executives and organizations implement AI at scale. Personal narrative topics should draw on strategic consulting, executive decision-making, and organizational transformation — not service industry or technical apprentice experiences."
     },
     "houston_ai_club": {
       "name": "Houston AI Club",
       "linkedin_page": "https://www.linkedin.com/company/houston-ai-club",
       "voice": "Community-warm, locally grounded, inclusive. Celebrates Houston's AI ecosystem.",
       "audience": "Houston AI community members, local tech professionals",
-      "tone": "Warm, community-driven, locally proud"
+      "tone": "Warm, community-driven, locally proud",
+      "author": "Leon Coe — AI strategist, executive consultant, and founder based in Houston. Writes from the lens of a senior practitioner embedded in the local AI ecosystem. Personal narrative topics should draw on executive leadership, community building, and strategic AI adoption — not service industry or technical apprentice experiences."
     },
     "amplify_intelligence": {
       "name": "Amplify Intelligence",
       "linkedin_page": "https://www.linkedin.com/company/amplify-intelligence",
       "voice": "Boardroom-sharp, consulting-grade. Speaks to senior decision-makers.",
       "audience": "C-suite, VPs, enterprise decision-makers",
-      "tone": "Authoritative, strategic, premium"
+      "tone": "Authoritative, strategic, premium",
+      "author": "Leon Coe — AI strategist, executive consultant, and founder of Amplify Intelligence. Writes from the lens of a senior advisor to C-suite and enterprise leaders on AI strategy, implementation, and organizational transformation. Personal narrative topics should draw on consulting engagements, executive decision-making, and enterprise AI adoption — not service industry or technical apprentice experiences."
     }
   },
   "article_settings": {
