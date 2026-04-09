@@ -1,0 +1,53 @@
+name: Phase 10 Content Pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run every Tuesday at 10:00 UTC
+    - cron: '0 10 * * 2'
+
+concurrency:
+  group: phase10-content-run
+  cancel-in-progress: false
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Phase 10 Content Pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python phase10_content_pipeline.py
+
+      - name: Commit and Push Results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add outputs/phase10_content/ phase10_topic_queue.json logs/phase10_run_log.json
+          
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Changes detected. Committing and pushing..."
+            git commit -m "chore(phase10): weekly content generation $(date +'%Y-%m-%d %H:%M')"
+            git push origin main
+          else
+            echo "No changes detected. Skipping commit."
+          fi
