@@ -84,14 +84,58 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           # Add directory changes
           git add signals/raw/ signals/scored/ signals/archive/ signals/insights/ content/drafts/ content/final/ automation/state/ automation/logs/
-          
+
           # Safe commit
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "Changes detected. Committing and pushing..."
             git commit -m "chore(signal-hunter): automated signal run summary $(date +'%Y-%m-%d %H:%M')"
+            git push origin main
+          else
+            echo "No changes detected. Skipping commit."
+          fi
+
+  generate-content:
+    needs: ingest-and-score
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser requests PyYAML
+
+      - name: Run Phase 10 Pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python phase10_content_pipeline.py
+
+      - name: Commit and Push Results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git pull --rebase origin main
+
+          git add outputs/phase10_content/ logs/phase10_run_log.json phase10_topic_queue.json
+
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Changes detected. Committing and pushing..."
+            git commit -m "chore(phase10): article generation $(date +'%Y-%m-%d %H:%M')"
             git push origin main
           else
             echo "No changes detected. Skipping commit."
