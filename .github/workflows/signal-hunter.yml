@@ -128,11 +128,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-
-          git pull --rebase origin main
-
           git add outputs/phase10_content/ logs/phase10_run_log.json phase10_topic_queue.json
-
+          git stash
+          git pull --rebase origin main
+          git stash pop
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "Changes detected. Committing and pushing..."
             git commit -m "chore(phase10): article generation $(date +'%Y-%m-%d %H:%M')"
