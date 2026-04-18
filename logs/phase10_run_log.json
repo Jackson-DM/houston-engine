@@ -363,5 +363,12 @@
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
     "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-18T13:37:11.290868Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
   }
 ]
