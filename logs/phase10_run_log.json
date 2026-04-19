@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-08T16:24:46.402789Z",
-    "status": "success",
-    "brand": "ai_first_work",
-    "topic": "The Hidden Cost of Agent Fragility",
-    "output_path": "outputs/phase10_content/ai_first_work/2026-04-08_the-hidden-cost-of-agent-fragility.md",
-    "word_count": 873,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T02:34:03.700246Z",
     "status": "success",
     "brand": "houston_ai_club",
@@ -362,6 +353,13 @@
   },
   {
     "timestamp": "2026-04-19T07:48:07.130024Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-19T13:36:01.289526Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
