@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T02:34:03.700246Z",
-    "status": "success",
-    "brand": "houston_ai_club",
-    "topic": "Why Houston Needs More AI Operators, Not More AI Opinions",
-    "output_path": "outputs/phase10_content/houston_ai_club/2026-04-09_why-houston-needs-more-ai-operators-not-more-ai-opinions.md",
-    "word_count": 775,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T02:45:06.292237Z",
     "status": "success",
     "brand": "amplify_intelligence",
@@ -360,6 +351,13 @@
   },
   {
     "timestamp": "2026-04-19T13:36:01.289526Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-19T19:10:47.021760Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
