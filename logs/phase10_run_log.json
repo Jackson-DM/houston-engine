@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-05T06:09:05.641654Z",
-    "status": "success",
-    "brand": "ai_first_work",
-    "topic": "Smoke Test Topic: AI Pipeline Automation",
-    "output_path": "outputs/phase10_content/ai_first_work/2026-04-05_smoke-test-topic-ai-pipeline-automation.md",
-    "word_count": 38,
-    "dry_run": true
-  },
-  {
     "timestamp": "2026-04-07T23:57:47.527553Z",
     "status": "success",
     "brand": "ai_first_work",
@@ -366,6 +357,13 @@
   },
   {
     "timestamp": "2026-04-18T19:11:03.319474Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-19T03:51:39.695036Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
