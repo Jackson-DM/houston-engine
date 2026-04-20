@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T03:07:03.190947Z",
-    "status": "success",
-    "brand": "houston_ai_club",
-    "topic": "The Texas Advantage in Practical AI Adoption",
-    "output_path": "outputs/phase10_content/houston_ai_club/2026-04-09_the-texas-advantage-in-practical-ai-adoption.md",
-    "word_count": 696,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T03:15:35.264080Z",
     "status": "success",
     "brand": "amplify_intelligence",
@@ -354,6 +345,13 @@
   },
   {
     "timestamp": "2026-04-20T08:29:34.127871Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-20T14:15:04.015885Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
