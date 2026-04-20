@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T03:15:35.264080Z",
-    "status": "success",
-    "brand": "amplify_intelligence",
-    "topic": "How to Build a Consulting-Grade Content Engine Without Burnout",
-    "output_path": "outputs/phase10_content/amplify_intelligence/2026-04-09_how-to-build-a-consulting-grade-content-engine-without-burno.md",
-    "word_count": 793,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T03:20:15.294417Z",
     "status": "success",
     "brand": "ai_first_work",
@@ -352,6 +343,13 @@
   },
   {
     "timestamp": "2026-04-20T14:15:04.015885Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-20T19:35:38.949413Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
