@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T02:45:06.292237Z",
-    "status": "success",
-    "brand": "amplify_intelligence",
-    "topic": "What an Authority Engine Actually Does for a Business",
-    "output_path": "outputs/phase10_content/amplify_intelligence/2026-04-09_what-an-authority-engine-actually-does-for-a-business.md",
-    "word_count": 826,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T02:57:34.859169Z",
     "status": "success",
     "brand": "ai_first_work",
@@ -358,6 +349,13 @@
   },
   {
     "timestamp": "2026-04-19T19:10:47.021760Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-20T03:53:27.344472Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
