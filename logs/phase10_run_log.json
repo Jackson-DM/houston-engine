@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T03:20:15.294417Z",
-    "status": "success",
-    "brand": "ai_first_work",
-    "topic": "From Hospitality to AI Systems: Lessons from Building in Public",
-    "output_path": "outputs/phase10_content/ai_first_work/2026-04-09_from-hospitality-to-ai-systems-lessons-from-building-in-publ.md",
-    "word_count": 972,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T03:26:39.764237Z",
     "status": "success",
     "brand": "houston_ai_club",
@@ -350,6 +341,13 @@
   },
   {
     "timestamp": "2026-04-20T19:35:38.949413Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-21T03:47:27.917701Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
