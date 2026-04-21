@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T03:26:39.764237Z",
-    "status": "success",
-    "brand": "houston_ai_club",
-    "topic": "A Simple Framework for Turning a Local AI Community into Signal",
-    "output_path": "outputs/phase10_content/houston_ai_club/2026-04-09_a-simple-framework-for-turning-a-local-ai-community-into-sig.md",
-    "word_count": 740,
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-09T03:28:55.902125Z",
     "status": "success",
     "brand": "amplify_intelligence",
@@ -348,6 +339,13 @@
   },
   {
     "timestamp": "2026-04-21T03:47:27.917701Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-21T08:10:43.473621Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
