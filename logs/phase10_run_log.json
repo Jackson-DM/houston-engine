@@ -1,12 +1,5 @@
 [
   {
-    "timestamp": "2026-04-11T19:06:33.841237Z",
-    "status": "skipped",
-    "reason": "empty_queue",
-    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
-    "dry_run": false
-  },
-  {
     "timestamp": "2026-04-12T03:47:56.691631Z",
     "status": "skipped",
     "reason": "empty_queue",
@@ -344,6 +337,13 @@
   },
   {
     "timestamp": "2026-04-23T14:14:05.309699Z",
+    "status": "skipped",
+    "reason": "empty_queue",
+    "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-04-23T19:42:56.871224Z",
     "status": "skipped",
     "reason": "empty_queue",
     "message": "No unprocessed topics in queue. Pipeline complete \u2014 nothing to generate.",
