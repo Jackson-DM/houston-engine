@@ -955,5 +955,10 @@
   "https://openai.com/index/debate",
   "https://openai.com/index/evolved-policy-gradients",
   "https://openai.com/index/gotta-learn-fast",
-  "https://openai.com/index/retro-contest"
+  "https://openai.com/index/retro-contest",
+  "https://openai.com/index/our-principles",
+  "https://openai.com/index/variance-reduction-for-policy-gradient-with-action-dependent-factorized-baselines",
+  "https://openai.com/index/improving-gans-using-optimal-transport",
+  "https://openai.com/index/hackathon-follow-up",
+  "https://openai.com/index/on-first-order-meta-learning-algorithms"
 ]
