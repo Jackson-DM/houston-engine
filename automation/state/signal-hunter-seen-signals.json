@@ -975,5 +975,10 @@
   "https://openai.com/index/choco",
   "https://openai.com/index/discovering-types-for-entity-disambiguation",
   "https://openai.com/index/requests-for-research-2",
-  "https://openai.com/index/scaling-kubernetes-to-2500-nodes"
+  "https://openai.com/index/scaling-kubernetes-to-2500-nodes",
+  "https://openai.com/index/openai-available-at-fedramp-moderate",
+  "https://openai.com/index/block-sparse-gpu-kernels",
+  "https://openai.com/index/learning-sparse-neural-networks-through-l0-regularization",
+  "https://openai.com/index/interpretable-and-pedagogical-examples",
+  "https://openai.com/index/learning-a-hierarchy"
 ]
