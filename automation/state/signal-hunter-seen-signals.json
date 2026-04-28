@@ -980,5 +980,10 @@
   "https://openai.com/index/block-sparse-gpu-kernels",
   "https://openai.com/index/learning-sparse-neural-networks-through-l0-regularization",
   "https://openai.com/index/interpretable-and-pedagogical-examples",
-  "https://openai.com/index/learning-a-hierarchy"
+  "https://openai.com/index/learning-a-hierarchy",
+  "https://openai.com/index/generalizing-from-simulation",
+  "https://openai.com/index/sim-to-real-transfer-of-robotic-control-with-dynamics-randomization",
+  "https://openai.com/index/asymmetric-actor-critic-for-image-based-robot-learning",
+  "https://openai.com/index/domain-randomization-and-generative-models-for-robotic-grasping",
+  "https://openai.com/index/meta-learning-for-wrestling"
 ]
