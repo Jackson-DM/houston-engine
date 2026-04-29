@@ -1005,5 +1005,10 @@
   "https://openai.com/index/hindsight-experience-replay",
   "https://openai.com/index/teacher-student-curriculum-learning",
   "https://openai.com/index/faster-physics-in-python",
-  "https://openai.com/index/learning-from-human-preferences"
+  "https://openai.com/index/learning-from-human-preferences",
+  "https://openai.com/index/learning-to-cooperate-compete-and-communicate",
+  "https://openai.com/index/ucb-exploration-via-q-ensembles",
+  "https://openai.com/index/openai-baselines-dqn",
+  "https://openai.com/index/robots-that-learn",
+  "https://openai.com/index/roboschool"
 ]
