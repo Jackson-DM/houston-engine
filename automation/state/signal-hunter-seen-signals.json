@@ -1000,5 +1000,10 @@
   "https://openai.com/index/gathering-human-feedback",
   "https://openai.com/index/better-exploration-with-parameter-noise",
   "https://openai.com/index/openai-baselines-ppo",
-  "https://openai.com/index/robust-adversarial-inputs"
+  "https://openai.com/index/robust-adversarial-inputs",
+  "https://openai.com/index/cybersecurity-in-the-intelligence-age",
+  "https://openai.com/index/hindsight-experience-replay",
+  "https://openai.com/index/teacher-student-curriculum-learning",
+  "https://openai.com/index/faster-physics-in-python",
+  "https://openai.com/index/learning-from-human-preferences"
 ]
