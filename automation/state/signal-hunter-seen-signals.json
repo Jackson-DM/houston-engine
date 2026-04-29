@@ -995,5 +995,10 @@
   "https://openai.com/index/learning-to-model-other-minds",
   "https://openai.com/index/learning-with-opponent-learning-awareness",
   "https://openai.com/index/openai-baselines-acktr-a2c",
-  "https://openai.com/index/more-on-dota-2"
+  "https://openai.com/index/more-on-dota-2",
+  "https://openai.com/index/dota-2",
+  "https://openai.com/index/gathering-human-feedback",
+  "https://openai.com/index/better-exploration-with-parameter-noise",
+  "https://openai.com/index/openai-baselines-ppo",
+  "https://openai.com/index/robust-adversarial-inputs"
 ]
