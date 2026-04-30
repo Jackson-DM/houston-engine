@@ -1015,5 +1015,10 @@
   "https://openai.com/index/where-the-goblins-came-from",
   "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age",
   "https://openai.com/index/equivalence-between-policy-gradients-and-soft-q-learning",
-  "https://openai.com/index/stochastic-neural-networks-for-hierarchical-reinforcement-learning"
+  "https://openai.com/index/stochastic-neural-networks-for-hierarchical-reinforcement-learning",
+  "https://openai.com/index/unsupervised-sentiment-neuron",
+  "https://openai.com/index/spam-detection-in-the-physical-world",
+  "https://openai.com/index/evolution-strategies",
+  "https://openai.com/index/one-shot-imitation-learning",
+  "https://openai.com/index/distill"
 ]
