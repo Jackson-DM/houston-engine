@@ -1,0 +1,33 @@
+{
+  "id": "2026-05-21-nvidia-newsroom-nvidia-gtc-taipei-at-computex-live-updat",
+  "created_at": "2026-05-21T20:12:23.955124Z",
+  "source_signal_path": "signals/scored/2026-05-21-nvidia-newsroom-nvidia-gtc-taipei-at-computex-live-updat.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 70,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Technological Infrastructure and Industrial AI Trends",
+    "summary": "NVIDIA is prioritizing 'AI factories' and 'Physical AI'\u2014the integration of generative AI into robotics and autonomous systems\u2014as the primary scaling vectors for global industry.",
+    "why_it_matters": "The shift from digital-only AI (LLMs) to 'Physical AI' signals the upcoming automation of industrial workflows, specifically those requiring physical manipulation, autonomous sensing, and robotics interaction in real-world environments.",
+    "business_implication": "Companies must transition from pilot-stage predictive analytics to infrastructure-heavy 'AI Factory' models. This requires significant investment in GPU clusters, high-speed networking, and digital twin simulation environments to integrate robotics into physical supply chains.",
+    "regional_angle": "Houston's leadership in energy infrastructure and port logistics makes it a prime sandbox for Physical AI. Port of Houston automation and petrochemical inspection robotics are direct beneficiaries of this hardware-software integration, positioning the Gulf Coast as a massive industrial testing ground.",
+    "content_angles": [
+      "From Bits to Bolts: How NVIDIA's Physical AI is Changing Houston Industrial Automation",
+      "Why Energy Majors Need an 'AI Factory' Architecture to Scale Autonomous Offshore Operations",
+      "Beyond Software: Why Houston's Industrial Base must prioritize Compute Infrastructure"
+    ],
+    "recommended_angle": "How 'Physical AI' will bridge the gap between Houston\u2019s legacy industrial expertise and the high-tech robotics revolution, specifically in maritime logistics and remote energy infrastructure management.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-05-21-nvidia-newsroom-nvidia-gtc-taipei-at-computex-live-updat"
+    ]
+  }
+}
