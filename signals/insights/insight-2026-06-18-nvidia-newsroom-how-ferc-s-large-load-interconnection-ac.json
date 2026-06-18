@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-18-nvidia-newsroom-how-ferc-s-large-load-interconnection-ac",
+  "created_at": "2026-06-18T20:39:30.978996Z",
+  "source_signal_path": "signals/scored/2026-06-18-nvidia-newsroom-how-ferc-s-large-load-interconnection-ac.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Regulatory/Energy Infrastructure",
+    "summary": "FERC has issued new guidance to streamline interconnection processes for large-load consumers, specifically targeting AI data centers, advanced manufacturing, and semiconductor facilities.",
+    "why_it_matters": "The primary bottleneck for enterprise AI deployment is no longer just compute availability, but power availability. FERC's intervention signals a shift toward prioritizing industrial-scale AI infrastructure within the national grid planning process, reducing 'queue stagnation' for high-load projects.",
+    "business_implication": "Companies planning or operating large-scale computing facilities or automated manufacturing plants can expect faster, more predictable timelines for grid integration. This reduces the 'time-to-market' risk for capital-intensive AI factories that were previously stalled by legacy utility interconnection hurdles.",
+    "regional_angle": "Houston is uniquely positioned for this shift given the presence of the ERCOT grid and the region's massive energy infrastructure. This FERC action lowers barriers for energy-intensive AI processing hubs to colocate with Texas's robust energy production and transmission corridors, potentially accelerating Houston's emergence as an AI-Industrial powerhouse.",
+    "content_angles": [
+      "The intersection of Texas energy resilience and the AI boom",
+      "How FERC reforms will fast-track Houston's industrial AI adoption",
+      "Navigating grid interconnection for capital-heavy manufacturing projects",
+      "Why Houston's energy corridor is the 'Goldilocks' zone for next-gen data centers"
+    ],
+    "recommended_angle": "How FERC's new grid interconnection rules act as a catalyst for Houston's transition from a pure energy hub to a digitized industrial AI powerhouse.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-06-18-nvidia-newsroom-how-ferc-s-large-load-interconnection-ac"
+    ]
+  }
+}
