@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-22-nvidia-newsroom-built-in-fort-worth-wistron-opens-advanc",
+  "created_at": "2026-07-22T03:49:44.400572Z",
+  "source_signal_path": "signals/scored/2026-07-22-nvidia-newsroom-built-in-fort-worth-wistron-opens-advanc.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Industrial Infrastructure Expansion",
+    "summary": "Wistron has launched a 324,000-square-foot advanced manufacturing facility in Fort Worth, Texas, dedicated to producing NVIDIA AI superchips and critical AI server infrastructure.",
+    "why_it_matters": "This represents a significant shift toward domestic 'onshoring' of critical AI hardware production, reducing geopolitical supply chain risks and fostering a regional micro-ecosystem for high-performance computing (HPC) manufacturing.",
+    "business_implication": "Enterprises can anticipate shorter lead times for AI hardware procurement. Reduced dependence on overseas assembly lowers logistics volatility risk and facilitates closer collaboration between hardware manufacturers and industrial AI software integrators.",
+    "regional_angle": "Houston-based energy and petrochemical firms currently investing in AI-driven predictive maintenance and digital twins can leverage this Texas-based supply chain to accelerate infrastructure deployments. It reinforces the 'Texas Tech Corridor' narrative, positioning Houston as a primary consumer of hardware manufactured within regional proximity.",
+    "content_angles": [
+      "The Onshoring Era: What Texas-made AI chips mean for the Houston energy sector",
+      "Hardware sovereignty: How proximity to manufacturing changes IT procurement strategies for Texas Enterprises",
+      "From Oilfield to Silicon: Analyzing Texas' role in the global AI supply chain"
+    ],
+    "recommended_angle": "How close-proximity AI hardware assembly creates a supply chain advantage for Houston\u2019s energy and industrial manufacturing giants.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-07-22-nvidia-newsroom-built-in-fort-worth-wistron-opens-advanc"
+    ]
+  }
+}
