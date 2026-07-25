@@ -1,0 +1,29 @@
+{
+  "id": "draft-2026-07-25-nvidia-newsroom-naver-nvidia-and-brookfield-to-expand-ko",
+  "created_at": "2026-07-25T08:25:21.745066Z",
+  "source_insight_path": "signals/insights/insight-2026-07-25-nvidia-newsroom-naver-nvidia-and-brookfield-to-expand-ko.json",
+  "source_signal_id": "2026-07-25-nvidia-newsroom-naver-nvidia-and-brookfield-to-expand-ko",
+  "content_type": "linkedin_post",
+  "hub_assignment": "general",
+  "industry_verticals": [
+    "general"
+  ],
+  "strategy": {
+    "angle": "The shift from cloud-dependency to sovereign, industrial-grade compute infrastructure.",
+    "format": "Punchy, analytical narrative with a Q&A breakdown.",
+    "audience": "Houston business leaders, C-suite executives, and innovators in energy, healthcare, and industrial tech.",
+    "tone": "Direct, authoritative, and focused on strategic industrial reality."
+  },
+  "draft": {
+    "hook": "The smartest money in industrial tech isn't betting on the general cloud anymore; it's betting on the 'factory'.",
+    "body": "NAVER, NVIDIA, and Brookfield just tripled their capacity for a sovereign AI factory to 200MW. This move signals a massive shift: the era of businesses renting generic compute is ending. When I talk with Houston leaders at Amplify Intelligence, the goal isn't just 'using AI'\u2014it\u2019s owning the compute that gives them a proprietary edge. By building localized, high-density infrastructure, companies escape the black-box variable costs of public cloud while securing their data sovereignty. Why are the giants making this transition now? Because for industrial-grade AI, the latency and control issues of public cloud are direct threats to profit margins. If you aren't planning for infrastructure ownership or dedicated clusters, you\u2019re just a tenant in someone else\u2019s AI economy.",
+    "closing": "Infrastructure is the new moat. Leon Coe and the team at Amplify Intelligence are currently helping Houston firms evaluate when to scale from cloud services to dedicated compute models that actually protect your long-term margins.",
+    "cta": "Which Houston industry sector do you believe will be the first to move entirely off the public cloud for their AI operations? Let's discuss the reality of your current compute strategy.",
+    "full_text": "The smartest money in industrial tech isn't betting on the general cloud anymore; it's betting on the 'factory'. NAVER, NVIDIA, and Brookfield just tripled their capacity for a sovereign AI factory to 200MW. This move signals a massive shift: the era of businesses renting generic compute is ending. When I talk with Houston leaders at Amplify Intelligence, the goal isn't just 'using AI'\u2014it\u2019s owning the compute that gives them a proprietary edge. By building localized, high-density infrastructure, companies escape the black-box variable costs of public cloud while securing their data sovereignty. \n\nWhy are the giants making this transition now? Because for industrial-grade AI, the latency and control issues of public cloud are direct threats to profit margins. If you aren't planning for infrastructure ownership or dedicated clusters, you\u2019re just a tenant in someone else\u2019s AI economy. \n\nInfrastructure is the new moat. Leon Coe and the team at Amplify Intelligence are currently helping Houston firms evaluate when to scale from cloud services to dedicated compute models that actually protect your long-term margins. \n\nWhich Houston industry sector do you believe will be the first to move entirely off the public cloud for their AI operations? Let's discuss the reality of your current compute strategy."
+  },
+  "editorial": {
+    "status": "draft",
+    "used_for_publishing": false,
+    "needs_review": true
+  }
+}
