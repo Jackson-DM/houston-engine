@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-27-nvidia-newsroom-aws-and-nvidia-to-deliver-2-million-addi",
+  "created_at": "2026-08-27T09:54:33.466913Z",
+  "source_signal_path": "signals/scored/2026-08-27-nvidia-newsroom-aws-and-nvidia-to-deliver-2-million-addi.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 65,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Infrastructure Expansion",
+    "summary": "AWS and NVIDIA have announced a massive supply chain expansion, committing to 2 million additional GPUs and integrated infrastructure to power agentic and physical AI applications.",
+    "why_it_matters": "The shift toward 'physical AI' implies a move from text-based LLMs to autonomous robotics, predictive logistics, and complex industrial simulation (Digital Twins), signaling the industrialization of generative AI.",
+    "business_implication": "Enterprises can now architect for high-compute demand without localized data center constraints, shifting the bottleneck from hardware availability to the capability of engineering teams to build agentic workflows.",
+    "regional_angle": "Houston's petrochemical and energy sectors rely on heavy simulations for process optimization and safety. Increased GPU capacity on AWS enables 'Real-time Digital Twins' for Port of Houston operations and remote autonomous drone-based pipeline inspections.",
+    "content_angles": [
+      "Moving from Chatbots to Robotics: How Houston's Energy Sector Can Use Physical AI for Autonomous Field Operations",
+      "Infrastructure as a Competitive Moat: Why Port of Houston Logistics Providers Should Shift to Cloud-Native Physical AI",
+      "The GPU Gold Rush: Overcoming the Talent Gap in Industrial AI Orchestration"
+    ],
+    "recommended_angle": "Focus on the transition to 'Physical AI'\u2014how Houston energy firms can leverage cloud-based massive-scale compute to deploy autonomous agents in high-risk physical environments like offshore platforms and refineries.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-08-27-nvidia-newsroom-aws-and-nvidia-to-deliver-2-million-addi"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "draft-2026-08-27-nvidia-newsroom-aws-and-nvidia-to-deliver-2-million-addi",
+  "created_at": "2026-08-27T09:54:37.651340Z",
+  "source_insight_path": "signals/insights/insight-2026-08-27-nvidia-newsroom-aws-and-nvidia-to-deliver-2-million-addi.json",
+  "source_signal_id": "2026-08-27-nvidia-newsroom-aws-and-nvidia-to-deliver-2-million-addi",
+  "content_type": "linkedin_post",
+  "hub_assignment": "general",
+  "industry_verticals": [
+    "general"
+  ],
+  "strategy": {
+    "angle": "The shift from generative text to industrial-scale physical AI in the Houston market.",
+    "format": "Narrative with a question-and-answer structure.",
+    "audience": "Houston-based C-suite executives, operations leaders, and industrial sector stakeholders.",
+    "tone": "Authoritative, grounded, and forward-thinking."
+  },
+  "draft": {
+    "hook": "The AI gold rush is officially moving from the screen to the shop floor.",
+    "body": "While most businesses are playing with chatbots, AWS and NVIDIA just committed to 2 million additional GPUs specifically to scale 'physical AI.' For Houston\u2019s industrial base, this isn't just a hardware upgrade; it\u2019s the transition from passive data analysis to autonomous, agentic systems that run our logistics and manufacturing. We are moving from LLMs that write emails to Digital Twins that optimize a refinery\u2019s throughput in real-time.\n\nWhy does this matter for the Houston business sector? Because physical AI requires a level of operational integration that pure software-as-a-service models never demanded. Leon Coe and the team at Amplify Intelligence are seeing that the companies winning in 2025 won't be the ones with the best prompts, but the ones with the most robust sensor data architecture. \n\nHow do you prepare for this shift? Stop viewing AI as a department and start viewing it as the nervous system of your physical operations. If your data is siloed in legacy ERPs, you cannot feed the agents that are about to dominate industrial efficiency.",
+    "closing": "The infrastructure is arriving. The question is whether your operational data is clean enough to be automated.",
+    "cta": "If you are running an industrial operation in Houston, identify one bottleneck that would vanish if a machine could 'see' and 'act' on the data instead of just reporting it\u2014and let\u2019s discuss the architecture required to get there.",
+    "full_text": "The AI gold rush is officially moving from the screen to the shop floor. While most businesses are playing with chatbots, AWS and NVIDIA just committed to 2 million additional GPUs specifically to scale 'physical AI.' For Houston\u2019s industrial base, this isn't just a hardware upgrade; it\u2019s the transition from passive data analysis to autonomous, agentic systems that run our logistics and manufacturing. We are moving from LLMs that write emails to Digital Twins that optimize a refinery\u2019s throughput in real-time.\n\nWhy does this matter for the Houston business sector? Because physical AI requires a level of operational integration that pure software-as-a-service models never demanded. Leon Coe and the team at Amplify Intelligence are seeing that the companies winning in 2025 won't be the ones with the best prompts, but the ones with the most robust sensor data architecture. \n\nHow do you prepare for this shift? Stop viewing AI as a department and start viewing it as the nervous system of your physical operations. If your data is siloed in legacy ERPs, you cannot feed the agents that are about to dominate industrial efficiency. The infrastructure is arriving. The question is whether your operational data is clean enough to be automated. If you are running an industrial operation in Houston, identify one bottleneck that would vanish if a machine could 'see' and 'act' on the data instead of just reporting it\u2014and let\u2019s discuss the architecture required to get there."
+  },
+  "editorial": {
+    "status": "draft",
+    "used_for_publishing": false,
+    "needs_review": true
+  }
+}
