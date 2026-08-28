@@ -1,0 +1,31 @@
+--- 
+ai_adjustment: 0
+base_score: 40
+collected_at: 2026-08-28 11:28:33+00:00
+confidence: 0.85
+duplicate_of: null
+final_score: 40
+gap_multiplier: 1.0
+geo_relevance: Global
+hub_assignment: general
+hub_scores:
+  amplified_exec: 0
+  amplify_intelligence: 0
+  houston_ai_club: 0
+  leon_coe: 0
+industry: Cross-Industry
+industry_verticals:
+- healthcare
+- logistics
+priority_hint: medium
+signal_category: AI Research
+signal_id: sig-2026-08-28-0c0552
+source_name: OpenAI Blog
+source_type: Company Blog
+source_url: https://openai.com/index/supporting-next-generation-ai-startups-thailand
+status: triaged
+tier: candidate
+---
+
+# Signal Summary
+Supporting Thailand’s next generation of AI startups: OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.
