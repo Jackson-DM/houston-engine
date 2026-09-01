@@ -1,7 +1,7 @@
 {
-  "last_successful_run": "2026-09-01T05:15:04Z",
+  "last_successful_run": "2026-09-01T11:43:01Z",
   "sources_scanned": 5,
-  "signals_created": 4,
+  "signals_created": 1,
   "duplicates_skipped": 3,
   "low_signal_rejected": 0
 }
