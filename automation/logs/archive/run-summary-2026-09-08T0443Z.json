@@ -27,10 +27,5 @@
   "errors": {
     "count": 0,
     "items": []
-  },
-  "humanization": {
-    "eligible_drafts": 0,
-    "generated_count": 0,
-    "skipped_count": 0
   }
 }
