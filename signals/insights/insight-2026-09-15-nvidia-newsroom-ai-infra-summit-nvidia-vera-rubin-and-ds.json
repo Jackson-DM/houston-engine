@@ -1,0 +1,33 @@
+{
+  "id": "2026-09-15-nvidia-newsroom-ai-infra-summit-nvidia-vera-rubin-and-ds",
+  "created_at": "2026-09-15T17:03:15.729154Z",
+  "source_signal_path": "signals/scored/2026-09-15-nvidia-newsroom-ai-infra-summit-nvidia-vera-rubin-and-ds.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Infrastructure Development",
+    "summary": "NVIDIA's focus on 'tokens per watt' efficiency for AI factories indicates a pivot from pure compute power to operational sustainability and energy-efficient architecture for massive AI workloads.",
+    "why_it_matters": "The cost of AI adoption is increasingly tied to energy consumption; optimizing infrastructure for power efficiency is a prerequisite for scaling industrial AI, especially for enterprises with high latency and throughput needs.",
+    "business_implication": "Companies building internal AI factories must shift procurement criteria from peak FLOPS to total cost of ownership (TCO) based on energy efficiency. High energy costs act as a ceiling for AI ROI, making efficiency-focused platforms critical for long-term scalability.",
+    "regional_angle": "Houston is uniquely positioned as an AI-Energy convergence point. The massive power demands of 'AI factories' align with Houston's grid capabilities and the need for petrochemical and energy firms to integrate AI into low-carbon infrastructure.",
+    "content_angles": [
+      "From Oil & Gas to Data: How Houston\u2019s Energy Grid Can Power the AI Factory Boom",
+      "Beyond Compute: Why 'Tokens per Watt' is the New KPI for Industrial AI Operations",
+      "Optimizing the Edge: Leveraging NVIDIA's DSX Platform for Remote Industrial Logistics in the Gulf Coast"
+    ],
+    "recommended_angle": "The Convergence of Houston's Energy Corridor and AI Infrastructure: Building Power-Efficient AI Factories to Lower TCO in Industrial Automation.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-09-15-nvidia-newsroom-ai-infra-summit-nvidia-vera-rubin-and-ds"
+    ]
+  }
+}
