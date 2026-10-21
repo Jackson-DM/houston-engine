@@ -1,0 +1,31 @@
+{
+  "id": "2026-10-21-nvidia-newsroom-nvidia-and-supply-chain-partners-expand-",
+  "created_at": "2026-10-21T11:56:36.986036Z",
+  "source_signal_path": "signals/scored/2026-10-21-nvidia-newsroom-nvidia-and-supply-chain-partners-expand-.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Infrastructure Expansion",
+    "summary": "NVIDIA is aggressively scaling manufacturing capacity through its global supply chain partners to meet surging demand for AI factory platforms and accelerated computing infrastructure.",
+    "why_it_matters": "The constraint on AI adoption is shifting from model development to physical infrastructure deployment. Large-scale availability of H100/Blackwell hardware is the bottleneck for enterprise-grade generative AI and agentic workflows.",
+    "business_implication": "Companies that rely on 'just-in-time' infrastructure procurement will face extended lead times and competitive disadvantage. Strategic AI adoption now requires 'capital-first' infrastructure planning rather than incremental SaaS adoption.",
+    "regional_angle": "Houston's energy and industrial giants are in a race to build localized AI 'data factories' to process massive seismic, petrochemical, and patient datasets. Increased supply chain capacity improves local project viability for Houston's energy corridor and TMC-based healthcare research institutions that require high-compute on-premise environments.",
+    "content_angles": [
+      "From Oil & Gas to AI: How Houston's Industrial Infrastructure Must Pivot to Handle Edge-AI Compute",
+      "Navigating the NVIDIA Bottleneck: Strategic Procurement for Houston's Energy Infrastructure",
+      "The New Industrial Revolution: Scaling AI Compute in the Gulf Coast Petrochemical Corridor"
+    ],
+    "recommended_angle": "Navigating the NVIDIA Bottleneck: Strategic Procurement for Houston's Energy Infrastructure",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": false,
+    "content_asset_ids": []
+  }
+}
