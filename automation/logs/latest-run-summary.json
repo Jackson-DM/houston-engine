@@ -1,6 +1,6 @@
 {
-  "run_started_at": "2026-10-24T20:54:11.103390Z",
-  "run_completed_at": "2026-10-24T20:54:13.989219Z",
+  "run_started_at": "2026-10-25T04:48:29.718492Z",
+  "run_completed_at": "2026-10-25T04:48:32.069738Z",
   "budget_warning": null,
   "ingestion": {
     "raw_signals_found": 1358,
