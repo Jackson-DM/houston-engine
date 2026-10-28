@@ -1,7 +1,7 @@
 --- 
 ai_adjustment: 0
 base_score: 35
-collected_at: 2026-10-28 13:02:12+00:00
+collected_at: 2026-10-28 22:38:47+00:00
 confidence: 0.85
 duplicate_of: null
 final_score: 35
@@ -18,10 +18,10 @@ industry_verticals:
 - general
 priority_hint: medium
 signal_category: AI Research
-signal_id: sig-2026-10-28-2b973d
+signal_id: sig-2026-10-28-675b2b
 source_name: OpenAI Blog
 source_type: Company Blog
-source_url: https://openai.com/index/legora-agentic-operating-system-for-legal-work
+source_url: https://openai.com/index/legora
 status: archived
 tier: archive
 ---
