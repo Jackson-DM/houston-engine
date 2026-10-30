@@ -1,0 +1,31 @@
+{
+  "run_started_at": "2026-10-30T13:01:19.729442Z",
+  "run_completed_at": "2026-10-30T13:01:22.208559Z",
+  "budget_warning": null,
+  "ingestion": {
+    "raw_signals_found": 1377,
+    "new_signals_written": 5,
+    "duplicates_skipped": 1364
+  },
+  "scoring": {
+    "signals_processed": 5,
+    "publish_count": 0,
+    "candidate_count": 0,
+    "archive_count": 3,
+    "ignore_count": 2
+  },
+  "insights": {
+    "eligible_signals": 0,
+    "generated_count": 0,
+    "skipped_count": 0
+  },
+  "drafts": {
+    "eligible_insights": 0,
+    "generated_count": 0,
+    "skipped_count": 0
+  },
+  "errors": {
+    "count": 0,
+    "items": []
+  }
+}
