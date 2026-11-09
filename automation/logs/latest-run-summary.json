@@ -1,27 +1,27 @@
 {
-  "run_started_at": "2026-11-08T22:10:55.222923Z",
-  "run_completed_at": "2026-11-08T22:10:57.400694Z",
+  "run_started_at": "2026-11-09T06:43:13.291731Z",
+  "run_completed_at": "2026-11-09T06:43:20.497546Z",
   "budget_warning": null,
   "ingestion": {
-    "raw_signals_found": 1408,
-    "new_signals_written": 3,
-    "duplicates_skipped": 1405
+    "raw_signals_found": 20,
+    "new_signals_written": 5,
+    "duplicates_skipped": 0
   },
   "scoring": {
-    "signals_processed": 3,
-    "publish_count": 0,
-    "candidate_count": 1,
+    "signals_processed": 5,
+    "publish_count": 1,
+    "candidate_count": 2,
     "archive_count": 2,
     "ignore_count": 0
   },
   "insights": {
-    "eligible_signals": 0,
-    "generated_count": 0,
+    "eligible_signals": 1,
+    "generated_count": 1,
     "skipped_count": 0
   },
   "drafts": {
-    "eligible_insights": 0,
-    "generated_count": 0,
+    "eligible_insights": 1,
+    "generated_count": 1,
     "skipped_count": 0
   },
   "errors": {
@@ -29,8 +29,8 @@
     "items": []
   },
   "humanization": {
-    "eligible_drafts": 0,
-    "generated_count": 0,
+    "eligible_drafts": 1,
+    "generated_count": 1,
     "skipped_count": 0
   }
 }
