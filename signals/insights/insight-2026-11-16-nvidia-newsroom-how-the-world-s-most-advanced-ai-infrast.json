@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-16-nvidia-newsroom-how-the-world-s-most-advanced-ai-infrast",
+  "created_at": "2026-11-16T22:11:13.896837Z",
+  "source_signal_path": "signals/scored/2026-11-16-nvidia-newsroom-how-the-world-s-most-advanced-ai-infrast.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Strategic Supply Chain Evolution",
+    "summary": "NVIDIA is shifting from a standard chip designer to an architect of global, hyper-complex AI infrastructure supply chains, focusing on systemic resilience and large-scale, multi-partner manufacturing integration.",
+    "why_it_matters": "As AI compute becomes the new 'oil' for enterprise, the reliability, logistics, and scaling speed of hardware delivery determine competitive advantage for downstream adopters in heavy industries.",
+    "business_implication": "Companies relying on AI infrastructure face significant bottleneck risks. Decision-makers must pivot from just-in-time procurement to strategic, long-cycle capacity planning and deepen partnerships with hardware integrators to ensure uptime.",
+    "regional_angle": "Houston\u2019s energy and logistics sectors (Port of Houston) are critical to the physical movement of this infrastructure. The localized integration of AI-enabled edge computing in petrochemical manufacturing requires exactly the kind of resilient supply chains Shoquist is building.",
+    "content_angles": [
+      "The physical footprint of AI: How Houston\u2019s industrial sector secures hardware for edge computing.",
+      "Transitioning from legacy SCADA to AI-native infrastructure: A supply chain perspective.",
+      "Mitigating the 'Compute Bottleneck' in Gulf Coast energy operations."
+    ],
+    "recommended_angle": "The 'Compute Bottleneck': Why Houston energy firms must treat hardware supply chains as a primary strategic risk to their digitalization roadmaps.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-11-16-nvidia-newsroom-how-the-world-s-most-advanced-ai-infrast"
+    ]
+  }
+}
