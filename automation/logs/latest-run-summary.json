@@ -1,27 +1,27 @@
 {
-  "run_started_at": "2026-11-15T18:54:28.875180Z",
-  "run_completed_at": "2026-11-15T18:54:32.727681Z",
+  "run_started_at": "2026-11-16T06:38:15.395151Z",
+  "run_completed_at": "2026-11-16T06:38:23.207024Z",
   "budget_warning": null,
   "ingestion": {
-    "raw_signals_found": 1427,
-    "new_signals_written": 0,
-    "duplicates_skipped": 1427
+    "raw_signals_found": 1429,
+    "new_signals_written": 5,
+    "duplicates_skipped": 1406
   },
   "scoring": {
-    "signals_processed": 0,
-    "publish_count": 0,
+    "signals_processed": 5,
+    "publish_count": 1,
     "candidate_count": 0,
-    "archive_count": 0,
-    "ignore_count": 0
+    "archive_count": 2,
+    "ignore_count": 2
   },
   "insights": {
-    "eligible_signals": 0,
-    "generated_count": 0,
+    "eligible_signals": 1,
+    "generated_count": 1,
     "skipped_count": 0
   },
   "drafts": {
-    "eligible_insights": 0,
-    "generated_count": 0,
+    "eligible_insights": 1,
+    "generated_count": 1,
     "skipped_count": 0
   },
   "errors": {
@@ -29,8 +29,8 @@
     "items": []
   },
   "humanization": {
-    "eligible_drafts": 0,
-    "generated_count": 0,
+    "eligible_drafts": 1,
+    "generated_count": 1,
     "skipped_count": 0
   }
 }

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-16-nvidia-newsroom-ai-day-seoul-brings-together-korea-s-ind",
+  "created_at": "2026-11-16T06:38:18.545829Z",
+  "source_signal_path": "signals/scored/2026-11-16-nvidia-newsroom-ai-day-seoul-brings-together-korea-s-ind.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Industrial AI & Robotics Adoption",
+    "summary": "NVIDIA's AI Day in Seoul highlights the accelerating transition from generative AI to 'physical AI'\u2014the integration of autonomous robotics, edge computing, and AI agents into physical industrial workflows.",
+    "why_it_matters": "Physical AI represents the next frontier of industrial automation where robots operate with human-like spatial intelligence. This shifts the focus from simple repetitive tasks to complex, adaptive material handling and facility management.",
+    "business_implication": "Companies that integrate edge-based physical AI can expect significant reductions in operational downtime and increased throughput in logistics and manufacturing, as machines gain the ability to adapt to dynamic, unscripted environments.",
+    "regional_angle": "Houston's Port of Houston and expansive industrial petrochemical corridors are prime candidates for autonomous edge-AI deployments. As Texas becomes a hub for robotics manufacturing, integrating NVIDIA's edge stack into local supply chain automation is a critical competitive lever.",
+    "content_angles": [
+      "From Automation to Autonomy: How Physical AI is Changing the Port of Houston",
+      "Why Energy Infrastructure Needs Edge Intelligence, Not Just Data Lakes",
+      "The Case for Investing in Robotics Infrastructure in the Gulf Coast Corridor"
+    ],
+    "recommended_angle": "How 'Physical AI' will redefine safety and logistics in Houston's petrochemical and shipping industries: A strategic roadmap for facility managers.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-11-16-nvidia-newsroom-ai-day-seoul-brings-together-korea-s-ind"
+    ]
+  }
+}
