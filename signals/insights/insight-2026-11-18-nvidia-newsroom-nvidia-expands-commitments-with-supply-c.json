@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-18-nvidia-newsroom-nvidia-expands-commitments-with-supply-c",
+  "created_at": "2026-11-18T07:36:01.032853Z",
+  "source_signal_path": "signals/scored/2026-11-18-nvidia-newsroom-nvidia-expands-commitments-with-supply-c.md",
+  "source": {
+    "publisher": "NVIDIA Newsroom",
+    "title": null
+  },
+  "scoring": {
+    "final_score": 60,
+    "route": "publish"
+  },
+  "insight": {
+    "signal_type": "Supply Chain Infrastructure Expansion",
+    "summary": "NVIDIA is formalizing partnerships with semiconductor substrate suppliers Kinsus and Samsung Electro-Mechanics to alleviate bottlenecks in AI chip production capacity.",
+    "why_it_matters": "The massive scale-up of AI compute capacity is limited by physical hardware components (substrates) rather than just GPU design; this secures the supply chain for hyperscale AI deployment.",
+    "business_implication": "Enterprises relying on massive AI inference/training infrastructure can expect more predictable delivery timelines for high-end H100/B200 clusters, reducing project volatility for data center operators.",
+    "regional_angle": "Houston's energy sector is increasingly reliant on local AI-driven seismic processing and predictive maintenance. Secure supply chains for NVIDIA hardware are critical for the region's 'Energy Transition' compute platforms and the Houston Ship Channel's autonomous logistics initiatives.",
+    "content_angles": [
+      "How Houston's Industrial AI projects will benefit from easing semiconductor supply chain bottlenecks",
+      "The physical infrastructure of AI: Why regional leaders must track substrate manufacturing",
+      "Scaling AI in the Energy Corridor: Strategic planning in an era of hardware shortages"
+    ],
+    "recommended_angle": "The physical supply chain of AI: How expanded manufacturing in Korea and Taiwan directly stabilizes long-term AI CapEx planning for Houston-based Fortune 500 energy firms.",
+    "confidence": 0.95
+  },
+  "status": {
+    "used_for_content": true,
+    "content_asset_ids": [
+      "draft-2026-11-18-nvidia-newsroom-nvidia-expands-commitments-with-supply-c"
+    ]
+  }
+}
