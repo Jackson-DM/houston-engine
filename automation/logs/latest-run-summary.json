@@ -1,11 +1,11 @@
 {
-  "run_started_at": "2026-11-22T06:57:12.510213Z",
-  "run_completed_at": "2026-11-22T06:57:15.246695Z",
+  "run_started_at": "2026-11-22T19:45:09.956717Z",
+  "run_completed_at": "2026-11-22T19:45:11.978252Z",
   "budget_warning": null,
   "ingestion": {
-    "raw_signals_found": 1461,
+    "raw_signals_found": 1462,
     "new_signals_written": 5,
-    "duplicates_skipped": 1446
+    "duplicates_skipped": 1451
   },
   "scoring": {
     "signals_processed": 5,
